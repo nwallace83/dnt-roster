@@ -23,6 +23,12 @@
     border-bottom: 0px;     
 }
 
+.nav-link {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+
 .padding-bottom-4 {
     padding-bottom: 4px;
 }
