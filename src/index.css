@@ -10,8 +10,36 @@
     background-color: black;
 }
 
+#company-logo {
+    width: 82.06px;
+    height: 41px;
+}
+
+#nav-menu {
+    padding-left: 0px;
+}
+
+#nav-menu > .nav-tabs {
+    border-bottom: 0px;     
+}
+
 .padding-bottom-4 {
     padding-bottom: 4px;
+}
+
+.padding-all-0 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.txt-right {
+    text-align: right;
 }
 
 body {
