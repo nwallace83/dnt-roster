@@ -4,14 +4,14 @@ import logo from '../images/logo.jpg'
 class Header extends React.Component {
     render() {
         return (
-            <div class="row">
-                <div class="col-md-1">
+            <div className="row">
+                <div className="col-md-1">
                  <img src={logo} height='40px' />
                 </div>
-                <div class="col-md-8">
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Roster</a>
+                <div className="col-md-8">
+                    <ul className="nav nav-tabs">
+                        <li className="nav-item">
+                            <a className="nav-link active" aria-current="page" href="#">Roster</a>
                         </li>
                     </ul>
                 </div>
