@@ -3,6 +3,8 @@ const db = require('../services/dbService')
 const userSchema = db.mongoose.Schema({
     id: String,
     user_name: String,
+    is_admin: Boolean,
+    avatar: String,
     token: {
         access_token: String,
         expires_at: Number,

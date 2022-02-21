@@ -38,16 +38,21 @@ router.post('/login/:code', async (req,res) => {
                 res.status(401).send('Must be in Company discord to login')
             }
         }
-        let jwtToken = getJWTToken(discordUser.username + '#' + discordUser.discriminator)
+        let jwtToken = getJWTToken(discordUser)
         res.json(jwtToken)
     } else {
         res.status(401).send()
     }
-
 })
 
-function getJWTToken(userName){
-    return jwt.sign({userName: userName, expiresAt: Date.now() + TEN_YEARS},jwtKey,{algorithm: "HS256",expiresIn: TEN_YEARS})
+function getJWTToken(discordUser){
+    return jwt.sign({userName: discordUser.username + '#' + discordUser.discriminator,
+            id: discordUser.id,
+            avatar: discordUser.avatar,
+            is_admin: false,
+            expiresAt: Date.now() + TEN_YEARS},
+                jwtKey,{algorithm: "HS256",
+                expiresIn: TEN_YEARS})
 }
 
 function userIsInCompanyDiscord(userGuilds) {
@@ -62,6 +67,8 @@ function userIsInCompanyDiscord(userGuilds) {
 function saveUserToDatabase(discordUser,userToken) {
     new User.UserModel({
         id: discordUser.id,
+        avatar: discordUser.avatar,
+        id_admin: false,
         user_name: discordUser.username + '#' + discordUser.discriminator,
         token: {
             access_token: userToken.access_token,

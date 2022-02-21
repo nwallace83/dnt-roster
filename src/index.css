@@ -23,6 +23,10 @@
     border-bottom: 0px;     
 }
 
+.round-image {
+    border-radius: 50%;
+}
+
 .nav-tabs .nav-link.active {
     border-color: green green transparent green;
     background-color: lightgrey;

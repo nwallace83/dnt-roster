@@ -107,7 +107,7 @@ class LoginLogoutButton extends React.Component {
         if (this.props.session.sessionToken && this.props.session.userName) {
             return (
                     <button type="button" className="btn btn-success" onClick={this.props.logout}>
-                        <img src={discordLogo} height='25px'/>
+                        <img className="round-image" src={this.props.session.avatarURL} height='25px'/>
                         <span>Logout</span>
                     </button>
              )

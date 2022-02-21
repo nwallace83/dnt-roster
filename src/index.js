@@ -6,8 +6,7 @@ import './index.css';
 import store from './store.js';
 import { Provider } from 'react-redux';
 import Header from './components/header'
-import RosterBody from './components/rosterBody'
-// import ContentBody from './components/contentBody'
+import ContentBody from './components/contentBody'
 
 // ========================================
   
@@ -15,7 +14,7 @@ import RosterBody from './components/rosterBody'
       <div className="container" id="app">
           <Provider store={store}>
               <Header/>
-              <RosterBody />
+              <ContentBody />
           </Provider>
       </div>,
     document.getElementById('root')
