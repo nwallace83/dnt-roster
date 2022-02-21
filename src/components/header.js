@@ -1,6 +1,25 @@
 import React from 'react';
 import logo from '../images/logo.jpg'
 import discordLogo from '../images/discordLogo.jpg'
+import { connect } from 'react-redux'
+import { setSession, clearSession } from '../reducers/sessionSlice';
+
+const mapStateToProps = (state) => {
+    return {
+        // activeTab: state.menu.activeTab,
+        session: state.session}
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        // changeTab: (tabName) => dispatch(changeTab(tabName)),
+        setSession: (session) => dispatch(setSession(session)),
+        // logout: () => {
+        //     dispatch(clearSession())
+        //     Cookies.remove("authorization")
+        // }
+    }
+}
 
 class Header extends React.Component {
     componentDidMount() {
@@ -9,12 +28,16 @@ class Header extends React.Component {
 
         if (urlParams.get('code')) {
             fetch('/api/v1/discord/login/' + urlParams.get('code'),{method: "POST"})
-            .then( resp => console.log(resp))
+            .then( res => {
+                urlParams.delete('code')
+                urlParams.delete('state')
+                if (res.ok) {
+                    res.json().then(res => this.props.setSession(res))
+                }
+            })
             .catch( err => console.log(err))
         }
 
-        console.log('code: ' + urlParams.get('code'))
-        console.log('state: ' + urlParams.get('state'))
     }
 
     render() {
@@ -48,4 +71,4 @@ class Header extends React.Component {
     }
 }
 
-export default Header
+export default connect(mapStateToProps,mapDispatchToProps)(Header)

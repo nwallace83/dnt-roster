@@ -22,23 +22,35 @@ router.post('/login/:code', async (req,res) => {
 
     if (userToken && userToken.access_token) {
         discordUser = await fetchDiscordUser(userToken)
+        console.log(discordUser)
     } else {
         res.status(401).send('Unable to validate user, yell at Kavion')
     }
 
-    if (await userExistsInDB(discordUser)) {
-        console.log('exists')
-    } else {
-        discordUserGuilds = await fetchDiscordUserGuilds(userToken)
-        if (userIsInCompanyDiscord(discordUserGuilds)) {
-            console.log('adding user: ' + discordUser.username + '#' + discordUser.discriminator)
-            saveUserToDatabase(discordUser,userToken)
+    if (userToken && userToken.access_token && discordUser) {
+        if (await userExistsInDB(discordUser)) {
+            console.log('exists')
         } else {
-            console.log('User '+ discordUser.username + '#' + discordUser.discriminator + ' attempted to login but is not in the company discord')
-            res.status(401).send('Must be in Company discord to login')
+            discordUserGuilds = await fetchDiscordUserGuilds(userToken)
+            if (userIsInCompanyDiscord(discordUserGuilds)) {
+                console.log('adding user: ' + discordUser.username + '#' + discordUser.discriminator)
+                saveUserToDatabase(discordUser,userToken)
+            } else {
+                console.log('User '+ discordUser.username + '#' + discordUser.discriminator + ' attempted to login but is not in the company discord')
+                res.status(401).send('Must be in Company discord to login')
+            }
         }
+        let jwtToken = getJWTToken(discordUser.username + '#' + discordUser.discriminator)
+        res.json(jwtToken)
+    } else {
+        res.status(401).send()
     }
+
 })
+
+function getJWTToken(userName){
+    return jwt.sign({userName: userName, expiresAt: Date.now() + TEN_YEARS},jwtKey,{algorithm: "HS256",expiresIn: TEN_YEARS})
+}
 
 function userIsInCompanyDiscord(userGuilds) {
     for (let i=0; i<userGuilds.length; i++) {
@@ -46,7 +58,6 @@ function userIsInCompanyDiscord(userGuilds) {
             return true
         }
     }
-
     return false;
 }
 
