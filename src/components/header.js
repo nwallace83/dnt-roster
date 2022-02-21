@@ -8,7 +8,7 @@ class Header extends React.Component {
         const urlParams = new URLSearchParams(queryString);
 
         if (urlParams.get('code')) {
-            fetch('/api/v1/discord/' + urlParams.get('code'),{method: "POST"})
+            fetch('/api/v1/discord/login/' + urlParams.get('code'),{method: "POST"})
             .then( resp => console.log(resp))
             .catch( err => console.log(err))
         }
