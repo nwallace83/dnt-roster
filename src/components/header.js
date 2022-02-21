@@ -14,10 +14,10 @@ const mapDispatchToProps = (dispatch) => {
     return {
         // changeTab: (tabName) => dispatch(changeTab(tabName)),
         setSession: (session) => dispatch(setSession(session)),
-        // logout: () => {
-        //     dispatch(clearSession())
-        //     Cookies.remove("authorization")
-        // }
+        logout: () => {
+            dispatch(clearSession())
+            Cookies.remove("authorization")
+        }
     }
 }
 
@@ -56,18 +56,36 @@ class Header extends React.Component {
                         </ul>
                     </div>
                     <div className="col-md-4 txt-right">
-                        <a href="https://discord.com/oauth2/authorize?response_type=code&client_id=944735010311786537&scope=identify%20guilds&state=BACONISGOOD&redirect_uri=http%3A%2F%2Flocalhost%3A3001&prompt=consent
-    ">
-                            <button type="button" className="btn btn-success" >
-                                <img src={discordLogo} height='20px'/>
-                                <span>Login</span>
-                            </button>
-                        </a>
+                        <LoginLogoutButton session={this.props.session}/>
                     </div>
                 </div>
             </div>
 
         )
+    }
+}
+
+class LoginLogoutButton extends React.Component {
+    render() {
+        if (this.props.session.sessionToken && this.props.session.userName) {
+            return (
+                <a href="#">
+                    <button type="button" className="btn btn-success" >
+                        <img src={discordLogo} height='20px'/>
+                        <span>{this.props.session.userName}</span>
+                    </button>
+                </a>
+             )
+        } else {
+            return (
+                <a href="https://discord.com/oauth2/authorize?response_type=code&client_id=944735010311786537&scope=identify%20guilds&state=BACONISGOOD&redirect_uri=http%3A%2F%2Flocalhost%3A3001&prompt=consent">
+                    <button type="button" className="btn btn-success" >
+                        <img src={discordLogo} height='20px'/>
+                        <span>Login</span>
+                    </button>
+                </a>
+            )
+        }
     }
 }
 

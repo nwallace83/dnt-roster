@@ -15,7 +15,6 @@ const CLIENT_SECRET = ''
 const REDIRECT_URI = 'http://localhost:3001'
 
 router.post('/login/:code', async (req,res) => {
-
     let userToken = await fetchToken(req.params.code)
     let discordUser
     let discordUserGuilds
