@@ -1,8 +1,9 @@
 import React from 'react';
 import logo from '../images/logo.jpg'
-import discordLogo from '../images/discordLogo.jpg'
+import discordLogo from '../images/discordLogo.png'
 import { connect } from 'react-redux'
 import { setSession, clearSession } from '../reducers/sessionSlice';
+import Cookies from 'js-cookie'
 
 const mapStateToProps = (state) => {
     return {
@@ -29,15 +30,32 @@ class Header extends React.Component {
         if (urlParams.get('code')) {
             fetch('/api/v1/discord/login/' + urlParams.get('code'),{method: "POST"})
             .then( res => {
-                urlParams.delete('code')
-                urlParams.delete('state')
+                window.history.replaceState({}, document.title, "/")
                 if (res.ok) {
-                    res.json().then(res => this.props.setSession(res))
+                    res.json().then(res => {
+                        this.props.setSession(res)
+                        Cookies.set('authorization',res,{expires: 30})
+                    })
                 }
             })
             .catch( err => console.log(err))
+        } else {
+            this.setSessionFromCookie()
         }
+    }
 
+    setSessionFromCookie() {
+        const authCookie = Cookies.get("authorization")
+        if (authCookie) {
+            fetch('/api/v1/auth')
+            .then (res => {
+                if (res.ok) {
+                    this.props.setSession(authCookie)
+                } else {
+                    this.props.logout()
+                }
+            })
+        }
     }
 
     render() {
@@ -56,7 +74,7 @@ class Header extends React.Component {
                         </ul>
                     </div>
                     <div className="col-md-4 txt-right">
-                        <LoginLogoutButton session={this.props.session}/>
+                        <LoginLogoutButton session={this.props.session} logout={this.props.logout} />
                     </div>
                 </div>
             </div>
@@ -69,18 +87,17 @@ class LoginLogoutButton extends React.Component {
     render() {
         if (this.props.session.sessionToken && this.props.session.userName) {
             return (
-                <a href="#">
-                    <button type="button" className="btn btn-success" >
-                        <img src={discordLogo} height='20px'/>
-                        <span>{this.props.session.userName}</span>
+                    <button type="button" className="btn btn-success" onClick={this.props.logout}>
+                        <img src={discordLogo} height='25px'/>
+                        <span>Logout</span>
                     </button>
-                </a>
              )
         } else {
-            return (
-                <a href="https://discord.com/oauth2/authorize?response_type=code&client_id=944735010311786537&scope=identify%20guilds&state=BACONISGOOD&redirect_uri=http%3A%2F%2Flocalhost%3A3001&prompt=consent">
+            let discord_url = 'https://discord.com/oauth2/authorize?response_type=code&client_id=944735010311786537&scope=identify%20guilds&state=BACONISGOOD&prompt=consent&redirect_uri=' + encodeURIComponent(window.location.protocol + '//' + window.location.host)
+            return (          
+                <a href={discord_url}>
                     <button type="button" className="btn btn-success" >
-                        <img src={discordLogo} height='20px'/>
+                        <img src={discordLogo} height='25px'/>
                         <span>Login</span>
                     </button>
                 </a>
