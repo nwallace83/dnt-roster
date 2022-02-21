@@ -21,7 +21,6 @@ router.post('/login/:code', async (req,res) => {
 
     if (userToken && userToken.access_token) {
         discordUser = await fetchDiscordUser(userToken)
-        console.log(discordUser)
     } else {
         res.status(401).send('Unable to validate user, yell at Kavion')
     }

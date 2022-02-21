@@ -3,20 +3,22 @@ import logo from '../images/logo.jpg'
 import discordLogo from '../images/discordLogo.png'
 import { connect } from 'react-redux'
 import { setSession, clearSession } from '../reducers/sessionSlice';
+import { changeTab } from '../reducers/menuSlice'
 import Cookies from 'js-cookie'
 
 const mapStateToProps = (state) => {
     return {
-        // activeTab: state.menu.activeTab,
+        activeTab: state.menu.activeTab,
         session: state.session}
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        // changeTab: (tabName) => dispatch(changeTab(tabName)),
+        changeTab: (tabName) => dispatch(changeTab(tabName)),
         setSession: (session) => dispatch(setSession(session)),
         logout: () => {
             dispatch(clearSession())
+            dispatch(changeTab('roster'))
             Cookies.remove("authorization")
         }
     }
@@ -53,9 +55,26 @@ class Header extends React.Component {
                     this.props.setSession(authCookie)
                 } else {
                     this.props.logout()
+                    this.props.changeTab('roster')
                 }
             })
+        } else {
+            this.props.changeTab('roster')
         }
+    }
+
+    showEditCharacersTab() {
+        if (this.props.session.sessionToken && this.props.session.userName) {
+            return(
+                <li className="nav-item" onClick={() => this.props.changeTab('editCharacter')}>
+                    <a className={this.getButtonClasses('editCharacter')} aria-current="page" href="#">Edit Character</a>
+                </li>
+            )
+        }
+    }
+
+    getButtonClasses(tabName) {
+        return "nav-link " + (this.props.activeTab === tabName ? "active" : "inactive")
     }
 
     render() {
@@ -65,12 +84,12 @@ class Header extends React.Component {
                     <div className="col-md-8" id="nav-menu">
                         <ul className="nav nav-tabs">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#" id="company-logo" style={{ backgroundImage: `url(${logo})`, backgroundSize: 'contain' }}>
-                                </a>
+                                <a className="nav-link" aria-current="page" href="#" id="company-logo" style={{ backgroundImage: `url(${logo})`, backgroundSize: 'contain' }} />
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Roster</a>
+                            <li className="nav-item" onClick={() => this.props.changeTab('roster')}>
+                                <a className={this.getButtonClasses('roster')} aria-current="page" href="#">Roster</a>
                             </li>
+                            {this.showEditCharacersTab()}
                         </ul>
                     </div>
                     <div className="col-md-4 txt-right">
