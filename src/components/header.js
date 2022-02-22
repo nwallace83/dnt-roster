@@ -3,21 +3,25 @@ import logo from '../images/logo.jpg'
 import discordLogo from '../images/discordLogo.png'
 import { connect } from 'react-redux'
 import { setSession, clearSession } from '../reducers/sessionSlice';
+import { clearCharacter, saveCharacter } from '../reducers/characterSlice';
 import { changeTab } from '../reducers/menuSlice'
 import Cookies from 'js-cookie'
 
 const mapStateToProps = (state) => {
     return {
         activeTab: state.menu.activeTab,
-        session: state.session}
+        session: state.session
+    }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         changeTab: (tabName) => dispatch(changeTab(tabName)),
         setSession: (session) => dispatch(setSession(session)),
+        saveCharacter: (character) => dispatch(saveCharacter(character)),
         logout: () => {
             dispatch(clearSession())
+            dispatch(clearCharacter())
             dispatch(changeTab('roster'))
             Cookies.remove("authorization")
         }
@@ -26,8 +30,12 @@ const mapDispatchToProps = (dispatch) => {
 
 class Header extends React.Component {
     componentDidMount() {
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
+        this.initializeSession()
+    }
+
+    initializeSession() {
+        const queryString = window.location.search
+        const urlParams = new URLSearchParams(queryString)
 
         if (urlParams.get('code')) {
             fetch('/api/v1/discord/login/' + urlParams.get('code'),{method: "POST"})
@@ -37,6 +45,7 @@ class Header extends React.Component {
                     res.json().then(res => {
                         this.props.setSession(res)
                         Cookies.set('authorization',res,{expires: 30})
+                        this.initializeCharacter()
                     })
                 }
             })
@@ -53,6 +62,7 @@ class Header extends React.Component {
             .then (res => {
                 if (res.ok) {
                     this.props.setSession(authCookie)
+                    this.initializeCharacter()
                 } else {
                     this.props.logout()
                     this.props.changeTab('roster')
@@ -61,6 +71,12 @@ class Header extends React.Component {
         } else {
             this.props.changeTab('roster')
         }
+    }
+
+    initializeCharacter() {
+        fetch('/api/v1/character/').then(res => {
+            res.json().then(res => this.props.saveCharacter(res))
+        })
     }
 
     showEditCharacersTab() {
@@ -112,7 +128,7 @@ class LoginLogoutButton extends React.Component {
                     </button>
              )
         } else {
-            let discord_url = 'https://discord.com/oauth2/authorize?response_type=code&client_id=944735010311786537&scope=identify%20guilds&state=BACONISGOOD&prompt=consent&redirect_uri=' + encodeURIComponent(window.location.protocol + '//' + window.location.host)
+            let discord_url = 'https://discord.com/oauth2/authorize?response_type=code&client_id=944735010311786537&scope=identify%20guilds&state=BACONISGOOD&prompt=none&redirect_uri=' + encodeURIComponent(window.location.protocol + '//' + window.location.host)
             return (          
                 <a href={discord_url}>
                     <button type="button" className="btn btn-success" >

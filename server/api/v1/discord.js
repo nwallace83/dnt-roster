@@ -6,7 +6,6 @@ const User = require('../../models/userModel')
 
 const jwt = require('jsonwebtoken')
 const jwtKey = "nate_is_awesome"
-const bcrypt = require('bcrypt')
 const TEN_YEARS = 315360000000
 
 const API_ENDPOINT = 'https://discord.com/api'
