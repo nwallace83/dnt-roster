@@ -35,7 +35,7 @@ class EditCharacterForm extends React.Component {
     saveCharacter = () => {
         let charToSave = {}
 
-        charToSave.characterName = document.characterform.charactername.value
+        charToSave.characterName = document.characterform.charactername.value.trim()
         charToSave.primaryWeapon1 = document.characterform.primaryweapon1.value
         charToSave.primaryWeapon2 = document.characterform.primaryweapon2.value
         charToSave.primaryRole = document.characterform.primaryrole.value
@@ -43,7 +43,7 @@ class EditCharacterForm extends React.Component {
         charToSave.secondaryWeapon2 = document.characterform.secondaryweapon2.value
         charToSave.secondaryRole = document.characterform.secondaryrole.value
 
-        if (charToSave.characterName.length > 1 && charToSave.primaryWeapon1.length > 1 && charToSave.primaryWeapon2.length > 1 && charToSave.primaryRole.length > 1){
+        if (charToSave.characterName.length > 2 && charToSave.primaryWeapon1.length > 1 && charToSave.primaryWeapon2.length > 1 && charToSave.primaryRole.length > 1){
             fetch('/api/v1/character',{method: "POST", headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(charToSave)}).then(res => {
                 if (res.ok) {
                     this.props.saveCharacter(charToSave)
