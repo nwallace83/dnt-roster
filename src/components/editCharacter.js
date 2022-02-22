@@ -59,7 +59,7 @@ class EditCharacterForm extends React.Component {
 
     render() {
         return (
-            <div className="col-md-8 offset-md-2">
+            <div className="col-md-8">
                 <form name="characterform" className="row g-3">
                     <div className="col-md-12">
                         <label className="form-label">Character Name</label>
@@ -67,7 +67,7 @@ class EditCharacterForm extends React.Component {
                         <hr />
                     </div>
                     <div className="col-md-5">
-                        <label className="form-label font-weight-bold">Weapon 1</label>
+                        <label className="form-label font-weight-bold">Weapon(primary)</label>
                         <select name="primaryweapon1" className="form-select">
                             <option selected={this.optionIsSelected('primaryWeapon1','')}></option>
                             <option selected={this.optionIsSelected('primaryWeapon1','Bow')}>Bow</option>
@@ -85,7 +85,7 @@ class EditCharacterForm extends React.Component {
                         </select>
                     </div>
                     <div className="col-md-5">
-                        <label className="form-label font-weight-bold">Weapon 2</label>
+                        <label className="form-label font-weight-bold">Weapon(primary)</label>
                         <select name="primaryweapon2" className="form-select">
                             <option></option>
                             <option selected={this.optionIsSelected('primaryWeapon2','Bow')}>Bow</option>
@@ -103,7 +103,7 @@ class EditCharacterForm extends React.Component {
                         </select>
                     </div>
                     <div className="col-md-2">
-                        <label className="form-label font-weight-bold">Role</label>
+                        <label className="form-label font-weight-bold">Role(primary)</label>
                         <select name="primaryrole" className="form-select">
                             <option></option>
                             <option selected={this.optionIsSelected('primaryRole','DPS')}>DPS</option>
@@ -112,7 +112,7 @@ class EditCharacterForm extends React.Component {
                         </select>
                     </div>
                     <div className="col-md-5">
-                        <label className="form-label font-weight-bold">Weapon 1</label>
+                        <label className="form-label font-weight-bold">Weapon(secondary)</label>
                         <select name="secondaryweapon1" className="form-select">
                             <option></option>
                             <option selected={this.optionIsSelected('secondaryWeapon1','Bow')}>Bow</option>
@@ -130,7 +130,7 @@ class EditCharacterForm extends React.Component {
                         </select>
                     </div>
                     <div className="col-md-5">
-                        <label className="form-label font-weight-bold">Weapon 2</label>
+                        <label className="form-label font-weight-bold">Weapon(secondary)</label>
                         <select name="secondaryweapon2" className="form-select">
                             <option></option>
                             <option selected={this.optionIsSelected('secondaryWeapon2','Bow')}>Bow</option>
@@ -148,7 +148,7 @@ class EditCharacterForm extends React.Component {
                         </select>
                     </div>
                     <div className="col-md-2">
-                        <label className="form-label font-weight-bold">Role</label>
+                        <label className="form-label font-weight-bold">Role(secondary)</label>
                         <select name="secondaryrole" className="form-select">
                             <option selected>{this.props.character.secondaryRole}</option>
                             <option selected={this.optionIsSelected('secondaryRole','DPS')}>DPS</option>

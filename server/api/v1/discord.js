@@ -14,34 +14,42 @@ const CLIENT_SECRET = ''
 const REDIRECT_URI = 'http://localhost:3001'
 
 router.post('/login/:code', async (req,res) => {
+    console.info('Fetching token for code: ' + req.params.code)
     let userToken = await fetchToken(req.params.code)
     let discordUser
     let discordUserGuilds
 
-    if (userToken && userToken.access_token) {
-        discordUser = await fetchDiscordUser(userToken)
-    } else {
-        res.status(401).send('Unable to validate user, yell at Kavion')
+    if (!userToken || !userToken.access_token) {
+        return res.status(401).send('Unable to get token from code provided')
     }
 
-    if (userToken && userToken.access_token && discordUser) {
-        if (await userExistsInDB(discordUser)) {
-            console.log('exists')
-        } else {
-            discordUserGuilds = await fetchDiscordUserGuilds(userToken)
-            if (userIsInCompanyDiscord(discordUserGuilds)) {
-                console.log('adding user: ' + discordUser.username + '#' + discordUser.discriminator)
-                saveUserToDatabase(discordUser,userToken)
-            } else {
-                console.log('User '+ discordUser.username + '#' + discordUser.discriminator + ' attempted to login but is not in the company discord')
-                res.status(401).send('Must be in Company discord to login')
-            }
-        }
-        let jwtToken = getJWTToken(discordUser)
-        res.json(jwtToken)
-    } else {
-        res.status(401).send()
+    discordUser = await fetchDiscordUser(userToken)
+
+    if (!discordUser || !discordUser.username || !discordUser.discriminator) {
+        return res.status(401).send('unable to get discord user from token provided')
     }
+
+    let discordProfileName = discordUser.username + '#' + discordUser.discriminator
+    let firstLogIn = await userExistsInDB(discordUser); firstLogIn = !firstLogIn
+
+    if (firstLogIn) {
+        console.info('fetching guilds for ' + discordProfileName)
+        discordUserGuilds = await fetchDiscordUserGuilds(userToken)
+        if (userIsInCompanyDiscord(discordUserGuilds)) {
+            console.info('adding new user: ' + discordProfileName)
+            saveUserToDatabase(discordUser,userToken)
+        } else {
+            console.info('User '+ discordProfileName + ' attempted to login but is not in the company discord')
+            res.status(401).send('Must be in Company discord to login')
+        }
+    }
+
+    if (!firstLogIn) {
+        console.info('Logging in user: ' + discordUser.username + '#' + discordUser.discriminator)
+    }
+
+    let jwtToken = getJWTToken(discordUser)
+    res.json(jwtToken)
 })
 
 function getJWTToken(discordUser){
@@ -78,7 +86,7 @@ function saveUserToDatabase(discordUser,userToken) {
 }
 
 async function userExistsInDB(discordUser) {
-    let user = await User.UserModel.findOne({userName: discordUser.username + '#' + discordUser.discriminator})
+    let user = await User.UserModel.findOne({user_name: discordUser.username + '#' + discordUser.discriminator})
     return user ? true : false
 }
 

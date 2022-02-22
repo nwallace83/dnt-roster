@@ -13,7 +13,7 @@ router.get('/', async (req,res) => {
 
     let user = await authenticateAndGetUserFromDB(req.cookies.authorization)
 
-    if (!user) {
+    if (!user || !user.id) {
         res.sendStatus(401)
     }
 
@@ -34,14 +34,15 @@ router.get('/', async (req,res) => {
     }
 })
 
+
 router.post('/', async (req,res) => {
     if(!req.cookies.authorization) {
         return res.sendStatus(401)
     }
 
     let user = await authenticateAndGetUserFromDB(req.cookies.authorization)
-    if (!user) {
-        return res.sendStatus(401)
+    if (!user || !user.id) {
+        return res.status(401).send("unable to get user from database")
     }
 
     let payload = req.body

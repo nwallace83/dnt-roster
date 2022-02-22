@@ -1,5 +1,5 @@
 import React from 'react'
-import RosterBody from './rosterBody'
+import Roster from './roster'
 import EditCharacter from './editCharacter'
 import { connect } from 'react-redux'
 
@@ -14,7 +14,7 @@ class ContentBody extends React.Component {
             if (this.props.activeTab == 'editCharacter') {
                 return <EditCharacter />
             } else {
-                return <RosterBody />
+                return <Roster />
             }
     }
 }
