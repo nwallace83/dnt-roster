@@ -6,6 +6,7 @@ import { setSession, clearSession } from '../reducers/sessionSlice';
 import { clearCharacter, saveCharacter } from '../reducers/characterSlice';
 import { changeTab } from '../reducers/menuSlice'
 import Cookies from 'js-cookie'
+import { toastr } from 'react-redux-toastr';
 
 const mapStateToProps = (state) => {
     return {
@@ -46,6 +47,7 @@ class Header extends React.Component {
                         this.props.setSession(res)
                         Cookies.set('authorization',res,{expires: 30})
                         this.initializeCharacter()
+                        toastr.success('Success', 'Welcome ' + this.props.session.userName)
                     })
                 }
             })
@@ -75,7 +77,12 @@ class Header extends React.Component {
 
     initializeCharacter() {
         fetch('/api/v1/character/').then(res => {
-            res.json().then(res => this.props.saveCharacter(res))
+            if (res.ok) {
+                res.json().then(res => this.props.saveCharacter(res))
+            } else {
+                this.props.logout()
+                toastr.error('Error','Unable to get your character, refresh page and yell at Kavion')
+            }
         })
     }
 

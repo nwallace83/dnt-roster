@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 
 class ContentBody extends React.Component {
     render() {
-            if (this.props.activeTab == 'editCharacter') {
+            if (this.props.activeTab === 'editCharacter') {
                 return <EditCharacter />
             } else {
                 return <Roster />

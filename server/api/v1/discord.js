@@ -5,13 +5,13 @@ const { URLSearchParams } = require('url');
 const User = require('../../models/userModel')
 
 const jwt = require('jsonwebtoken')
-const jwtKey = "nate_is_awesome"
+const jwtKey = process.env.JWT_KEY
 const TEN_YEARS = 315360000000
 
 const API_ENDPOINT = 'https://discord.com/api'
 const CLIENT_ID = '944735010311786537'
-const CLIENT_SECRET = ''
-const REDIRECT_URI = 'http://localhost:3001'
+const CLIENT_SECRET = process.env.CLIENT_SECRET
+const REDIRECT_URI = process.env.REDIRECT_URI
 
 router.post('/login/:code', async (req,res) => {
     console.info('Fetching token for code: ' + req.params.code)
@@ -20,12 +20,14 @@ router.post('/login/:code', async (req,res) => {
     let discordUserGuilds
 
     if (!userToken || !userToken.access_token) {
+        console.error('Unable to get token for code: ' + req.params.code)
         return res.status(401).send('Unable to get token from code provided')
     }
 
     discordUser = await fetchDiscordUser(userToken)
 
     if (!discordUser || !discordUser.username || !discordUser.discriminator) {
+        console.error('unable to get discord user from token: ' + userToken.access_token)
         return res.status(401).send('unable to get discord user from token provided')
     }
 
@@ -86,7 +88,7 @@ function saveUserToDatabase(discordUser,userToken) {
 }
 
 async function userExistsInDB(discordUser) {
-    let user = await User.UserModel.findOne({user_name: discordUser.username + '#' + discordUser.discriminator})
+    let user = await User.UserModel.findOne({id: discordUser.id})
     return user ? true : false
 }
 

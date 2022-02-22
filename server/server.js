@@ -4,6 +4,15 @@ const path = require('path')
 const cookieParser = require("cookie-parser")
 const bodyParser = require('body-parser')
 
+if (!process.env.CLIENT_SECRET || !process.env.REDIRECT_URI || !process.env.JWT_KEY) {
+    console.error('Missing environmental variable verify they exist: ')
+    process.env.CLIENT_SECRET ?  console.log('CLIENT_SECRET: Found') : console.log('CLIENT_SECRET: missing')
+    process.env.REDIRECT_URI ?  console.log('REDIRECT_URI: Found') : console.log('REDIRECT_URI: missing')
+    process.env.JWT_KEY ?  console.log('JWT_KEY: Found') : console.log('JWT_KEY: missing')
+    console.error('CLIENT_SECRET, REDIRECT_URI, JWT_KEY')
+    process.exit(1)
+}
+
 app.use(cookieParser())
 app.use(bodyParser.json())
 

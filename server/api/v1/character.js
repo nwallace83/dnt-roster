@@ -2,7 +2,7 @@ var express = require('express')
 var router = express.Router()
 const Character = require('../../models/characterModel')
 const User  = require('../../models/userModel')
-const jwtKey = "nate_is_awesome"
+const jwtKey = process.env.JWT_KEY
 
 const jwt = require('jsonwebtoken')
 
@@ -14,7 +14,7 @@ router.get('/', async (req,res) => {
     let user = await authenticateAndGetUserFromDB(req.cookies.authorization)
 
     if (!user || !user.id) {
-        res.sendStatus(401)
+        return res.sendStatus(401)
     }
 
     let character = await Character.CharacterModel.findOne({id:user.id})

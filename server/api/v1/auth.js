@@ -1,7 +1,7 @@
 var express = require('express')
 var router = express.Router()
 const jwt = require('jsonwebtoken')
-const jwtKey = "nate_is_awesome"
+const jwtKey = process.env.JWT_KEY
 
 router.get('/',(req,res) => {
     if(!req.cookies.authorization) {

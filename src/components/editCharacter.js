@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { toastr } from 'react-redux-toastr'
 import { saveCharacter } from '../reducers/characterSlice'
 
 const mapStateToProps = (state) => {
@@ -46,15 +47,16 @@ class EditCharacterForm extends React.Component {
             fetch('/api/v1/character',{method: "POST", headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(charToSave)}).then(res => {
                 if (res.ok) {
                     this.props.saveCharacter(charToSave)
+                    toastr.success('Character Saved')
                 }
             })
         } else {
-            window.alert('Form is not valid')
+            toastr.error('Missing Info','Fill out the damn form before submitting')
         }
     }
 
     optionIsSelected(fieldName,value) {
-        return this.props.character[fieldName] == value ? true : false
+        return this.props.character[fieldName] === value ? true : false
     }
 
     render() {
