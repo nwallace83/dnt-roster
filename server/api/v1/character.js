@@ -1,6 +1,5 @@
 var express = require('express')
-const fetch = require('node-fetch')
-var router = express.Router();
+var router = express.Router()
 const Character = require('../../models/characterModel')
 const User  = require('../../models/userModel')
 const jwtKey = "nate_is_awesome"
@@ -12,21 +11,24 @@ router.get('/', async (req,res) => {
         return res.sendStatus(401)
     }
 
-    let decodedWebToken
-    try {
-        decodedWebToken= jwt.verify(req.cookies.authorization,jwtKey)
-    } catch {
-        return res.sendStatus(401)
-    }
-    
-    let user = await User.UserModel.findOne({id:decodedWebToken.id})
+    let user = await authenticateAndGetUserFromDB(req.cookies.authorization)
+
     if (!user) {
-        return sendStatus(401)
+        res.sendStatus(401)
     }
 
-    let character = await Character.CharacterModel.findOne({id:decodedWebToken.id})
+    let character = await Character.CharacterModel.findOne({id:user.id})
+
     if (character) {
-        res.json(character)
+        let sanitizedCharacter = {}
+        sanitizedCharacter.characterName = character.characterName
+        sanitizedCharacter.primaryRole = character.primaryRole
+        sanitizedCharacter.primaryWeapon1 = character.primaryWeapon1
+        sanitizedCharacter.primaryWeapon2 = character.primaryWeapon2
+        sanitizedCharacter.secondRole = character.secondRole
+        sanitizedCharacter.secondaryWeapon1 = character.secondaryWeapon1
+        sanitizedCharacter.secondaryWeapon2 = character.secondaryWeapon2
+        res.json(sanitizedCharacter)
     } else {
         res.json({})
     }
@@ -37,9 +39,46 @@ router.post('/', async (req,res) => {
         return res.sendStatus(401)
     }
 
-    let decryptedWebToken= jwt.verify(req.cookies.authorization,jwtKey)
-    
-    console.log(decryptedWebToken)
+    let user = await authenticateAndGetUserFromDB(req.cookies.authorization)
+    if (!user) {
+        return res.sendStatus(401)
+    }
+
+    let payload = req.body
+
+    let character = {}
+    character.id = user.id
+    character.characterName = payload.characterName ? payload.characterName : ""
+    character.primaryRole = payload.primaryRole ? payload.primaryRole : ""
+    character.primaryWeapon1 = payload.primaryWeapon1 ? payload.primaryWeapon1 : ""
+    character.primaryWeapon2 = payload.primaryWeapon2 ? payload.primaryWeapon2 : ""
+    character.secondaryRole = payload.secondRole ? payload.secondaryRole : ""
+    character.secondaryWeapon1 = payload.secondaryWeapon1 ? payload.secondaryWeapon1 : ""
+    character.secondaryWeapon2 = payload.secondaryWeapon2 ? payload.secondaryWeapon2 : ""
+
+    let result = await Character.CharacterModel.updateOne({id:user.id},character,{upsert: true})
+    if (result) {
+        res.sendStatus(200)
+    } else {
+        res.sendStatus(401)
+    }
 })
+
+async function authenticateAndGetUserFromDB(authorization) {
+    let decodedWebToken
+
+    try {
+        decodedWebToken = jwt.verify(authorization,jwtKey)
+    } catch {
+        return null
+    }
+    
+    let user = await User.UserModel.findOne({id:decodedWebToken.id})
+    if (user) {
+        return user
+    } else {
+        return null
+    }
+}
 
 module.exports = router;

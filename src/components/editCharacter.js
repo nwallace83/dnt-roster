@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { saveCharacter } from '../reducers/characterSlice'
 
 const mapStateToProps = (state) => {
     return {
@@ -30,7 +31,7 @@ class CharacterBody extends React.Component {
 }
 
 class EditCharacterForm extends React.Component {
-    saveCharacter() {
+    saveCharacter = () => {
         let charToSave = {}
 
         charToSave.characterName = document.characterform.charactername.value
@@ -43,7 +44,9 @@ class EditCharacterForm extends React.Component {
 
         if (charToSave.characterName.length > 1 && charToSave.primaryWeapon1.length > 1 && charToSave.primaryWeapon2.length > 1 && charToSave.primaryRole.length > 1){
             fetch('/api/v1/character',{method: "POST", headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(charToSave)}).then(res => {
-                console.log(res);
+                if (res.ok) {
+                    this.props.saveCharacter(charToSave)
+                }
             })
         } else {
             window.alert('Form is not valid')
