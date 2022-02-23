@@ -169,7 +169,7 @@ class EditCharacterForm extends React.Component {
                     <div className="col-md-2">
                         <label className="form-label font-weight-bold">Role</label>
                         <select name="secondaryrole" className="form-select">
-                            <option selected>{this.props.character.secondaryRole}</option>
+                            <option selected></option>
                             <option selected={this.optionIsSelected('secondaryRole','DPS')}>DPS</option>
                             <option selected={this.optionIsSelected('secondaryRole','Healer')}>Healer</option>
                             <option selected={this.optionIsSelected('secondaryRole','Tank')}>Tank</option>
