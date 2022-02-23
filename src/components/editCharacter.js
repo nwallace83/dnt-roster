@@ -35,13 +35,17 @@ class EditCharacterForm extends React.Component {
     saveCharacter = () => {
         let charToSave = {}
 
-        charToSave.characterName = document.characterform.charactername.value.trim()
-        charToSave.primaryWeapon1 = document.characterform.primaryweapon1.value
-        charToSave.primaryWeapon2 = document.characterform.primaryweapon2.value
-        charToSave.primaryRole = document.characterform.primaryrole.value
-        charToSave.secondaryWeapon1 = document.characterform.secondaryweapon1.value
-        charToSave.secondaryWeapon2 = document.characterform.secondaryweapon2.value
-        charToSave.secondaryRole = document.characterform.secondaryrole.value
+        charToSave.characterName = document.characterform.charactername.value ? document.characterform.charactername.value.trim() : ""
+        charToSave.primaryWeapon1 = document.characterform.primaryweapon1.value ? document.characterform.primaryweapon1.value : ""
+        charToSave.primaryWeapon2 = document.characterform.primaryweapon2.value ? document.characterform.primaryweapon2.value : ""
+        charToSave.primaryRole = document.characterform.primaryrole.value ? document.characterform.primaryrole.value : ""
+        charToSave.primaryArmor = document.characterform.primaryarmor.value ? document.characterform.primaryarmor.value : ""
+        charToSave.primaryGS = document.characterform.primarygs.value ? document.characterform.primarygs.value : "500"
+        charToSave.secondaryWeapon1 = document.characterform.secondaryweapon1.value ? document.characterform.secondaryweapon1.value : ""
+        charToSave.secondaryWeapon2 = document.characterform.secondaryweapon2.value ? document.characterform.secondaryweapon2.value : ""
+        charToSave.secondaryRole = document.characterform.secondaryrole.value ? document.characterform.secondaryrole.value : ""
+        charToSave.secondaryArmor = document.characterform.secondaryarmor.value ? document.characterform.secondaryarmor.value : ""
+        charToSave.secondaryGS = document.characterform.secondarygs.value ? document.characterform.secondarygs.value : "500"
 
         if (charToSave.characterName.length > 2 && charToSave.primaryWeapon1.length > 1 && charToSave.primaryWeapon2.length > 1 && charToSave.primaryRole.length > 1){
             fetch('/api/v1/character',{method: "POST", headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(charToSave)}).then(res => {
@@ -65,11 +69,11 @@ class EditCharacterForm extends React.Component {
                 <form name="characterform" className="row g-3">
                     <div className="col-md-12">
                         <label className="form-label">Character Name</label>
-                        <input name="charactername" type="text" className="form-control" defaultValue={this.props.character.characterName}/>
+                        <input name="charactername" maxlength="16" type="text" className="form-control" defaultValue={this.props.character.characterName}/>
                         <hr />
                     </div>
-                    <div className="col-md-5">
-                        <label className="form-label font-weight-bold">Weapon(primary)</label>
+                    <div className="col-md-3">
+                        <label className="form-label font-weight-bold">Main Weapon</label>
                         <select name="primaryweapon1" className="form-select">
                             <option selected={this.optionIsSelected('primaryWeapon1','')}></option>
                             <option selected={this.optionIsSelected('primaryWeapon1','Bow')}>Bow</option>
@@ -86,8 +90,8 @@ class EditCharacterForm extends React.Component {
                             <option selected={this.optionIsSelected('primaryWeapon1','War Hammer')}>War Hammer</option>                                                                                                                                                                                                                                                                                                            
                         </select>
                     </div>
-                    <div className="col-md-5">
-                        <label className="form-label font-weight-bold">Weapon(primary)</label>
+                    <div className="col-md-3">
+                        <label className="form-label font-weight-bold">Main Weapon</label>
                         <select name="primaryweapon2" className="form-select">
                             <option></option>
                             <option selected={this.optionIsSelected('primaryWeapon2','Bow')}>Bow</option>
@@ -105,7 +109,7 @@ class EditCharacterForm extends React.Component {
                         </select>
                     </div>
                     <div className="col-md-2">
-                        <label className="form-label font-weight-bold">Role(primary)</label>
+                        <label className="form-label font-weight-bold">Role</label>
                         <select name="primaryrole" className="form-select">
                             <option></option>
                             <option selected={this.optionIsSelected('primaryRole','DPS')}>DPS</option>
@@ -113,8 +117,21 @@ class EditCharacterForm extends React.Component {
                             <option selected={this.optionIsSelected('primaryRole','Tank')}>Tank</option>
                         </select>
                     </div>
-                    <div className="col-md-5">
-                        <label className="form-label font-weight-bold">Weapon(secondary)</label>
+                    <div className="col-md-2">
+                        <label className="form-label font-weight-bold">Armor</label>
+                        <select name="primaryarmor" className="form-select">
+                            <option></option>
+                            <option selected={this.optionIsSelected('primaryArmor','Light')}>Light</option>
+                            <option selected={this.optionIsSelected('primaryArmor','Medium')}>Medium</option>
+                            <option selected={this.optionIsSelected('primaryArmor','Heavy')}>Heavy</option>
+                        </select>
+                    </div>
+                    <div className="col-md-2">
+                        <label className="form-label">Gear Score</label>
+                        <input name="primarygs" maxlength="3" type="Number" className="form-control" defaultValue={this.props.character.primaryGS}/>
+                    </div>
+                    <div className="col-md-3">
+                        <label className="form-label font-weight-bold">Alt Weapon</label>
                         <select name="secondaryweapon1" className="form-select">
                             <option></option>
                             <option selected={this.optionIsSelected('secondaryWeapon1','Bow')}>Bow</option>
@@ -131,8 +148,8 @@ class EditCharacterForm extends React.Component {
                             <option selected={this.optionIsSelected('secondaryWeapon1','War Hammer')}>War Hammer</option>   
                         </select>
                     </div>
-                    <div className="col-md-5">
-                        <label className="form-label font-weight-bold">Weapon(secondary)</label>
+                    <div className="col-md-3">
+                        <label className="form-label font-weight-bold">Alt Weapon</label>
                         <select name="secondaryweapon2" className="form-select">
                             <option></option>
                             <option selected={this.optionIsSelected('secondaryWeapon2','Bow')}>Bow</option>
@@ -150,13 +167,26 @@ class EditCharacterForm extends React.Component {
                         </select>
                     </div>
                     <div className="col-md-2">
-                        <label className="form-label font-weight-bold">Role(secondary)</label>
+                        <label className="form-label font-weight-bold">Role</label>
                         <select name="secondaryrole" className="form-select">
                             <option selected>{this.props.character.secondaryRole}</option>
                             <option selected={this.optionIsSelected('secondaryRole','DPS')}>DPS</option>
                             <option selected={this.optionIsSelected('secondaryRole','Healer')}>Healer</option>
                             <option selected={this.optionIsSelected('secondaryRole','Tank')}>Tank</option>
                         </select>
+                    </div>
+                    <div className="col-md-2">
+                        <label className="form-label font-weight-bold">Armor</label>
+                        <select name="secondaryarmor" className="form-select">
+                            <option></option>
+                            <option selected={this.optionIsSelected('secondaryArmor','Light')}>Light</option>
+                            <option selected={this.optionIsSelected('secondaryArmor','Medium')}>Medium</option>
+                            <option selected={this.optionIsSelected('secondaryArmor','Heavy')}>Heavy</option>
+                        </select>
+                    </div>
+                    <div className="col-md-2">
+                        <label className="form-label">Gear Score</label>
+                        <input name="secondarygs" maxlength="3" type="Number" className="form-control" defaultValue={this.props.character.secondaryGS}/>
                     </div>
                     <div className="col-md-3">
                       <button type="button" class="btn btn-primary" onClick={this.saveCharacter}>Save</button>

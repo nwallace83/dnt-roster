@@ -6,9 +6,13 @@ const characterSchema = db.mongoose.Schema({
     primaryWeapon1: String,
     primaryWeapon2: String,
     primaryRole: String,
+    primaryArmor: String,
+    primaryGS: String,
     secondaryWeapon1: String,
     secondaryWeapon2: String,
     secondaryRole: String,
+    secondaryArmor: String,
+    secondaryGS: String,
     discordUserName: String
 });
 

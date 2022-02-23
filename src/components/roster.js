@@ -46,13 +46,9 @@ class Roster extends React.Component {
                     <thead>
                         <tr>
                             <th scope="col">Name</th>
-                            <th scope="col">Discord ID</th>
-                            <th scope="col">Main</th>
-                            <th scope="col">Main</th>
-                            <th scope="col">Role</th>
-                            <th scope="col">Alt</th>
-                            <th scope="col">Alt</th>
-                            <th scope="col">Role</th>
+                            <th scope="col">Discord</th>
+                            <th scope="col" colspan="5">Main</th>
+                            <th scope="col" colspan="5">Alt</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -81,7 +77,13 @@ class Player extends React.Component {
                     <span>{this.props.player.primaryWeapon2}</span>
                 </td>
                 <td>
+                    <span>{this.props.player.primaryArmor}</span>
+                </td>
+                <td>
                     <span>{this.props.player.primaryRole}</span>
+                </td>
+                <td>
+                    <span>{this.props.player.primaryGS}</span>
                 </td>
                 <td>
                     <img className='padding-bottom-4' height='15px' src={this.getWeaponIcon(this.props.player.secondaryWeapon1)} />
@@ -92,7 +94,13 @@ class Player extends React.Component {
                     <span>{this.props.player.secondaryWeapon2}</span>
                 </td>
                 <td>
+                    <span>{this.props.player.secondaryArmor}</span>
+                </td>
+                <td>
                     <span>{this.props.player.secondaryRole}</span>
+                </td>
+                <td>
+                    <span>{this.props.player.secondaryGS}</span>
                 </td>
             </tr>
         )

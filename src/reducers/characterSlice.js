@@ -7,9 +7,13 @@ export const characterSlice = createSlice({
         primaryWeapon1: "",
         primaryWeapon2: "",
         primaryRole: "",
+        primaryArmor: "",
+        primaryGS: "",
         secondaryWeapon1: "",
         secondaryWeapon2: "",
         secondaryRole: "",
+        secondaryArmor: "",
+        secondaryGS: "",
         discordUserName: ""
     },
     reducers: {
@@ -22,9 +26,13 @@ export const characterSlice = createSlice({
                 primaryWeapon1: "",
                 primaryWeapon2: "",
                 primaryRole: "",
+                primaryArmor: "",
+                primaryGS: "",
                 secondaryWeapon1: "",
                 secondaryWeapon2: "",
                 secondaryRole: "",
+                secondaryArmor: "",
+                secondaryGS: "",
                 discordUserName: ""
             }
         }
