@@ -8,7 +8,8 @@ const characterSchema = db.mongoose.Schema({
     primaryRole: String,
     secondaryWeapon1: String,
     secondaryWeapon2: String,
-    secondaryRole: String
+    secondaryRole: String,
+    discordUserName: String
 });
 
 const Character = db.mongoose.model("characters",characterSchema)

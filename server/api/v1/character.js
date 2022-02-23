@@ -28,6 +28,7 @@ router.get('/', async (req,res) => {
         sanitizedCharacter.secondRole = character.secondRole
         sanitizedCharacter.secondaryWeapon1 = character.secondaryWeapon1
         sanitizedCharacter.secondaryWeapon2 = character.secondaryWeapon2
+        sanitizedCharacter.discordUserName = character.discordUserName ? character.discordUserName : ""
         res.json(sanitizedCharacter)
     } else {
         res.json({})
@@ -56,8 +57,15 @@ router.post('/', async (req,res) => {
     character.secondaryRole = payload.secondRole ? payload.secondaryRole : ""
     character.secondaryWeapon1 = payload.secondaryWeapon1 ? payload.secondaryWeapon1 : ""
     character.secondaryWeapon2 = payload.secondaryWeapon2 ? payload.secondaryWeapon2 : ""
+    character.discordUserName = user.user_name ? user.user_name : ""
+
+    let existingCharacter = await Character.CharacterModel.find({id:user.id})
+    if(existingCharacter.length > 0) {
+        await Character.CharacterModel.deleteOne({id:user.id})
+    }
 
     let result = await Character.CharacterModel.updateOne({id:user.id},character,{upsert: true})
+
     if (result) {
         res.sendStatus(200)
     } else {

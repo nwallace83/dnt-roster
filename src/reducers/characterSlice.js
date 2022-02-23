@@ -9,7 +9,8 @@ export const characterSlice = createSlice({
         primaryRole: "",
         secondaryWeapon1: "",
         secondaryWeapon2: "",
-        secondaryRole: ""
+        secondaryRole: "",
+        discordUserName: ""
     },
     reducers: {
         saveCharacter: (state,character) => {
@@ -23,7 +24,8 @@ export const characterSlice = createSlice({
                 primaryRole: "",
                 secondaryWeapon1: "",
                 secondaryWeapon2: "",
-                secondaryRole: ""
+                secondaryRole: "",
+                discordUserName: ""
             }
         }
     }

@@ -25,6 +25,7 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(clearCharacter())
             dispatch(changeTab('roster'))
             Cookies.remove("authorization")
+            toastr.success('Logged Out','Successfully logged out')
         }
     }
 }

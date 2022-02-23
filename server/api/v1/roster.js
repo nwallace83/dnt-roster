@@ -24,6 +24,7 @@ function sanitizeCharacters(characters) {
         sanitizedCharacter.secondaryRole = characters[i].secondaryRole ? characters[i].secondaryRole : ""
         sanitizedCharacter.secondaryWeapon1 = characters[i].secondaryWeapon1 ? characters[i].secondaryWeapon1 : ""
         sanitizedCharacter.secondaryWeapon2 = characters[i].secondaryWeapon2 ? characters[i].secondaryWeapon2 : ""
+        sanitizedCharacter.discordUserName = characters[i].discordUserName ? characters[i].discordUserName : ""
 
         newCharacterArray.push(sanitizedCharacter)
     }
