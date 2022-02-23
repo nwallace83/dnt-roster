@@ -13,11 +13,11 @@ import sword from '../images/weapons/sword.png'
 import voidGauntlet from '../images/weapons/voidgauntlet.png'
 import warHammer from '../images/weapons/warhammer.png'
 import { connect } from 'react-redux';
-import { setRoster, clearRoster } from '../reducers/rosterSlice';
+import { setRoster, clearRoster, applyFilter } from '../reducers/rosterSlice';
 
 const mapStateToProps = (state) => {
     return {
-        roster: state.roster.roster,
+        roster: state.roster.filteredRoster,
     }
 }
 
@@ -25,6 +25,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         setRoster: (roster) => dispatch(setRoster(roster)),
         clearRoster: () => dispatch(clearRoster()),
+        applyFilter: (filterText) => dispatch(applyFilter(filterText))
     }
 }
 
@@ -41,21 +42,46 @@ class Roster extends React.Component {
 
     render() {
         return (
-            <div className="container bg-light-grey">
+            <div className="container bg-light-grey padding-top-4">
+                <RosterFilter roster={this.props.roster} applyFilter={this.props.applyFilter} />
                 <table className="table table-striped table-bordered ">
-                    <thead>
-                        <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Discord</th>
-                            <th scope="col" colspan="5">Main</th>
-                            <th scope="col" colspan="5">Alt</th>
-                        </tr>
-                    </thead>
+                        <RosterHeader />
                     <tbody>
                         {this.props.roster.map( (player,index) => {return <Player player={player} key={index} />})}
                     </tbody>
                 </table>
             </div>
+        )
+    }
+}
+
+class RosterFilter extends React.Component {
+    render() {
+        return (
+            <div className="col-md-12" id="roster-filter">
+                <span>Filter:</span>
+                <input id="rosterfilterinput" type="text" onChange={this.applyFilter} />
+            </div>
+        )
+    }
+
+     applyFilter = () => {
+        let filterValue = document.getElementById('rosterfilterinput').value.trim()
+        this.props.applyFilter(filterValue)
+    }
+}
+
+class RosterHeader extends React.Component {
+    render() {
+        return (
+            <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Discord</th>
+                <th scope="col" colspan="5">Main</th>
+                <th scope="col" colspan="5">Alt</th>
+            </tr>
+        </thead>
         )
     }
 }

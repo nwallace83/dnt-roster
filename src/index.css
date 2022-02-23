@@ -19,6 +19,15 @@
     padding-left: 0px;
 }
 
+#roster-filter {
+    padding-bottom: 15px;
+    padding-top: 5px;
+}
+
+#roster-filter input{
+    border-radius: 5px;
+}
+
 #nav-menu > .nav-tabs {
     border-bottom: 0px;     
 }
@@ -58,6 +67,10 @@
 
 .padding-bottom-4 {
     padding-bottom: 4px;
+}
+
+.padding-top-4 {
+    padding-top: 4px;
 }
 
 .padding-all-0 {
