@@ -48,7 +48,7 @@ class Header extends React.Component {
                         this.props.setSession(res)
                         Cookies.set('authorization',res,{expires: 30})
                         this.initializeCharacter()
-                        toastr.success('Success', 'Welcome ' + this.props.session.userName)
+                        toastr.success('Logged in', 'Welcome ' + this.props.session.userName)
                     })
                 }
             })
