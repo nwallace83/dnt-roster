@@ -32,25 +32,19 @@ router.post('/login/:code', async (req,res) => {
     }
 
     let discordProfileName = discordUser.username + '#' + discordUser.discriminator
-    let firstLogIn = await userExistsInDB(discordUser); firstLogIn = !firstLogIn
 
-    if (firstLogIn) {
-        console.info('fetching guilds for ' + discordProfileName)
-        discordUserGuilds = await fetchDiscordUserGuilds(userToken)
-        if (userIsInCompanyDiscord(discordUserGuilds)) {
-            console.info('adding new user: ' + discordProfileName)
-            saveUserToDatabase(discordUser,userToken)
-        } else {
-            console.info('User '+ discordProfileName + ' attempted to login but is not in the company discord')
-            res.status(401).send('Must be in Company discord to login')
-        }
+    console.info('fetching guilds for ' + discordProfileName)
+    discordUserGuilds = await fetchDiscordUserGuilds(userToken)
+
+    if (userIsInCompanyDiscord(discordUserGuilds)) {
+        console.info('upserting user: ' + discordProfileName)
+        saveUserToDatabase(discordUser,userToken)
+    } else {
+        console.info('User '+ discordProfileName + ' attempted to login but is not in the company discord')
+        return res.status(401).send('Must be in Company discord to login')
     }
 
-    if (!firstLogIn) {
-        console.info('Logging in user: ' + discordUser.username + '#' + discordUser.discriminator)
-    }
-
-    let jwtToken = getJWTToken(discordUser)
+    let jwtToken = getJWTToken(discordUser,userToken)
     res.json(jwtToken)
 })
 
@@ -73,8 +67,8 @@ function userIsInCompanyDiscord(userGuilds) {
     return false;
 }
 
-function saveUserToDatabase(discordUser,userToken) {
-    new User.UserModel({
+async function saveUserToDatabase(discordUser,userToken) {
+    let userToUpdate = {
         id: discordUser.id,
         avatar: discordUser.avatar,
         id_admin: false,
@@ -82,14 +76,11 @@ function saveUserToDatabase(discordUser,userToken) {
         token: {
             access_token: userToken.access_token,
             expires_at: (userToken.expires_in * 1000) + Date.now(),
-            refresh_token: userToken.refresh_token,        
+            refresh_token: userToken.refresh_token
         }
-    }).save()
-}
+    }
 
-async function userExistsInDB(discordUser) {
-    let user = await User.UserModel.findOne({id: discordUser.id})
-    return user ? true : false
+    await User.UserModel.updateOne({id:discordUser.id},userToUpdate,{upsert: true})
 }
 
 async function fetchToken(code){

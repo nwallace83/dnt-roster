@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken')
 
 router.get('/', async (req,res) => {
     if(!req.cookies.authorization) {
-        return res.sendStatus(401)
+        return res.status(401).send("No authorization token provided")
     }
 
     let user = await authenticateAndGetUserFromDB(req.cookies.authorization)
@@ -42,7 +42,7 @@ router.get('/', async (req,res) => {
 
 router.post('/', async (req,res) => {
     if(!req.cookies.authorization) {
-        return res.sendStatus(401)
+        return res.status(401).send("No authorization token provided")
     }
 
     let user = await authenticateAndGetUserFromDB(req.cookies.authorization)
@@ -66,12 +66,6 @@ router.post('/', async (req,res) => {
     character.secondaryWeapon1 = payload.secondaryWeapon1 ? payload.secondaryWeapon1 : ""
     character.secondaryWeapon2 = payload.secondaryWeapon2 ? payload.secondaryWeapon2 : ""
     character.discordUserName = user.user_name ? user.user_name : ""
-
-
-    // let existingCharacter = await Character.CharacterModel.find({id:user.id})
-    // if(existingCharacter.length > 0) {
-    //     await Character.CharacterModel.deleteOne({id:user.id})
-    // }
 
     let result = await Character.CharacterModel.updateOne({id:user.id},character,{upsert: true})
 
