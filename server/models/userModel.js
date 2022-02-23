@@ -5,6 +5,7 @@ const userSchema = db.mongoose.Schema({
     user_name: String,
     is_admin: Boolean,
     avatar: String,
+    last_login: Number,
     token: {
         access_token: String,
         expires_at: Number,

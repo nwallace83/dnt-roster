@@ -2,11 +2,8 @@ var express = require('express')
 const fetch = require('node-fetch')
 var router = express.Router();
 const { URLSearchParams } = require('url');
-const User = require('../../models/userModel')
-
-const jwt = require('jsonwebtoken')
-const jwtKey = process.env.JWT_KEY
-const TEN_YEARS = 315360000000
+const dbUserService = require('../../services/dbUserService')
+const tokenService = require('../../services/tokenService')
 
 const API_ENDPOINT = 'https://discord.com/api'
 const CLIENT_ID = '944735010311786537'
@@ -15,7 +12,7 @@ const REDIRECT_URI = process.env.REDIRECT_URI
 
 router.post('/login/:code', async (req,res) => {
     console.info('Fetching token for code: ' + req.params.code)
-    let userToken = await fetchToken(req.params.code)
+    let userToken = await fetchDiscordToken(req.params.code)
     let discordUser
     let discordUserGuilds
 
@@ -38,25 +35,15 @@ router.post('/login/:code', async (req,res) => {
 
     if (userIsInCompanyDiscord(discordUserGuilds)) {
         console.info('upserting user: ' + discordProfileName)
-        saveUserToDatabase(discordUser,userToken)
+        dbUserService.saveDiscordUserToDatabase(discordUser,userToken)
     } else {
         console.info('User '+ discordProfileName + ' attempted to login but is not in the company discord')
         return res.status(401).send('Must be in Company discord to login')
     }
 
-    let jwtToken = getJWTToken(discordUser,userToken)
+    let jwtToken = tokenService.getJWTToken(discordUser,userToken)
     res.json(jwtToken)
 })
-
-function getJWTToken(discordUser){
-    return jwt.sign({userName: discordUser.username + '#' + discordUser.discriminator,
-            id: discordUser.id,
-            avatar: discordUser.avatar,
-            is_admin: false,
-            expiresAt: Date.now() + TEN_YEARS},
-                jwtKey,{algorithm: "HS256",
-                expiresIn: TEN_YEARS})
-}
 
 function userIsInCompanyDiscord(userGuilds) {
     for (let i=0; i<userGuilds.length; i++) {
@@ -67,23 +54,7 @@ function userIsInCompanyDiscord(userGuilds) {
     return false;
 }
 
-async function saveUserToDatabase(discordUser,userToken) {
-    let userToUpdate = {
-        id: discordUser.id,
-        avatar: discordUser.avatar,
-        id_admin: false,
-        user_name: discordUser.username + '#' + discordUser.discriminator,
-        token: {
-            access_token: userToken.access_token,
-            expires_at: (userToken.expires_in * 1000) + Date.now(),
-            refresh_token: userToken.refresh_token
-        }
-    }
-
-    await User.UserModel.updateOne({id:discordUser.id},userToUpdate,{upsert: true})
-}
-
-async function fetchToken(code){
+async function fetchDiscordToken(code){
     const params = new URLSearchParams()
     params.append('grant_type','authorization_code')
     params.append('client_id',CLIENT_ID)

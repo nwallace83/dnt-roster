@@ -1,8 +1,8 @@
 var express = require('express')
 var router = express.Router()
-const Character = require('../../models/characterModel')
-const User  = require('../../models/userModel')
-const jwtKey = process.env.JWT_KEY
+const tokenService = require('../../services/tokenService')
+const dbUserService = require('../../services/dbUserService')
+const dbCharacterService = require('../../services/dbCharacterService')
 
 const jwt = require('jsonwebtoken')
 
@@ -11,13 +11,9 @@ router.get('/', async (req,res) => {
         return res.status(401).send("No authorization token provided")
     }
 
-    let user = await authenticateAndGetUserFromDB(req.cookies.authorization)
+    let user = await authenticateAndGetUserFromDB(req.cookies.authorization,res)
 
-    if (!user || !user.id) {
-        return res.sendStatus(401)
-    }
-
-    let character = await Character.CharacterModel.findOne({id:user.id})
+    let character = await dbCharacterService.findCharacterById(user.id)
 
     if (character) {
         let sanitizedCharacter = {}
@@ -45,10 +41,7 @@ router.post('/', async (req,res) => {
         return res.status(401).send("No authorization token provided")
     }
 
-    let user = await authenticateAndGetUserFromDB(req.cookies.authorization)
-    if (!user || !user.id) {
-        return res.status(401).send("unable to get user from database")
-    }
+    let user = await authenticateAndGetUserFromDB(req.cookies.authorization,res)
 
     let payload = req.body
 
@@ -67,30 +60,28 @@ router.post('/', async (req,res) => {
     character.secondaryWeapon2 = payload.secondaryWeapon2 ? payload.secondaryWeapon2 : ""
     character.discordUserName = user.user_name ? user.user_name : ""
 
-    let result = await Character.CharacterModel.updateOne({id:user.id},character,{upsert: true})
+    let result = await dbCharacterService.updateCharacterById(user.id,character)
 
-    if (result) {
+    if (result.modifiedCount === 1 || result.upsertedCount === 1 || result.matchedCount === 1) {
         res.sendStatus(200)
     } else {
-        res.sendStatus(401)
+        res.status(401).send("Unable to save character")
     }
 })
 
-async function authenticateAndGetUserFromDB(authorization) {
-    let decodedWebToken
+async function authenticateAndGetUserFromDB(authorization,res) {
+    let decodedWebToken = tokenService.decodeWebToken(authorization)
+    if (!decodedWebToken) {
+        return res.status(401).send("Invalid authentication token")
+    }
 
-    try {
-        decodedWebToken = jwt.verify(authorization,jwtKey)
-    } catch {
-        return null
-    }
-    
-    let user = await User.UserModel.findOne({id:decodedWebToken.id})
-    if (user) {
-        return user
+    let user = await dbUserService.getUserById(decodedWebToken.id)
+    if (!user) {
+        return res.status(401).send("User not in database")
     } else {
-        return null
+        return user
     }
+
 }
 
 module.exports = router;
