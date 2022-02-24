@@ -30,10 +30,14 @@ router.post('/', async (req,res) => {
         return res.status(401).send("No authorization token provided")
     }
 
+    let character = req.body
     let user = await authenticateAndGetUserFromDB(req.cookies.authorization,res)
 
-    let character = req.body
+    if (!user) {
+        console.error("Unable to find user in database")
+    } 
 
+    character.discordUserName = user.user_name ? user.user_name : ''
     let result = await dbCharacterService.updateCharacterById(user.id,character)
 
     if (result && (result.modifiedCount === 1 || result.upsertedCount === 1 || result.matchedCount === 1)) {
@@ -43,10 +47,10 @@ router.post('/', async (req,res) => {
     }
 })
 
-async function authenticateAndGetUserFromDB(authorization,res) {
+async function authenticateAndGetUserFromDB(authorization) {
     let decodedWebToken = tokenService.decodeWebToken(authorization)
     if (!decodedWebToken) {
-        return res.status(401).send("Invalid authentication token")
+        return null
     }
 
     let user = await dbUserService.getUserById(decodedWebToken.id)
