@@ -30,7 +30,7 @@ export const characterSlice = createSlice({
     initialState: initialState,
     reducers: {
         saveCharacter: (state,character) => {
-            if (character.payload && character.payload.characterName && character.payload.craftin) {
+            if (character.payload && character.payload.characterName && character.payload.crafting) {
                 return character.payload
             } else {
                 return initialState
