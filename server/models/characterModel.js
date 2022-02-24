@@ -18,7 +18,7 @@ const characterSchema = db.mongoose.Schema({
             weaponSmithing: {type: Boolean, default: false},
             armoring: {type: Boolean, default: false},
             engineering: {type: Boolean, default: false},
-            jewelcrafting: {type: Boolean, default: false},
+            jewelCrafting: {type: Boolean, default: false},
             arcana: {type: Boolean, default: false},
             cooking: {type: Boolean, default: false},
             furnishing: {type: Boolean, default: false}

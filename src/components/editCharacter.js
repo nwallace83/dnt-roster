@@ -5,7 +5,6 @@ import { saveCharacter } from '../reducers/characterSlice'
 
 const mapStateToProps = (state) => {
     return {
-        session: state.session,
         character: state.character
     }
 }
@@ -33,7 +32,7 @@ class CharacterBody extends React.Component {
 
 class EditCharacterForm extends React.Component {
     saveCharacter = () => {
-        let charToSave = {}
+        let charToSave = {crafting:{}}
 
         charToSave.characterName = document.characterform.charactername.value ? document.characterform.charactername.value.trim() : ""
         charToSave.primaryWeapon1 = document.characterform.primaryweapon1.value ? document.characterform.primaryweapon1.value : ""
@@ -46,6 +45,13 @@ class EditCharacterForm extends React.Component {
         charToSave.secondaryRole = document.characterform.secondaryrole.value ? document.characterform.secondaryrole.value : ""
         charToSave.secondaryArmor = document.characterform.secondaryarmor.value ? document.characterform.secondaryarmor.value : ""
         charToSave.secondaryGS = document.characterform.secondarygs.value ? document.characterform.secondarygs.value : "500"
+        charToSave.crafting.weaponSmithing = document.characterform.weaponsmithing.checked ? true: false
+        charToSave.crafting.armoring = document.characterform.armoring.checked ? true : false
+        charToSave.crafting.engineering = document.characterform.engineering.checked ? true : false
+        charToSave.crafting.jewelCrafting = document.characterform.jewelcrafting.checked ? true : false
+        charToSave.crafting.arcana = document.characterform.arcana.checked ? true : false
+        charToSave.crafting.cooking = document.characterform.cooking.checked ? true : false
+        charToSave.crafting.furnishing = document.characterform.furnishing.checked ? true : false
 
         if (charToSave.characterName.length > 2 && charToSave.primaryWeapon1.length > 1 && charToSave.primaryWeapon2.length > 1 && charToSave.primaryRole.length > 1){
             fetch('/api/v1/character',{method: "POST", headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(charToSave)}).then(res => {
@@ -65,13 +71,15 @@ class EditCharacterForm extends React.Component {
 
     render() {
         return (
-            <div className="col-md-8">
+            <div className="col-md-12">
                 <form name="characterform" className="row g-3">
-                    <div className="col-md-12">
-                        <label className="form-label">Character Name</label>
-                        <input name="charactername" maxlength="16" type="text" className="form-control" defaultValue={this.props.character.characterName}/>
-                        <hr />
+                    <div className ="col-md-12">
+                        <div className="col-md-4">
+                            <label className="form-label">Character Name</label>
+                            <input name="charactername" maxlength="16" type="text" className="form-control" defaultValue={this.props.character.characterName}/>
+                        </div>
                     </div>
+                    <hr />
                     <div className="col-md-3">
                         <label className="form-label font-weight-bold">Main Weapon</label>
                         <select name="primaryweapon1" className="form-select">
@@ -188,11 +196,72 @@ class EditCharacterForm extends React.Component {
                         <label className="form-label">Gear Score</label>
                         <input name="secondarygs" maxlength="3" type="Number" className="form-control" defaultValue={this.props.character.secondaryGS}/>
                     </div>
+                    <hr />
+                    <TradeSkills character={this.props.character} />
                     <div className="col-md-3">
                       <button type="button" class="btn btn-primary" onClick={this.saveCharacter}>Save</button>
                     </div>
                 </form>
                 <hr />
+            </div>
+        )
+    }
+}
+
+class TradeSkills extends React.Component {
+    optionIsChecked(fieldName) {
+        return this.props.character.crafting[fieldName]
+    }
+
+    render() {
+        return (
+            <div className="row">
+                    <h5>Tradeskills:</h5>
+                    <div class="form-check col-md-2">
+                        <input class="form-check-input" name ="weaponsmithing" type="checkbox" value="" id="weaponsmithing" checked={this.optionIsChecked('weaponSmithing')} />
+                        <label class="form-check-label" for="weaponsmithing">
+                            Weaponsmithing
+                        </label>
+                    </div>
+                    <div class="form-check col-md-2">
+                        <input class="form-check-input" name ="armoring" type="checkbox" value="" id="armoring" checked={this.optionIsChecked('armoring')} />
+                        <label class="form-check-label" for="armoring">
+                            Armoring
+                        </label>
+                    </div>
+                    <div class="form-check col-md-2">
+                        <input class="form-check-input" name ="engineering" type="checkbox" value="" id="engineering" checked={this.optionIsChecked('engineering')} />
+                        <label class="form-check-label" for="engineering">
+                            Engineering
+                        </label>
+                    </div>
+                    <div class="form-check col-md-2">
+                        <input class="form-check-input" name ="jewelcrafting" type="checkbox" value="" id="jewelcrafting" checked={this.optionIsChecked('jewelCrafting')} />
+                        <label class="form-check-label" for="jewelcrafting">
+                            Jewelcrafting
+                        </label>
+                    </div>
+                    <div class="form-check col-md-2">
+                        <input class="form-check-input" name ="arcana" type="checkbox" value="" id="arcana" checked={this.optionIsChecked('arcana')} />
+                        <label class="form-check-label" for="arcana">
+                            Arcana
+                        </label>
+                    </div>
+                    <div class="form-check col-md-2">
+                        <input class="form-check-input" name ="cooking" type="checkbox" value="" id="cooking" checked={this.optionIsChecked('cooking')} />
+                        <label class="form-check-label" for="cooking">
+                            Cooking
+                        </label>
+                    </div>
+                    <div class="form-check col-md-2">
+                        <input class="form-check-input" name ="furnishing" type="checkbox" value="" id="furnishing" checked={this.optionIsChecked('furnishing')} />
+                        <label class="form-check-label" for="furnishing">
+                            Furnishing
+                        </label>
+                    </div>
+                    <div class="col-md-12">
+                       <span>*only check if you have 200 + trophies + gear*</span>
+                    </div>
             </div>
         )
     }
