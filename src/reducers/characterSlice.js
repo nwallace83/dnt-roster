@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { current } from 'immer'
 
 export const characterSlice = createSlice({
     name:'character',
@@ -15,7 +16,7 @@ export const characterSlice = createSlice({
         secondaryArmor: "",
         secondaryGS: "",
         discordUserName: "",
-            crafting: {
+        crafting: {
                 weaponSmithing: false,
                 armoring: false,
                 engineering: false,
@@ -31,10 +32,15 @@ export const characterSlice = createSlice({
         },
         clearCharacter: (state) => {
             return this.initialState
+        },
+        toggleTradeSkill: (state,tradeSkill) => {
+            let currentState = current(state)
+            let newValue = !currentState.crafting[tradeSkill.payload]
+            return {...state,crafting: {...state.crafting,[tradeSkill.payload]: newValue}}
         }
     }
 })
 
-export const { clearCharacter, saveCharacter }  = characterSlice.actions
+export const { clearCharacter, saveCharacter, toggleTradeSkill }  = characterSlice.actions
 
 export default characterSlice.reducer
