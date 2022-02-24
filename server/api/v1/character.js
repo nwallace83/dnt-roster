@@ -11,8 +11,9 @@ router.get('/', async (req,res) => {
 
     let user = await authenticateAndGetUserFromDB(req.cookies.authorization,res)
 
+
     if (!user || !user.id) {
-        return res.sendStatus(401)
+        return res.sendStatus(401).send("User not in database")
     }
 
     let character = await dbCharacterService.findCharacterById(user.id)
@@ -49,11 +50,7 @@ async function authenticateAndGetUserFromDB(authorization,res) {
     }
 
     let user = await dbUserService.getUserById(decodedWebToken.id)
-    if (!user) {
-        return res.status(401).send("User not in database")
-    } else {
-        return user
-    }
+    return user
 }
 
 module.exports = router;

@@ -19,7 +19,7 @@ async function updateLastLoginById(userid) {
     }
 }
 
-function saveDiscordUserToDatabase(discordUser,userToken) {
+async function saveDiscordUserToDatabase(discordUser,userToken) {
     let userToSave = {
         id: discordUser.id,
         avatar: discordUser.avatar,
@@ -33,7 +33,8 @@ function saveDiscordUserToDatabase(discordUser,userToken) {
         }
     }
 
-    User.UserModel.updateOne({id:discordUser.id},userToSave,{upsert: true})
+    let result = await User.UserModel.updateOne({id:discordUser.id},userToSave,{upsert: true})
+    return result
 }
 
 module.exports = {getUserById, updateLastLoginById, saveDiscordUserToDatabase}

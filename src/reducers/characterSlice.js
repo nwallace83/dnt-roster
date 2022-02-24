@@ -34,7 +34,6 @@ export const characterSlice = createSlice({
                 return character.payload
             } else {
                 return initialState
-
             }
 
         },

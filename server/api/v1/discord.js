@@ -33,16 +33,22 @@ router.post('/login/:code', async (req,res) => {
     console.info('fetching guilds for ' + discordProfileName)
     discordUserGuilds = await fetchDiscordUserGuilds(userToken)
 
-    if (userIsInCompanyDiscord(discordUserGuilds)) {
-        console.info('upserting user: ' + discordProfileName)
-        dbUserService.saveDiscordUserToDatabase(discordUser,userToken)
-    } else {
+    if (!userIsInCompanyDiscord(discordUserGuilds)) {
         console.info('User '+ discordProfileName + ' attempted to login but is not in the company discord')
         return res.status(401).send('Must be in Company discord to login')
+    } 
+
+    console.info('upserting user: ' + discordProfileName)
+    let result = await dbUserService.saveDiscordUserToDatabase(discordUser,userToken)
+    
+    if (result && (result.modifiedCount === 1 || result.upsertedCount === 1)) {
+        let jwtToken = tokenService.getJWTToken(discordUser,userToken)
+        res.json(jwtToken)
+    } else {
+        return res.status(401).send('Unable to upsert user: ' + discordProfileName)
     }
 
-    let jwtToken = tokenService.getJWTToken(discordUser,userToken)
-    res.json(jwtToken)
+
 })
 
 function userIsInCompanyDiscord(userGuilds) {
