@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { toastr } from 'react-redux-toastr'
-import { saveCharacter } from '../reducers/characterSlice'
+import { saveCharacter, toggleTradeSkill } from '../reducers/characterSlice'
 
 const mapStateToProps = (state) => {
     return {
@@ -12,6 +12,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         saveCharacter: (character) => dispatch(saveCharacter(character)),
+        toggleTradeSkill: (tradeSkill) => dispatch(toggleTradeSkill(tradeSkill))
     }
 }
 
@@ -24,7 +25,7 @@ class CharacterBody extends React.Component {
                         <hr />
                     </div>
                 </div>
-                <EditCharacterForm character={this.props.character} saveCharacter={this.props.saveCharacter}/>
+                <EditCharacterForm character={this.props.character} saveCharacter={this.props.saveCharacter} toggleTradeSkill={this.props.toggleTradeSkill} />
             </div>
         )
     }
@@ -197,7 +198,7 @@ class EditCharacterForm extends React.Component {
                         <input name="secondarygs" maxlength="3" type="Number" className="form-control" defaultValue={this.props.character.secondaryGS}/>
                     </div>
                     <hr />
-                    <TradeSkills character={this.props.character} />
+                    <TradeSkills character={this.props.character} toggleTradeSkill={this.props.toggleTradeSkill}/>
                     <div className="col-md-3">
                       <button type="button" class="btn btn-primary" onClick={this.saveCharacter}>Save</button>
                     </div>
@@ -217,44 +218,44 @@ class TradeSkills extends React.Component {
         return (
             <div className="row">
                     <h5>Tradeskills:</h5>
-                    <div class="form-check col-md-2">
-                        <input class="form-check-input" name ="weaponsmithing" type="checkbox" value="" id="weaponsmithing" checked={this.optionIsChecked('weaponSmithing')} />
+                    <div class="form-check col-md-3">
+                        <input class="form-check-input" name ="weaponsmithing" type="checkbox" value="" id="weaponsmithing" onClick={() => this.props.toggleTradeSkill('weaponSmithing')} checked={this.optionIsChecked('weaponSmithing')} />
                         <label class="form-check-label" for="weaponsmithing">
                             Weaponsmithing
                         </label>
                     </div>
-                    <div class="form-check col-md-2">
-                        <input class="form-check-input" name ="armoring" type="checkbox" value="" id="armoring" checked={this.optionIsChecked('armoring')} />
+                    <div class="form-check col-md-3">
+                        <input class="form-check-input" name ="armoring" type="checkbox" value="" id="armoring" onClick={() => this.props.toggleTradeSkill('armoring')} checked={this.optionIsChecked('armoring')} />
                         <label class="form-check-label" for="armoring">
                             Armoring
                         </label>
                     </div>
-                    <div class="form-check col-md-2">
-                        <input class="form-check-input" name ="engineering" type="checkbox" value="" id="engineering" checked={this.optionIsChecked('engineering')} />
+                    <div class="form-check col-md-3">
+                        <input class="form-check-input" name ="engineering" type="checkbox" value="" id="engineering" onClick={() => this.props.toggleTradeSkill('engineering')} checked={this.optionIsChecked('engineering')} />
                         <label class="form-check-label" for="engineering">
                             Engineering
                         </label>
                     </div>
-                    <div class="form-check col-md-2">
-                        <input class="form-check-input" name ="jewelcrafting" type="checkbox" value="" id="jewelcrafting" checked={this.optionIsChecked('jewelCrafting')} />
+                    <div class="form-check col-md-3">
+                        <input class="form-check-input" name ="jewelcrafting" type="checkbox" value="" id="jewelcrafting" onClick={() => this.props.toggleTradeSkill('jewelCrafting')} checked={this.optionIsChecked('jewelCrafting')} />
                         <label class="form-check-label" for="jewelcrafting">
                             Jewelcrafting
                         </label>
                     </div>
-                    <div class="form-check col-md-2">
-                        <input class="form-check-input" name ="arcana" type="checkbox" value="" id="arcana" checked={this.optionIsChecked('arcana')} />
+                    <div class="form-check col-md-3">
+                        <input class="form-check-input" name ="arcana" type="checkbox" value="" id="arcana" onClick={() => this.props.toggleTradeSkill('arcana')} checked={this.optionIsChecked('arcana')} />
                         <label class="form-check-label" for="arcana">
                             Arcana
                         </label>
                     </div>
-                    <div class="form-check col-md-2">
-                        <input class="form-check-input" name ="cooking" type="checkbox" value="" id="cooking" checked={this.optionIsChecked('cooking')} />
+                    <div class="form-check col-md-3">
+                        <input class="form-check-input" name ="cooking" type="checkbox" value="" id="cooking" onClick={() => this.props.toggleTradeSkill('cooking')} checked={this.optionIsChecked('cooking')} />
                         <label class="form-check-label" for="cooking">
                             Cooking
                         </label>
                     </div>
-                    <div class="form-check col-md-2">
-                        <input class="form-check-input" name ="furnishing" type="checkbox" value="" id="furnishing" checked={this.optionIsChecked('furnishing')} />
+                    <div class="form-check col-md-3">
+                        <input class="form-check-input" name ="furnishing" type="checkbox" value="" id="furnishing" onClick={() => this.props.toggleTradeSkill('furnishing')} checked={this.optionIsChecked('furnishing')} />
                         <label class="form-check-label" for="furnishing">
                             Furnishing
                         </label>
