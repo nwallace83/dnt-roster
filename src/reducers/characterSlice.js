@@ -1,9 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { current } from 'immer'
 
-export const characterSlice = createSlice({
-    name:'character',
-    initialState: {
+const initialState =  {
         characterName: "",
         primaryWeapon1: "",
         primaryWeapon2: "",
@@ -24,14 +22,24 @@ export const characterSlice = createSlice({
                 arcana: false,
                 cooking: false,
                 furnishing: false
-            }
-    },
+        }
+    }
+
+export const characterSlice = createSlice({
+    name:'character',
+    initialState: initialState,
     reducers: {
         saveCharacter: (state,character) => {
-            return character.payload
+            if (character.payload && character.payload.characterName && character.payload.craftin) {
+                return character.payload
+            } else {
+                return initialState
+
+            }
+
         },
         clearCharacter: (state) => {
-            return this.initialState
+            return initialState
         },
         toggleTradeSkill: (state,tradeSkill) => {
             let currentState = current(state)
