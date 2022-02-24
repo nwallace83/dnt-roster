@@ -5,14 +5,11 @@ async function findCharacterById(characerID) {
 }
 
 async function updateCharacterById(userID,character) {
-    let result =  Character.CharacterModel.updateOne({id: userID},character,{upsert: true, runValidators: true},callbackFunction)
-
-    function callbackFunction(err,result) {
-        if (err) {
-            return err
-        } else {
-            return result
-        }
+    try {
+        let result = await Character.CharacterModel.updateOne({id: userID},character,{upsert: true, runValidators: true})
+        return result
+    } catch(err) {
+        return null
     }
 }
 
