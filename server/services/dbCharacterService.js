@@ -13,4 +13,8 @@ async function updateCharacterById(userID,character) {
     }
 }
 
-module.exports = {findCharacterById, updateCharacterById}
+async function findCharacters() {
+    return await Character.CharacterModel.find();
+}
+
+module.exports = {findCharacterById, updateCharacterById, findCharacters}

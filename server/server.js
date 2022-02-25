@@ -40,12 +40,13 @@ app.use('/',express.static(path.join(__dirname, 'html')))
 
 if (process.env.NODE_ENV === "production") {
     app.use((req, res, next) => {
+        console.log("secure: " + req.secure)
         if (!req.secure) {
             res.redirect(301, `https://${req.headers.host}${req.url}`);
         } else {
             next();
         }
-        });
+    });
 
 const https = require('https')
 const fs = require('fs')
