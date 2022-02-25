@@ -26,10 +26,6 @@ app.use(
     })
 );
 
-app.use(helmet.crossOriginResourcePolicy({policy: "cross-origin"}))
-
-helmet.contentSecurityPolicy.getDefaultDirectives
-
 var discord = require('./api/v1/discord')
 var auth = require('./api/v1/auth')
 var character = require('./api/v1/character')
@@ -43,26 +39,18 @@ app.use('/api/v1/roster',roster)
 app.use('/',express.static(path.join(__dirname, 'html')))
 
 if (process.env.NODE_ENV === "production") {
-    app.use((req, res, next) => {
-        console.warn('secure: ' + req.secure)
-        if (!req.secure) {
-            res.redirect(301, `https://${req.headers.host}${req.url}`);
-        } else {
-            next();
-        }
-    });
+    const https = require('https')
+    const fs = require('fs')
+    const privateKey = fs.readFileSync("dntroster.com.key")
+    const certicate = fs.readFileSync("dntroster.com_2022.crt")
+    const credentials = {key: privateKey, cert: certicate}
 
-const https = require('https')
-const fs = require('fs')
-const privateKey = fs.readFileSync("dntroster.com.key")
-const certicate = fs.readFileSync("dntroster.com_2022.crt")
-const credentials = {key: privateKey, cert: certicate}
+    const httpsServer = https.createServer(credentials, app)
 
-const httpsServer = https.createServer(credentials, app)
-
-const httpServer = express();
-httpServer.get('*', function(req, res) {  
-    res.redirect('https://' + req.headers.host + req.url);
+    const httpServer = express();
+    httpServer.disable('x-powered-by')
+    httpServer.get('*', function(req, res) {  
+        res.redirect('https://' + req.headers.host + req.url);
 })
 
 httpsServer.listen(8443)
@@ -73,4 +61,3 @@ httpServer.listen(3001)
     const httpServer = http.createServer(app)
     httpServer.listen(3001)
 }
-
