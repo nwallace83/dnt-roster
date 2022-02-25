@@ -1,4 +1,6 @@
-const express = require('express');
+const express = require('express')
+const http = require('http')
+const https = require('https')
 const app = express();
 const path = require('path')
 const cookieParser = require("cookie-parser")
@@ -24,13 +26,12 @@ app.use(
         upgradeInsecureRequests: null
       },
     })
-  );
-  
+); 
 
 var discord = require('./api/v1/discord')
 var auth = require('./api/v1/auth')
 var character = require('./api/v1/character')
-var roster = require('./api/v1/roster')
+var roster = require('./api/v1/roster');
 
 app.use('/api/v1/discord',discord)
 app.use('/api/v1/auth',auth)
@@ -39,4 +40,15 @@ app.use('/api/v1/roster',roster)
 
 app.use('/',express.static(path.join(__dirname, 'html')))
 
-app.listen(3001);
+if (process.env.NODE_ENV === "production") {
+    const privateKey = fs.readFileSync("dntroster.com.key")
+    const certicate = fs.readFileSync("dntroster.com_2022.crt")
+    const credentials = {key: privateKey, cert: certicate}
+    
+    const httpsServer = https.createServer(credentials, app)
+    httpsServer.listen(8443)
+}
+
+const httpServer = http.createServer(app)
+
+httpServer.listen(3001)
