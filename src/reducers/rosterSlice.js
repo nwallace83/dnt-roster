@@ -32,10 +32,6 @@ export const rosterSlice = createSlice({
                             character.primaryArmor.toUpperCase().indexOf(filterValue.payload.toUpperCase()) > -1 || 
                             character.primaryWeapon1.toUpperCase().indexOf(filterValue.payload.toUpperCase()) > -1 || 
                             character.primaryWeapon2.toUpperCase().indexOf(filterValue.payload.toUpperCase()) > -1 || 
-                            character.secondaryRole.toUpperCase().indexOf(filterValue.payload.toUpperCase()) > -1 || 
-                            character.secondaryArmor.toUpperCase().indexOf(filterValue.payload.toUpperCase()) > -1 || 
-                            character.secondaryWeapon1.toUpperCase().indexOf(filterValue.payload.toUpperCase()) > -1 || 
-                            character.secondaryWeapon2.toUpperCase().indexOf(filterValue.payload.toUpperCase()) > -1 || 
                             character.discordUserName.toUpperCase().indexOf(filterValue.payload.toUpperCase()) > -1
             })
             return {roster: [...state.roster],filteredRoster: filteredCharacters}
