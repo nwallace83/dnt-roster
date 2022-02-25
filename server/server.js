@@ -27,7 +27,6 @@ app.use(
 );
 
 app.use(helmet.crossOriginResourcePolicy({policy: "same-site"}))
-app.use(helmet.crossOriginOpenerPolicy({policy: "same-site"}))
 
 helmet.contentSecurityPolicy.getDefaultDirectives
 
