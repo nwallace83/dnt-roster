@@ -48,8 +48,8 @@ const credentials = {key: privateKey, cert: certicate}
 
 const httpsServer = https.createServer(credentials, app)
 httpsServer.listen(8443)
-} else {
-    const http = require('http')
-    const httpServer = http.createServer(app)
-    httpServer.listen(3001)
 }
+
+const http = require('http')
+const httpServer = http.createServer(app)
+httpServer.listen(3001)
