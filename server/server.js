@@ -54,7 +54,7 @@ if (process.env.NODE_ENV === "production") {
 })
 
 httpsServer.listen(8443)
-httpServer.listen(3001)
+httpServer.listen(8080)
 
 } else {
     const http = require('http')
