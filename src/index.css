@@ -15,6 +15,10 @@
     height: 41px;
 }
 
+#login-logout-div {
+    padding-right: 0px;
+}
+
 #nav-menu {
     padding-left: 0px;
 }

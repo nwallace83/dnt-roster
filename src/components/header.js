@@ -116,7 +116,7 @@ class Header extends React.Component {
                             {this.showEditCharacersTab()}
                         </ul>
                     </div>
-                    <div className="col-md-4 txt-right">
+                    <div className="col-md-4 txt-right" id="login-logout-div">
                         <LoginLogoutButton session={this.props.session} logout={this.props.logout} />
                     </div>
                 </div>
