@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../images/logo.jpg'
+import logo from '../images/logo-green.png'
 import discordLogo from '../images/discordLogo.png'
 import { connect } from 'react-redux'
 import { setSession, clearSession } from '../reducers/sessionSlice';
@@ -106,10 +106,11 @@ class Header extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className="col-md-8" id="nav-menu">
+                        <img src={logo} height="40px" id="logo"/>
                         <ul className="nav nav-tabs">
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <a className="nav-link" aria-current="page" href="#" id="company-logo" style={{ backgroundImage: `url(${logo})`, backgroundSize: 'contain' }} />
-                            </li>
+                            </li> */}
                             <li className="nav-item" onClick={() => this.props.changeTab('roster')}>
                                 <a className={this.getButtonClasses('roster')} aria-current="page" href="#">Roster</a>
                             </li>

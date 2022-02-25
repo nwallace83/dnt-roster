@@ -19,6 +19,12 @@
     padding-right: 0px;
 }
 
+#logo {
+    float: left;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
 #nav-menu {
     padding-left: 0px;
 }
