@@ -16,15 +16,6 @@ if (!process.env.CLIENT_SECRET || !process.env.REDIRECT_URI || !process.env.JWT_
 
 app.use(cookieParser())
 app.use(bodyParser.json())
-app.use(helmet({crossOriginEmbedderPolicy: false}))
-
-app.use(
-    helmet.contentSecurityPolicy({
-        directives: {
-        "img-src": ["'self'","*.discordapp.com","data:"]
-        },
-    })
-);
 
 var discord = require('./api/v1/discord')
 var auth = require('./api/v1/auth')
@@ -41,6 +32,16 @@ app.use('/',express.static(path.join(__dirname, 'html')))
 if (process.env.NODE_ENV === "production") {
     const https = require('https')
     const fs = require('fs')
+
+    app.use(helmet({crossOriginEmbedderPolicy: false}))
+    app.use(
+        helmet.contentSecurityPolicy({
+            directives: {
+            "img-src": ["'self'","*.discordapp.com","data:"]
+            },
+        })
+    );
+
     const privateKey = fs.readFileSync("dntroster.com.key")
     const certicate = fs.readFileSync("dntroster.com_2022.crt")
     const credentials = {key: privateKey, cert: certicate}
