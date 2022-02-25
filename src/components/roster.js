@@ -67,7 +67,11 @@ class RosterFilter extends React.Component {
 
      applyFilter = () => {
         let filterValue = document.getElementById('rosterfilterinput').value.trim()
-        this.props.applyFilter(filterValue)
+        setTimeout(() => {
+            if (filterValue === document.getElementById('rosterfilterinput').value.trim()) {
+                this.props.applyFilter(filterValue)
+            }
+        },250)
     }
 }
 
