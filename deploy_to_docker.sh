@@ -13,7 +13,7 @@ docker build --rm -f Dockerfile.prod -t dntroster:latest .
 docker run -d --network dntroster --hostname dntroster \
 	--env NODE_ENV=production \
 	--env CLIENT_SECRET=$CLIENT_SECRET \
-	--env REDIRECT_URI=$REDIRECT_URI \
+	--env REDIRECT_URI="https://dntroster.com" \
 	--env JWT_KEY=$JWT_KEY \
 	--env CA_BUNDLE=ca_bundle.crt \
 	--env DOMAIN_CRT=dntroster.com_2022.crt \
