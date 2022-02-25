@@ -12,13 +12,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "PHaRTnONu",
@@ -34,13 +34,13 @@
 "secondaryGS": "500",
 "crafting":{
 
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Grizzlymillz",
@@ -56,13 +56,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Profanity",
@@ -78,13 +78,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Kill Kupo",
@@ -100,13 +100,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "AwpQ",
@@ -122,13 +122,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Svvat",
@@ -144,13 +144,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Rarieko",
@@ -166,13 +166,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Acebully",
@@ -188,13 +188,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Vincent Belmonte",
@@ -210,13 +210,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Riggity Wrecked",
@@ -232,13 +232,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "LesRad",
@@ -254,13 +254,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "DrTrustFund",
@@ -276,13 +276,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Fe7on",
@@ -298,13 +298,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Coop",
@@ -320,13 +320,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "GhostFilms",
@@ -342,13 +342,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Sir Patch",
@@ -364,13 +364,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Shrev OG",
@@ -386,13 +386,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "ACWan30",
@@ -408,13 +408,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Rooey",
@@ -430,13 +430,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "BrrokenPTW",
@@ -452,13 +452,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "King 1",
@@ -474,13 +474,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Ju1ia",
@@ -496,13 +496,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Viracochaa",
@@ -518,13 +518,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Hanz Jaeger",
@@ -540,13 +540,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "LouDy",
@@ -562,13 +562,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Anastasia Rose",
@@ -584,13 +584,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Paco Villa",
@@ -606,13 +606,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Low IQ Boomer",
@@ -628,13 +628,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Snylack",
@@ -650,13 +650,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Dark'wrath",
@@ -672,13 +672,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Faussey",
@@ -694,13 +694,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Ohilio",
@@ -716,13 +716,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "FBGG.Unleeasheed",
@@ -738,13 +738,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Ace21",
@@ -760,13 +760,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Biggy^G",
@@ -782,13 +782,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Zer0Ace",
@@ -804,13 +804,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Alchemisti",
@@ -826,13 +826,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "dedomukongsuh",
@@ -848,13 +848,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Rhizor",
@@ -870,13 +870,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Arky",
@@ -892,13 +892,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "DrinkMommyMilk",
@@ -914,13 +914,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Itz Mam",
@@ -936,13 +936,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Macho4",
@@ -958,13 +958,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Samurai",
@@ -980,13 +980,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Polka Escobar",
@@ -1002,13 +1002,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Adexxx",
@@ -1024,13 +1024,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Zionical",
@@ -1046,13 +1046,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Steven-with-a-ph",
@@ -1069,13 +1069,13 @@
 "secondaryRole": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Orgazmik",
@@ -1091,13 +1091,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Shleppy",
@@ -1113,13 +1113,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "EgoVIking",
@@ -1135,13 +1135,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Toopy",
@@ -1157,13 +1157,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Pabl0",
@@ -1179,13 +1179,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "TrayceyaDeinmaar",
@@ -1201,13 +1201,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Nahlon Deinmaar",
@@ -1223,13 +1223,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "LeRican",
@@ -1245,13 +1245,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Shogunate",
@@ -1267,13 +1267,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Battz ",
@@ -1289,13 +1289,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Ernanz",
@@ -1311,13 +1311,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Mr Neme",
@@ -1333,13 +1333,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "fenixassassin",
@@ -1355,13 +1355,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Foplak",
@@ -1377,13 +1377,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "4mbii",
@@ -1399,13 +1399,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "HoustonHardHead",
@@ -1421,13 +1421,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Durac",
@@ -1443,13 +1443,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Roan",
@@ -1465,13 +1465,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Hakuren19",
@@ -1487,13 +1487,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "GokuBruhh",
@@ -1509,13 +1509,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Dmorg",
@@ -1531,13 +1531,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Hungo",
@@ -1553,13 +1553,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Jon Juan",
@@ -1575,13 +1575,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "nighttfall",
@@ -1597,13 +1597,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Cryo-Sensei",
@@ -1619,13 +1619,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "ZestyE90",
@@ -1641,13 +1641,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "CurtAlan",
@@ -1663,13 +1663,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Seshmasta",
@@ -1685,13 +1685,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "MyEndGame",
@@ -1707,13 +1707,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Karma Kills",
@@ -1729,13 +1729,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "ZARAKI WITHA FRO",
@@ -1751,13 +1751,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "TrunksBruhh",
@@ -1773,13 +1773,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "HinsL",
@@ -1795,13 +1795,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "EmilyRyuna",
@@ -1817,13 +1817,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Staglord",
@@ -1839,13 +1839,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "MarcosHFdez",
@@ -1861,13 +1861,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "TankerLee",
@@ -1883,13 +1883,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Ethalot",
@@ -1905,13 +1905,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Envy-Texas1291",
@@ -1927,13 +1927,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Outskilled",
@@ -1949,13 +1949,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Yanis",
@@ -1971,13 +1971,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Ziggrath ",
@@ -1993,13 +1993,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Any Primers",
@@ -2015,13 +2015,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Horse Girl",
@@ -2037,13 +2037,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "W4gs",
@@ -2059,13 +2059,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Agreon",
@@ -2081,13 +2081,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Moon Gang Tae",
@@ -2103,13 +2103,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Blerk",
@@ -2125,13 +2125,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Scurri",
@@ -2147,13 +2147,13 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "ShadowZonee",
@@ -2169,13 +2169,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Hazypixels",
@@ -2191,13 +2191,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Darth Roblox",
@@ -2213,13 +2213,13 @@
 "secondaryGS":"500",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
 {
 "characterName": "Morelynn",
@@ -2235,11 +2235,11 @@
 "secondaryWeapon2": "",
 "secondaryArmor":"",
 "crafting":{
-    "weaponSmithing": "",
-    "armoring": "",
-    "engineering": "",
-    "jewelCrafting": "",
-    "arcana": "",
-    "cooking": "",
-    "furnishing": ""
+    "weaponSmithing": false,
+    "armoring": false,
+    "engineering": false,
+    "jewelCrafting": false,
+    "arcana": false,
+    "cooking": false,
+    "furnishing": false
 }}
