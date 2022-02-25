@@ -59,9 +59,18 @@ const certicate = fs.readFileSync("dntroster.com_2022.crt")
 const credentials = {key: privateKey, cert: certicate}
 
 const httpsServer = https.createServer(credentials, app)
+
+const httpServer = express();
+http.get('*', function(req, res) {  
+    res.redirect('https://' + req.headers.host + req.url);
+})
+
 httpsServer.listen(8443)
+httpServer.listen(3001)
+
+} else {
+    const http = require('http')
+    const httpServer = http.createServer(app)
+    httpServer.listen(3001)
 }
 
-const http = require('http')
-const httpServer = http.createServer(app)
-httpServer.listen(3001)
