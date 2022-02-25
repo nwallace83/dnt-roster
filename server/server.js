@@ -20,7 +20,8 @@ app.use(helmet({crossOriginEmbedderPolicy: false}))
 app.use(
     helmet.contentSecurityPolicy({
       directives: {
-        "img-src": ["'self'","*.discordapp.com","data:"]
+        "img-src": ["'self'","*.discordapp.com","data:"],
+        upgradeInsecureRequests: null
       },
     })
   );
