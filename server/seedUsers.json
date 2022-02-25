@@ -8,8 +8,17 @@
 "primaryGS": "589",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Sword",
-"secondaryWeapon2": "War Hammer"
-}
+"secondaryWeapon2": "War Hammer",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "PHaRTnONu",
 "id": "946175676728365136",
@@ -20,8 +29,17 @@
 "primaryGS": "589",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "War Hammer",
-"secondaryWeapon2": "Spear"
-}
+"secondaryWeapon2": "Spear",
+"secondaryGS": "500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Grizzlymillz",
 "id": "929047341053399091",
@@ -29,8 +47,20 @@
 "primaryWeapon1": "Life Staff",
 "primaryWeapon2": "Void Gauntlet",
 "primaryArmor": "Medium",
-"primaryGS": "586"
-}
+"primaryGS": "586",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Profanity",
 "id": "946297702860353536",
@@ -41,8 +71,17 @@
 "primaryGS": "619",
 "secondaryRole": "Heavy",
 "secondaryWeapon1": "Sword",
-"secondaryWeapon2": "War Hammer"
-}
+"secondaryWeapon2": "War Hammer",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Kill Kupo",
 "id": "941433766285574224",
@@ -53,8 +92,17 @@
 "primaryGS": "620",
 "secondaryRole": "Heavy",
 "secondaryWeapon1": "Sword",
-"secondaryWeapon2": "Spear"
-}
+"secondaryWeapon2": "Spear",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "AwpQ",
 "id": "946225526937362442",
@@ -65,8 +113,17 @@
 "primaryGS": "600",
 "secondaryRole": "Light",
 "secondaryWeapon1": "Void Gauntlet",
-"secondaryWeapon2": "Ice Gauntlet"
-}
+"secondaryWeapon2": "Ice Gauntlet",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Svvat",
 "id": "929108514599735379",
@@ -77,8 +134,17 @@
 "primaryGS": "580",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Life Staff",
-"secondaryWeapon2": "Rapier"
-}
+"secondaryWeapon2": "Rapier",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Rarieko",
 "id": "929496952721244220",
@@ -89,8 +155,17 @@
 "primaryGS": "570",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Life Staff",
-"secondaryWeapon2": "Rapier"
-}
+"secondaryWeapon2": "Rapier",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Acebully",
 "id": "946264640055308328",
@@ -101,8 +176,17 @@
 "primaryGS": "593",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Musket",
-"secondaryWeapon2": "Rapier"
-}
+"secondaryWeapon2": "Rapier",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Vincent Belmonte",
 "id": "946257073820299264",
@@ -113,8 +197,17 @@
 "primaryGS": "591",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Bow",
-"secondaryWeapon2": "Spear"
-}
+"secondaryWeapon2": "Spear",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Riggity Wrecked",
 "id": "946291584239022112",
@@ -125,8 +218,17 @@
 "primaryGS": "602",
 "secondaryRole": "Light",
 "secondaryWeapon1": "War Hammer",
-"secondaryWeapon2": "Great Axe"
-}
+"secondaryWeapon2": "Great Axe",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "LesRad",
 "id": "942525566488297586",
@@ -137,8 +239,17 @@
 "primaryGS": "578",
 "secondaryRole": "Heavy",
 "secondaryWeapon1": "Great Axe",
-"secondaryWeapon2": "Hatchet"
-}
+"secondaryWeapon2": "Hatchet",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "DrTrustFund",
 "id": "946242795591577600",
@@ -149,8 +260,17 @@
 "primaryGS": "602",
 "secondaryRole": "Light",
 "secondaryWeapon1": "Life Staff",
-"secondaryWeapon2": "Rapier"
-}
+"secondaryWeapon2": "Rapier",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Fe7on",
 "id": "944082096073355369",
@@ -161,8 +281,17 @@
 "primaryGS": "590",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Void Gauntlet",
-"secondaryWeapon2": "Ice Gauntlet"
-}
+"secondaryWeapon2": "Ice Gauntlet",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Coop",
 "id": "946297839208759337",
@@ -173,8 +302,17 @@
 "primaryGS": "570",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Great Axe",
-"secondaryWeapon2": "War Hammer"
-}
+"secondaryWeapon2": "War Hammer",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "GhostFilms",
 "id": "945685118465478656",
@@ -182,8 +320,20 @@
 "primaryWeapon1": "Great Axe",
 "primaryWeapon2": "War Hammer",
 "primaryArmor": "Heavy",
-"primaryGS": "535"
-}
+"primaryGS": "535",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Sir Patch",
 "id": "946241354835566612",
@@ -194,8 +344,17 @@
 "primaryGS": "600",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Void Gauntlet",
-"secondaryWeapon2": "Great Axe"
-}
+"secondaryWeapon2": "Great Axe",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Shrev OG",
 "id": "918893645581676615",
@@ -206,8 +365,17 @@
 "primaryGS": "582",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Bow",
-"secondaryWeapon2": "Spear"
-}
+"secondaryWeapon2": "Spear",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "ACWan30",
 "id": "943402777755930664",
@@ -218,8 +386,17 @@
 "primaryGS": "596",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Great Axe",
-"secondaryWeapon2": "War Hammer"
-}
+"secondaryWeapon2": "War Hammer",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Rooey",
 "id": "946270571841351721",
@@ -230,8 +407,17 @@
 "primaryGS": "570",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Hatchet",
-"secondaryWeapon2": "Great Axe"
-}
+"secondaryWeapon2": "Great Axe",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "BrrokenPTW",
 "id": "944713566014025728",
@@ -242,8 +428,17 @@
 "primaryGS": "600",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Great Axe",
-"secondaryWeapon2": "Hatchet"
-}
+"secondaryWeapon2": "Hatchet",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "King 1",
 "id": "926338043655360552",
@@ -254,8 +449,17 @@
 "primaryGS": "540",
 "secondaryRole": "Heavy",
 "secondaryWeapon1": "Great Axe",
-"secondaryWeapon2": "War Hammer"
-}
+"secondaryWeapon2": "War Hammer",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Ju1ia",
 "id": "926564952859373569",
@@ -263,8 +467,20 @@
 "primaryWeapon1": "Life Staff",
 "primaryWeapon2": "Void Gauntlet",
 "primaryArmor": "Light",
-"primaryGS": "500"
-}
+"primaryGS": "500",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Viracochaa",
 "id": "930890846570700812",
@@ -272,8 +488,20 @@
 "primaryWeapon1": "Great Axe",
 "primaryWeapon2": "War Hammer",
 "primaryArmor": "Medium",
-"primaryGS": "581"
-}
+"primaryGS": "581",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Hanz Jaeger",
 "id": "945391567080931359",
@@ -284,8 +512,17 @@
 "primaryGS": "609",
 "secondaryRole": "Heavy",
 "secondaryWeapon1": "Great Axe",
-"secondaryWeapon2": "War Hammer"
-}
+"secondaryWeapon2": "War Hammer",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "LouDy",
 "id": "940830206539735110",
@@ -296,8 +533,17 @@
 "primaryGS": "597",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Great Axe",
-"secondaryWeapon2": "War Hammer"
-}
+"secondaryWeapon2": "War Hammer",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Anastasia Rose",
 "id": "943314530644156466",
@@ -308,8 +554,17 @@
 "primaryGS": "611",
 "secondaryRole": "Heavy",
 "secondaryWeapon1": "War Hammer",
-"secondaryWeapon2": "Great Axe"
-}
+"secondaryWeapon2": "Great Axe",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Paco Villa",
 "id": "933555827007193148",
@@ -320,8 +575,17 @@
 "primaryGS": "579",
 "secondaryRole": "Tank",
 "secondaryWeapon1": "Sword",
-"secondaryWeapon2": "War Hammer"
-}
+"secondaryWeapon2": "War Hammer",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Low IQ Boomer",
 "id": "920487159478251591",
@@ -332,8 +596,17 @@
 "primaryGS": "545",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Ice Gauntlet",
-"secondaryWeapon2": "Fire Staff"
-}
+"secondaryWeapon2": "Fire Staff",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Snylack",
 "id": "941500885819883582",
@@ -341,8 +614,20 @@
 "primaryWeapon1": "Great Axe",
 "primaryWeapon2": "War Hammer",
 "primaryArmor": "Heavy",
-"primaryGS": "540"
-}
+"primaryGS": "540",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Dark'wrath",
 "id": "941904820854468628",
@@ -353,8 +638,17 @@
 "primaryGS": "595",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Great Axe",
-"secondaryWeapon2": "War Hammer"
-}
+"secondaryWeapon2": "War Hammer",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Faussey",
 "id": "926905389176483940",
@@ -362,8 +656,20 @@
 "primaryWeapon1": "Life Staff",
 "primaryWeapon2": "Great Axe",
 "primaryArmor": "Light",
-"primaryGS": "490"
-}
+"primaryGS": "490",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Ohilio",
 "id": "927136643536801873",
@@ -374,8 +680,17 @@
 "primaryGS": "588",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Great Axe",
-"secondaryWeapon2": "Life Staff"
-}
+"secondaryWeapon2": "Life Staff",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "FBGG.Unleeasheed",
 "id": "938926446745899008",
@@ -386,8 +701,17 @@
 "primaryGS": "597",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Great Axe",
-"secondaryWeapon2": "War Hammer"
-}
+"secondaryWeapon2": "War Hammer",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Ace21",
 "id": "939283832274845776",
@@ -398,8 +722,17 @@
 "primaryGS": "562",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Spear",
-"secondaryWeapon2": "Bow"
-}
+"secondaryWeapon2": "Bow",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Biggy^G",
 "id": "916607370900168704",
@@ -410,8 +743,17 @@
 "primaryGS": "572",
 "secondaryRole": "Light",
 "secondaryWeapon1": "Bow",
-"secondaryWeapon2": "Spear"
-}
+"secondaryWeapon2": "Spear",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Zer0Ace",
 "id": "922861932053143582",
@@ -419,8 +761,20 @@
 "primaryWeapon1": "Bow",
 "primaryWeapon2": "Rapier",
 "primaryArmor": "Light",
-"primaryGS": "566"
-}
+"primaryGS": "566",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Alchemisti",
 "id": "946228132837462126",
@@ -428,8 +782,20 @@
 "primaryWeapon1": "Life Staff",
 "primaryWeapon2": "",
 "primaryArmor": "Heavy",
-"primaryGS": "500"
-}
+"primaryGS": "500",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "dedomukongsuh",
 "id": "944352113213992960",
@@ -440,8 +806,17 @@
 "primaryGS": "594",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "War Hammer",
-"secondaryWeapon2": "Great Axe"
-}
+"secondaryWeapon2": "Great Axe",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Rhizor",
 "id": "944149480033353779",
@@ -449,8 +824,20 @@
 "primaryWeapon1": "Great Axe",
 "primaryWeapon2": "War Hammer",
 "primaryArmor": "Heavy",
-"primaryGS": "578"
-}
+"primaryGS": "578",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Arky",
 "id": "946248971062497290",
@@ -461,8 +848,17 @@
 "primaryGS": "550",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Great Axe",
-"secondaryWeapon2": "War Hammer"
-}
+"secondaryWeapon2": "War Hammer",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "DrinkMommyMilk",
 "id": "945834839754551316",
@@ -470,8 +866,20 @@
 "primaryWeapon1": "Great Axe",
 "primaryWeapon2": "War Hammer",
 "primaryArmor": "Medium",
-"primaryGS": "590"
-}
+"primaryGS": "590",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Itz Mam",
 "id": "933450887857315900",
@@ -482,8 +890,17 @@
 "primaryGS": "578",
 "secondaryRole": "Heavy",
 "secondaryWeapon1": "Bow",
-"secondaryWeapon2": "Hatchet"
-}
+"secondaryWeapon2": "Hatchet",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Macho4",
 "id": "925162426406666280",
@@ -494,8 +911,17 @@
 "primaryGS": "576",
 "secondaryRole": "Light",
 "secondaryWeapon1": "Fire Staff",
-"secondaryWeapon2": "Ice Gauntlet"
-}
+"secondaryWeapon2": "Ice Gauntlet",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Samurai",
 "id": "946263808484184095",
@@ -506,8 +932,17 @@
 "primaryGS": "589",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Great Axe",
-"secondaryWeapon2": "War Hammer"
-}
+"secondaryWeapon2": "War Hammer",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Polka Escobar",
 "id": "942576803669770320",
@@ -515,8 +950,20 @@
 "primaryWeapon1": "Life Staff",
 "primaryWeapon2": "Void Gauntlet",
 "primaryArmor": "Medium",
-"primaryGS": "522"
-}
+"primaryGS": "522",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Adexxx",
 "id": "926853607737942016",
@@ -524,8 +971,20 @@
 "primaryWeapon1": "Life Staff",
 "primaryWeapon2": "Great Axe",
 "primaryArmor": "Medium",
-"primaryGS": "586"
-}
+"primaryGS": "586",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Zionical",
 "id": "945055485994872913",
@@ -536,8 +995,17 @@
 "primaryGS": "602",
 "secondaryRole": "Light",
 "secondaryWeapon1": "Great Axe",
-"secondaryWeapon2": "War Hammer"
-}
+"secondaryWeapon2": "War Hammer",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Steven-with-a-ph",
 "id": "946232941405675531",
@@ -548,8 +1016,18 @@
 "primaryGS": "600",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Great Axe",
-"secondaryWeapon2": "War Hammer"
-}
+"secondaryWeapon2": "War Hammer",
+"secondaryGS":"500",
+"secondaryRole": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Orgazmik",
 "id": "945040437549342740",
@@ -557,8 +1035,20 @@
 "primaryWeapon1": "Life Staff",
 "primaryWeapon2": "Great Axe",
 "primaryArmor": "Light",
-"primaryGS": "537"
-}
+"primaryGS": "537",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Shleppy",
 "id": "926848906409701406",
@@ -569,8 +1059,17 @@
 "primaryGS": "564",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Fire Staff",
-"secondaryWeapon2": "Ice Gauntlet"
-}
+"secondaryWeapon2": "Ice Gauntlet",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "EgoVIking",
 "id": "942635496708911124",
@@ -581,8 +1080,17 @@
 "primaryGS": "582",
 "secondaryRole": "Heavy",
 "secondaryWeapon1": "Sword",
-"secondaryWeapon2": "War Hammer"
-}
+"secondaryWeapon2": "War Hammer",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Toopy",
 "id": "945114814223613982",
@@ -593,8 +1101,17 @@
 "primaryGS": "612",
 "secondaryRole": "Light",
 "secondaryWeapon1": "Void Gauntlet",
-"secondaryWeapon2": "Fire Staff"
-}
+"secondaryWeapon2": "Fire Staff",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Pabl0",
 "id": "944737014052450344",
@@ -602,8 +1119,20 @@
 "primaryWeapon1": "Great Axe",
 "primaryWeapon2": "Hatchet",
 "primaryArmor": "Heavy",
-"primaryGS": "575"
-}
+"primaryGS": "575",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "TrayceyaDeinmaar",
 "id": "921928105713627227",
@@ -614,8 +1143,17 @@
 "primaryGS": "550",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Sword",
-"secondaryWeapon2": "Great Axe"
-}
+"secondaryWeapon2": "Great Axe",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Nahlon Deinmaar",
 "id": "920949483104256031",
@@ -623,8 +1161,20 @@
 "primaryWeapon1": "Spear",
 "primaryWeapon2": "Bow",
 "primaryArmor": "Medium",
-"primaryGS": "564"
-}
+"primaryGS": "564",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "LeRican",
 "id": "922369089199038485",
@@ -635,8 +1185,17 @@
 "primaryGS": "573",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Musket",
-"secondaryWeapon2": "Spear"
-}
+"secondaryWeapon2": "Spear",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Shogunate",
 "id": "873340147469537300",
@@ -647,8 +1206,17 @@
 "primaryGS": "591",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Hatchet",
-"secondaryWeapon2": ""
-}
+"secondaryWeapon2": "",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Battz ",
 "id": "946234796479250453",
@@ -656,8 +1224,20 @@
 "primaryWeapon1": "Bow",
 "primaryWeapon2": "Rapier",
 "primaryArmor": "Light",
-"primaryGS": "589"
-}
+"primaryGS": "589",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Ernanz",
 "id": "302246794421731333",
@@ -668,8 +1248,17 @@
 "primaryGS": "596",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Void Gauntlet",
-"secondaryWeapon2": "Ice Gauntlet"
-}
+"secondaryWeapon2": "Ice Gauntlet",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Mr Neme",
 "id": "945495778904916030",
@@ -677,8 +1266,20 @@
 "primaryWeapon1": "Hatchet",
 "primaryWeapon2": "Bow",
 "primaryArmor": "Medium",
-"primaryGS": "594"
-}
+"primaryGS": "594",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "fenixassassin",
 "id": "939686605688565821",
@@ -689,8 +1290,17 @@
 "primaryGS": "600",
 "secondaryRole": "Heavy",
 "secondaryWeapon1": "Great Axe",
-"secondaryWeapon2": "War Hammer"
-}
+"secondaryWeapon2": "War Hammer",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Foplak",
 "id": "824004745907011594",
@@ -701,8 +1311,17 @@
 "primaryGS": "594",
 "secondaryRole": "Light",
 "secondaryWeapon1": "Bow",
-"secondaryWeapon2": "Spear"
-}
+"secondaryWeapon2": "Spear",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "4mbii",
 "id": "945766543072051290",
@@ -710,8 +1329,20 @@
 "primaryWeapon1": "Void Gauntlet",
 "primaryWeapon2": "Ice Gauntlet",
 "primaryArmor": "Light",
-"primaryGS": "595"
-}
+"primaryGS": "595",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "HoustonHardHead",
 "id": "944789537031356496",
@@ -719,8 +1350,20 @@
 "primaryWeapon1": "Great Axe",
 "primaryWeapon2": "War Hammer",
 "primaryArmor": "Heavy",
-"primaryGS": "575"
-}
+"primaryGS": "575",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Durac",
 "id": "942785259295088652",
@@ -731,8 +1374,17 @@
 "primaryGS": "585",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Great Axe",
-"secondaryWeapon2": "War Hammer"
-}
+"secondaryWeapon2": "War Hammer",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Roan",
 "id": "936005060331204628",
@@ -743,8 +1395,17 @@
 "primaryGS": "592",
 "secondaryRole": "Light",
 "secondaryWeapon1": "Spear",
-"secondaryWeapon2": "Bow"
-}
+"secondaryWeapon2": "Bow",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Hakuren19",
 "id": "421090517078769674",
@@ -752,8 +1413,20 @@
 "primaryWeapon1": "Sword",
 "primaryWeapon2": "War Hammer",
 "primaryArmor": "Heavy",
-"primaryGS": "620"
-}
+"primaryGS": "620",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "GokuBruhh",
 "id": "728405146345668668",
@@ -761,8 +1434,20 @@
 "primaryWeapon1": "Life Staff",
 "primaryWeapon2": "Rapier",
 "primaryArmor": "Medium",
-"primaryGS": "544"
-}
+"primaryGS": "544",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Dmorg",
 "id": "944278474158374983",
@@ -773,8 +1458,17 @@
 "primaryGS": "500",
 "secondaryRole": "Heavy",
 "secondaryWeapon1": "Great Axe",
-"secondaryWeapon2": "War Hammer"
-}
+"secondaryWeapon2": "War Hammer",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Hungo",
 "id": "927288295178780682",
@@ -785,8 +1479,17 @@
 "primaryGS": "578",
 "secondaryRole": "Heavy",
 "secondaryWeapon1": "Sword",
-"secondaryWeapon2": "War Hammer"
-}
+"secondaryWeapon2": "War Hammer",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Jon Juan",
 "id": "934691364556378112",
@@ -794,8 +1497,20 @@
 "primaryWeapon1": "Fire Staff",
 "primaryWeapon2": "Ice Gauntlet",
 "primaryArmor": "Light",
-"primaryGS": "590"
-}
+"primaryGS": "590",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "nighttfall",
 "id": "941808378575994981",
@@ -803,8 +1518,20 @@
 "primaryWeapon1": "Bow",
 "primaryWeapon2": "Spear",
 "primaryArmor": "Medium",
-"primaryGS": "586"
-}
+"primaryGS": "586",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Cryo-Sensei",
 "id": "931396241068261376",
@@ -815,8 +1542,17 @@
 "primaryGS": "590",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Bow",
-"secondaryWeapon2": "Spear"
-}
+"secondaryWeapon2": "Spear",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "ZestyE90",
 "id": "937392053845905478",
@@ -827,8 +1563,17 @@
 "primaryGS": "599",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Hatchet",
-"secondaryWeapon2": "Spear"
-}
+"secondaryWeapon2": "Spear",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "CurtAlan",
 "id": "945435380101025833",
@@ -839,8 +1584,17 @@
 "primaryGS": "594",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Hatchet",
-"secondaryWeapon2": "Great Axe"
-}
+"secondaryWeapon2": "Great Axe",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Seshmasta",
 "id": "288296058487046146",
@@ -851,8 +1605,17 @@
 "primaryGS": "597",
 "secondaryRole": "Heavy",
 "secondaryWeapon1": "Life Staff",
-"secondaryWeapon2": "War Hammer"
-}
+"secondaryWeapon2": "War Hammer",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "MyEndGame",
 "id": "941716148611846175",
@@ -863,8 +1626,17 @@
 "primaryGS": "608",
 "secondaryRole": "Heavy",
 "secondaryWeapon1": "Hatchet",
-"secondaryWeapon2": ""
-}
+"secondaryWeapon2": "",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Karma Kills",
 "id": "941222236310868028",
@@ -872,8 +1644,20 @@
 "primaryWeapon1": "Great Axe",
 "primaryWeapon2": "War Hammer",
 "primaryArmor": "Heavy",
-"primaryGS": "575"
-}
+"primaryGS": "575",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "ZARAKI WITHA FRO",
 "id": "946224349206179870",
@@ -881,8 +1665,20 @@
 "primaryWeapon1": "Great Axe",
 "primaryWeapon2": "War Hammer",
 "primaryArmor": "Medium",
-"primaryGS": "601"
-}
+"primaryGS": "601",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "TrunksBruhh",
 "id": "944385611538784316",
@@ -893,8 +1689,17 @@
 "primaryGS": "592",
 "secondaryRole": "Light",
 "secondaryWeapon1": "Musket",
-"secondaryWeapon2": "Rapier"
-}
+"secondaryWeapon2": "Rapier",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "HinsL",
 "id": "940303004106620928",
@@ -905,8 +1710,17 @@
 "primaryGS": "598",
 "secondaryRole": "Heavy",
 "secondaryWeapon1": "Hatchet",
-"secondaryWeapon2": "Great Axe"
-}
+"secondaryWeapon2": "Great Axe",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "EmilyRyuna",
 "id": "696005133678673980",
@@ -917,8 +1731,17 @@
 "primaryGS": "600",
 "secondaryRole": "Heavy",
 "secondaryWeapon1": "Life Staff",
-"secondaryWeapon2": "Void Gauntlet"
-}
+"secondaryWeapon2": "Void Gauntlet",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Staglord",
 "id": "946240247287644241",
@@ -926,8 +1749,20 @@
 "primaryWeapon1": "Great Axe",
 "primaryWeapon2": "War Hammer",
 "primaryArmor": "Medium",
-"primaryGS": "606"
-}
+"primaryGS": "606",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "MarcosHFdez",
 "id": "946143880628293692",
@@ -935,8 +1770,20 @@
 "primaryWeapon1": "Great Axe",
 "primaryWeapon2": "War Hammer",
 "primaryArmor": "Heavy",
-"primaryGS": "605"
-}
+"primaryGS": "605",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "TankerLee",
 "id": "946105566709829673",
@@ -947,8 +1794,17 @@
 "primaryGS": "608",
 "secondaryRole": "Heavy",
 "secondaryWeapon1": "Hatchet",
-"secondaryWeapon2": "Great Axe"
-}
+"secondaryWeapon2": "Great Axe",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Ethalot",
 "id": "946141987080384612",
@@ -956,8 +1812,20 @@
 "primaryWeapon1": "Life Staff",
 "primaryWeapon2": "Void Gauntlet",
 "primaryArmor": "Medium",
-"primaryGS": "617"
-}
+"primaryGS": "617",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Envy-Texas1291",
 "id": "944126250908287016",
@@ -968,8 +1836,17 @@
 "primaryGS": "600",
 "secondaryRole": "Heavy",
 "secondaryWeapon1": "Hatchet",
-"secondaryWeapon2": "Spear"
-}
+"secondaryWeapon2": "Spear",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Outskilled",
 "id": "946284083951059024",
@@ -980,8 +1857,17 @@
 "primaryGS": "600",
 "secondaryRole": "Light",
 "secondaryWeapon1": "Ice Gauntlet",
-"secondaryWeapon2": "Void Gauntlet"
-}
+"secondaryWeapon2": "Void Gauntlet",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Yanis",
 "id": "946172595701694544",
@@ -992,8 +1878,17 @@
 "primaryGS": "623",
 "secondaryRole": "Light",
 "secondaryWeapon1": "Fire Staff",
-"secondaryWeapon2": "Ice Gauntlet"
-}
+"secondaryWeapon2": "Ice Gauntlet",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Ziggrath ",
 "id": "944787440407826472",
@@ -1004,8 +1899,17 @@
 "primaryGS": "600",
 "secondaryRole": "Light",
 "secondaryWeapon1": "Fire Staff",
-"secondaryWeapon2": "Rapier"
-}
+"secondaryWeapon2": "Rapier",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Any Primers",
 "id": "946221133546536971",
@@ -1016,8 +1920,17 @@
 "primaryGS": "620",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Spear",
-"secondaryWeapon2": "Bow"
-}
+"secondaryWeapon2": "Bow",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Horse Girl",
 "id": "946052316396654652",
@@ -1028,8 +1941,17 @@
 "primaryGS": "620",
 "secondaryRole": "Light",
 "secondaryWeapon1": "Fire Staff",
-"secondaryWeapon2": "Ice Gauntlet"
-}
+"secondaryWeapon2": "Ice Gauntlet",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "W4gs",
 "id": "946282059125645373",
@@ -1040,8 +1962,17 @@
 "primaryGS": "610",
 "secondaryRole": "Light",
 "secondaryWeapon1": "Life Staff",
-"secondaryWeapon2": "Rapier"
-}
+"secondaryWeapon2": "Rapier",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Agreon",
 "id": "820407673294946355",
@@ -1049,8 +1980,20 @@
 "primaryWeapon1": "War Hammer",
 "primaryWeapon2": "Great Axe",
 "primaryArmor": "Heavy",
-"primaryGS": "622"
-}
+"primaryGS": "622",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Moon Gang Tae",
 "id": "946279368936783892",
@@ -1061,8 +2004,17 @@
 "primaryGS": "615",
 "secondaryRole": "Light",
 "secondaryWeapon1": "Fire Staff",
-"secondaryWeapon2": "Ice Gauntlet"
-}
+"secondaryWeapon2": "Ice Gauntlet",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Blerk",
 "id": "943525847736934420",
@@ -1073,8 +2025,17 @@
 "primaryGS": "612",
 "secondaryRole": "Light",
 "secondaryWeapon1": "Void Gauntlet",
-"secondaryWeapon2": "Ice Gauntlet"
-}
+"secondaryWeapon2": "Ice Gauntlet",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Scurri",
 "id": "508782321621663746",
@@ -1082,8 +2043,20 @@
 "primaryWeapon1": "Sword",
 "primaryWeapon2": "War Hammer",
 "primaryArmor": "Heavy",
-"primaryGS": "598"
-}
+"primaryGS": "598",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "ShadowZonee",
 "id": "944416680405250088",
@@ -1094,8 +2067,17 @@
 "primaryGS": "595",
 "secondaryRole": "Light",
 "secondaryWeapon1": "Life Staff",
-"secondaryWeapon2": "Rapier"
-}
+"secondaryWeapon2": "Rapier",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Hazypixels",
 "id": "462253517814628392",
@@ -1106,8 +2088,17 @@
 "primaryGS": "606",
 "secondaryRole": "Medium",
 "secondaryWeapon1": "Bow",
-"secondaryWeapon2": "Spear"
-}
+"secondaryWeapon2": "Spear",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Darth Roblox",
 "id": "946052600044879882",
@@ -1118,8 +2109,17 @@
 "primaryGS": "621",
 "secondaryRole": "Heavy",
 "secondaryWeapon1": "War Hammer",
-"secondaryWeapon2": "Sword"
-}
+"secondaryWeapon2": "Sword",
+"secondaryGS":"500",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
 {
 "characterName": "Morelynn",
 "id": "541512377774899217",
@@ -1127,5 +2127,17 @@
 "primaryWeapon1": "Great Axe",
 "primaryWeapon2": "War Hammer",
 "primaryArmor": "Medium",
-"primaryGS": "610"
-}
+"primaryGS": "610",
+"secondaryGS":"500",
+"secondaryRole": "",
+"secondaryWeapon1": "",
+"secondaryWeapon2": "",
+"crafting": {
+    "weaponSmithing": "",
+    "armoring": "",
+    "engineering": "",
+    "jewelCrafting": "",
+    "arcana": "",
+    "cooking": "",
+    "furnishing": ""
+}}
