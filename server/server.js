@@ -40,14 +40,15 @@ app.use('/api/v1/roster',roster)
 
 app.use('/',express.static(path.join(__dirname, 'html')))
 
-if (process.env.NODE_ENV === "production") {
-    const privateKey = fs.readFileSync("dntroster.com.key")
-    const certicate = fs.readFileSync("dntroster.com_2022.crt")
+ if (process.env.NODE_ENV === "production") {
+    const fs = require('fs')
+    const privateKey = fs.readFileSync("/Users/nathan/dnt-roster/certificates/dntroster.com.key")
+    const certicate = fs.readFileSync("/Users/nathan/dnt-roster/certificates/dntroster.com_2022.crt")
     const credentials = {key: privateKey, cert: certicate}
     
     const httpsServer = https.createServer(credentials, app)
     httpsServer.listen(8443)
-}
+ }
 
 const httpServer = http.createServer(app)
 
