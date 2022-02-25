@@ -43,9 +43,8 @@ app.use('/api/v1/roster',roster)
 app.use('/',express.static(path.join(__dirname, 'html')))
 
 if (process.env.NODE_ENV === "production") {
-    console.warn('secure: ' + req.secure)
     app.use((req, res, next) => {
-        console.log("secure: " + req.secure)
+        console.warn('secure: ' + req.secure)
         if (!req.secure) {
             res.redirect(301, `https://${req.headers.host}${req.url}`);
         } else {
