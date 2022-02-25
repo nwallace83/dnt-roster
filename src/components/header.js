@@ -108,9 +108,6 @@ class Header extends React.Component {
                     <div className="col-md-8" id="nav-menu">
                         <img src={logo} height="40px" id="logo"/>
                         <ul className="nav nav-tabs">
-                            {/* <li className="nav-item">
-                                <a className="nav-link" aria-current="page" href="#" id="company-logo" style={{ backgroundImage: `url(${logo})`, backgroundSize: 'contain' }} />
-                            </li> */}
                             <li className="nav-item" onClick={() => this.props.changeTab('roster')}>
                                 <a className={this.getButtonClasses('roster')} aria-current="page" href="#">Roster</a>
                             </li>
@@ -141,7 +138,7 @@ class LoginLogoutButton extends React.Component {
             return (          
                 <a href={discord_url}>
                     <button type="button" className="btn btn-success" >
-                        <img src={discordLogo} height='25px'/>
+                        <img src={discordLogo} height='20px' />
                         <span>Login</span>
                     </button>
                 </a>
