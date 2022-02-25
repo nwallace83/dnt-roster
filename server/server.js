@@ -21,8 +21,7 @@ app.use(helmet({crossOriginEmbedderPolicy: false}))
 app.use(
     helmet.contentSecurityPolicy({
       directives: {
-        "img-src": ["'self'","*.discordapp.com","data:"],
-        upgradeInsecureRequests: process.env.NODE_ENV === "production" ? [] : null
+        "img-src": ["'self'","*.discordapp.com","data:"]
       },
     })
 ); 
@@ -40,6 +39,15 @@ app.use('/api/v1/roster',roster)
 app.use('/',express.static(path.join(__dirname, 'html')))
 
 if (process.env.NODE_ENV === "production") {
+
+    app.use((req, res, next) => {
+    if (process.env.NODE_ENV !== 'development' && process.env.NODE_ENV === 'production') {
+        res.redirect(301, `https://${req.headers.host}${req.url}`);
+    } else {
+        next();
+    }
+    });
+
 const https = require('https')
 const fs = require('fs')
 const privateKey = fs.readFileSync("dntroster.com.key")
