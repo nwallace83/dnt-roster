@@ -10,7 +10,8 @@
 "secondaryWeapon1": "Sword",
 "secondaryWeapon2": "War Hammer",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -31,7 +32,8 @@
 "secondaryWeapon1": "War Hammer",
 "secondaryWeapon2": "Spear",
 "secondaryGS": "500",
-"crafting": {
+"crafting":{
+
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -52,7 +54,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -73,7 +76,8 @@
 "secondaryWeapon1": "Sword",
 "secondaryWeapon2": "War Hammer",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -94,7 +98,8 @@
 "secondaryWeapon1": "Sword",
 "secondaryWeapon2": "Spear",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -115,7 +120,8 @@
 "secondaryWeapon1": "Void Gauntlet",
 "secondaryWeapon2": "Ice Gauntlet",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -136,7 +142,8 @@
 "secondaryWeapon1": "Life Staff",
 "secondaryWeapon2": "Rapier",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -157,7 +164,8 @@
 "secondaryWeapon1": "Life Staff",
 "secondaryWeapon2": "Rapier",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -178,7 +186,8 @@
 "secondaryWeapon1": "Musket",
 "secondaryWeapon2": "Rapier",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -199,7 +208,8 @@
 "secondaryWeapon1": "Bow",
 "secondaryWeapon2": "Spear",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -220,7 +230,8 @@
 "secondaryWeapon1": "War Hammer",
 "secondaryWeapon2": "Great Axe",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -241,7 +252,8 @@
 "secondaryWeapon1": "Great Axe",
 "secondaryWeapon2": "Hatchet",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -262,7 +274,8 @@
 "secondaryWeapon1": "Life Staff",
 "secondaryWeapon2": "Rapier",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -283,7 +296,8 @@
 "secondaryWeapon1": "Void Gauntlet",
 "secondaryWeapon2": "Ice Gauntlet",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -304,7 +318,8 @@
 "secondaryWeapon1": "Great Axe",
 "secondaryWeapon2": "War Hammer",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -325,7 +340,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -346,7 +362,8 @@
 "secondaryWeapon1": "Void Gauntlet",
 "secondaryWeapon2": "Great Axe",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -367,7 +384,8 @@
 "secondaryWeapon1": "Bow",
 "secondaryWeapon2": "Spear",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -388,7 +406,8 @@
 "secondaryWeapon1": "Great Axe",
 "secondaryWeapon2": "War Hammer",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -409,7 +428,8 @@
 "secondaryWeapon1": "Hatchet",
 "secondaryWeapon2": "Great Axe",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -430,7 +450,8 @@
 "secondaryWeapon1": "Great Axe",
 "secondaryWeapon2": "Hatchet",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -451,7 +472,8 @@
 "secondaryWeapon1": "Great Axe",
 "secondaryWeapon2": "War Hammer",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -472,7 +494,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -493,7 +516,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -514,7 +538,8 @@
 "secondaryWeapon1": "Great Axe",
 "secondaryWeapon2": "War Hammer",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -535,7 +560,8 @@
 "secondaryWeapon1": "Great Axe",
 "secondaryWeapon2": "War Hammer",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -556,7 +582,8 @@
 "secondaryWeapon1": "War Hammer",
 "secondaryWeapon2": "Great Axe",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -577,7 +604,8 @@
 "secondaryWeapon1": "Sword",
 "secondaryWeapon2": "War Hammer",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -598,7 +626,8 @@
 "secondaryWeapon1": "Ice Gauntlet",
 "secondaryWeapon2": "Fire Staff",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -619,7 +648,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -640,7 +670,8 @@
 "secondaryWeapon1": "Great Axe",
 "secondaryWeapon2": "War Hammer",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -661,7 +692,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -682,7 +714,8 @@
 "secondaryWeapon1": "Great Axe",
 "secondaryWeapon2": "Life Staff",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -703,7 +736,8 @@
 "secondaryWeapon1": "Great Axe",
 "secondaryWeapon2": "War Hammer",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -724,7 +758,8 @@
 "secondaryWeapon1": "Spear",
 "secondaryWeapon2": "Bow",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -745,7 +780,8 @@
 "secondaryWeapon1": "Bow",
 "secondaryWeapon2": "Spear",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -766,7 +802,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -787,7 +824,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -808,7 +846,8 @@
 "secondaryWeapon1": "War Hammer",
 "secondaryWeapon2": "Great Axe",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -829,7 +868,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -850,7 +890,8 @@
 "secondaryWeapon1": "Great Axe",
 "secondaryWeapon2": "War Hammer",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -871,7 +912,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -892,7 +934,8 @@
 "secondaryWeapon1": "Bow",
 "secondaryWeapon2": "Hatchet",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -913,7 +956,8 @@
 "secondaryWeapon1": "Fire Staff",
 "secondaryWeapon2": "Ice Gauntlet",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -934,7 +978,8 @@
 "secondaryWeapon1": "Great Axe",
 "secondaryWeapon2": "War Hammer",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -955,7 +1000,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -976,7 +1022,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -997,7 +1044,8 @@
 "secondaryWeapon1": "Great Axe",
 "secondaryWeapon2": "War Hammer",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1019,7 +1067,8 @@
 "secondaryWeapon2": "War Hammer",
 "secondaryGS":"500",
 "secondaryRole": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1040,7 +1089,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1061,7 +1111,8 @@
 "secondaryWeapon1": "Fire Staff",
 "secondaryWeapon2": "Ice Gauntlet",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1082,7 +1133,8 @@
 "secondaryWeapon1": "Sword",
 "secondaryWeapon2": "War Hammer",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1103,7 +1155,8 @@
 "secondaryWeapon1": "Void Gauntlet",
 "secondaryWeapon2": "Fire Staff",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1124,7 +1177,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1145,7 +1199,8 @@
 "secondaryWeapon1": "Sword",
 "secondaryWeapon2": "Great Axe",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1166,7 +1221,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1187,7 +1243,8 @@
 "secondaryWeapon1": "Musket",
 "secondaryWeapon2": "Spear",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1208,7 +1265,8 @@
 "secondaryWeapon1": "Hatchet",
 "secondaryWeapon2": "",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1229,7 +1287,8 @@
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1250,7 +1309,8 @@
 "secondaryWeapon1": "Void Gauntlet",
 "secondaryWeapon2": "Ice Gauntlet",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1271,7 +1331,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1292,7 +1353,8 @@
 "secondaryWeapon1": "Great Axe",
 "secondaryWeapon2": "War Hammer",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1313,7 +1375,8 @@
 "secondaryWeapon1": "Bow",
 "secondaryWeapon2": "Spear",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1334,7 +1397,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1355,7 +1419,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1376,7 +1441,8 @@
 "secondaryWeapon1": "Great Axe",
 "secondaryWeapon2": "War Hammer",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1397,7 +1463,8 @@
 "secondaryWeapon1": "Spear",
 "secondaryWeapon2": "Bow",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1418,7 +1485,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1439,7 +1507,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1460,7 +1529,8 @@
 "secondaryWeapon1": "Great Axe",
 "secondaryWeapon2": "War Hammer",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1481,7 +1551,8 @@
 "secondaryWeapon1": "Sword",
 "secondaryWeapon2": "War Hammer",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1502,7 +1573,8 @@
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1523,7 +1595,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1544,7 +1617,8 @@
 "secondaryWeapon1": "Bow",
 "secondaryWeapon2": "Spear",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1565,7 +1639,8 @@
 "secondaryWeapon1": "Hatchet",
 "secondaryWeapon2": "Spear",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1586,7 +1661,8 @@
 "secondaryWeapon1": "Hatchet",
 "secondaryWeapon2": "Great Axe",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1607,7 +1683,8 @@
 "secondaryWeapon1": "Life Staff",
 "secondaryWeapon2": "War Hammer",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1628,7 +1705,8 @@
 "secondaryWeapon1": "Hatchet",
 "secondaryWeapon2": "",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1649,7 +1727,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1670,7 +1749,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1691,7 +1771,8 @@
 "secondaryWeapon1": "Musket",
 "secondaryWeapon2": "Rapier",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1712,7 +1793,8 @@
 "secondaryWeapon1": "Hatchet",
 "secondaryWeapon2": "Great Axe",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1733,7 +1815,8 @@
 "secondaryWeapon1": "Life Staff",
 "secondaryWeapon2": "Void Gauntlet",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1754,7 +1837,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1775,7 +1859,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1796,7 +1881,8 @@
 "secondaryWeapon1": "Hatchet",
 "secondaryWeapon2": "Great Axe",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1817,7 +1903,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1838,7 +1925,8 @@
 "secondaryWeapon1": "Hatchet",
 "secondaryWeapon2": "Spear",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1859,7 +1947,8 @@
 "secondaryWeapon1": "Ice Gauntlet",
 "secondaryWeapon2": "Void Gauntlet",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1880,7 +1969,8 @@
 "secondaryWeapon1": "Fire Staff",
 "secondaryWeapon2": "Ice Gauntlet",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1901,7 +1991,8 @@
 "secondaryWeapon1": "Fire Staff",
 "secondaryWeapon2": "Rapier",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1922,7 +2013,8 @@
 "secondaryWeapon1": "Spear",
 "secondaryWeapon2": "Bow",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1943,7 +2035,8 @@
 "secondaryWeapon1": "Fire Staff",
 "secondaryWeapon2": "Ice Gauntlet",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1964,7 +2057,8 @@
 "secondaryWeapon1": "Life Staff",
 "secondaryWeapon2": "Rapier",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -1985,7 +2079,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -2006,7 +2101,8 @@
 "secondaryWeapon1": "Fire Staff",
 "secondaryWeapon2": "Ice Gauntlet",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -2027,7 +2123,8 @@
 "secondaryWeapon1": "Void Gauntlet",
 "secondaryWeapon2": "Ice Gauntlet",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -2048,7 +2145,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -2069,7 +2167,8 @@
 "secondaryWeapon1": "Life Staff",
 "secondaryWeapon2": "Rapier",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -2090,7 +2189,8 @@
 "secondaryWeapon1": "Bow",
 "secondaryWeapon2": "Spear",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -2111,7 +2211,8 @@
 "secondaryWeapon1": "War Hammer",
 "secondaryWeapon2": "Sword",
 "secondaryGS":"500",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
@@ -2132,7 +2233,8 @@
 "secondaryRole": "",
 "secondaryWeapon1": "",
 "secondaryWeapon2": "",
-"crafting": {
+"secondaryArmor":"",
+"crafting":{
     "weaponSmithing": "",
     "armoring": "",
     "engineering": "",
