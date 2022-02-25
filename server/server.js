@@ -20,11 +20,16 @@ app.use(helmet({crossOriginEmbedderPolicy: false}))
 
 app.use(
     helmet.contentSecurityPolicy({
-      directives: {
+        directives: {
         "img-src": ["'self'","*.discordapp.com","data:"]
-      },
+        },
     })
-); 
+);
+
+app.use(helmet.crossOriginResourcePolicy({policy: "same-site"}))
+app.use(helmet.crossOriginOpenerPolicy({policy: "same-site"}))
+
+helmet.contentSecurityPolicy.getDefaultDirectives
 
 var discord = require('./api/v1/discord')
 var auth = require('./api/v1/auth')
@@ -39,6 +44,7 @@ app.use('/api/v1/roster',roster)
 app.use('/',express.static(path.join(__dirname, 'html')))
 
 if (process.env.NODE_ENV === "production") {
+    console.warn('secure: ' + req.secure)
     app.use((req, res, next) => {
         console.log("secure: " + req.secure)
         if (!req.secure) {
