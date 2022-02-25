@@ -39,14 +39,13 @@ app.use('/api/v1/roster',roster)
 app.use('/',express.static(path.join(__dirname, 'html')))
 
 if (process.env.NODE_ENV === "production") {
-
     app.use((req, res, next) => {
-    if (process.env.NODE_ENV !== 'development' && process.env.NODE_ENV === 'production') {
-        res.redirect(301, `https://${req.headers.host}${req.url}`);
-    } else {
-        next();
-    }
-    });
+        if (!req.secure) {
+            res.redirect(301, `https://${req.headers.host}${req.url}`);
+        } else {
+            next();
+        }
+        });
 
 const https = require('https')
 const fs = require('fs')
