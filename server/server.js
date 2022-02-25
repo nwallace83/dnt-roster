@@ -22,7 +22,7 @@ app.use(
     helmet.contentSecurityPolicy({
       directives: {
         "img-src": ["'self'","*.discordapp.com","data:"],
-        upgradeInsecureRequests: process.env.NODE_ENV === "production" ? null : [true]
+        upgradeInsecureRequests: process.env.NODE_ENV === "production" ? ['true'] : null
       },
     })
 ); 
