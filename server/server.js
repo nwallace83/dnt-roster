@@ -1,6 +1,4 @@
 const express = require('express')
-const http = require('http')
-const https = require('https')
 const app = express();
 const path = require('path')
 const cookieParser = require("cookie-parser")
@@ -23,7 +21,7 @@ app.use(
     helmet.contentSecurityPolicy({
       directives: {
         "img-src": ["'self'","*.discordapp.com","data:"],
-        upgradeInsecureRequests: null
+        upgradeInsecureRequests: process.env.NODE_ENV === "production" ? true : null
       },
     })
 ); 
@@ -40,16 +38,17 @@ app.use('/api/v1/roster',roster)
 
 app.use('/',express.static(path.join(__dirname, 'html')))
 
- if (process.env.NODE_ENV === "production") {
-    const fs = require('fs')
-    const privateKey = fs.readFileSync("/Users/nathan/dnt-roster/certificates/dntroster.com.key")
-    const certicate = fs.readFileSync("/Users/nathan/dnt-roster/certificates/dntroster.com_2022.crt")
-    const credentials = {key: privateKey, cert: certicate}
-    
-    const httpsServer = https.createServer(credentials, app)
-    httpsServer.listen(8443)
- }
+if (process.env.NODE_ENV === "production") {
+const https = require('https')
+const fs = require('fs')
+const privateKey = fs.readFileSync("dntroster.com.key")
+const certicate = fs.readFileSync("dntroster.com_2022.crt")
+const credentials = {key: privateKey, cert: certicate}
 
-const httpServer = http.createServer(app)
-
-httpServer.listen(3001)
+const httpsServer = https.createServer(credentials, app)
+httpsServer.listen(8443)
+} else {
+    const http = require('http')
+    const httpServer = http.createServer(app)
+    httpServer.listen(3001)
+}
