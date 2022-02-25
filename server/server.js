@@ -17,11 +17,12 @@ if (!process.env.CLIENT_SECRET || !process.env.REDIRECT_URI || !process.env.JWT_
 app.use(cookieParser())
 app.use(bodyParser.json())
 app.use(helmet({crossOriginEmbedderPolicy: false}))
+
 app.use(
     helmet.contentSecurityPolicy({
       directives: {
         "img-src": ["'self'","*.discordapp.com","data:"],
-        upgradeInsecureRequests: process.env.NODE_ENV === "production" ? true : null
+        upgradeInsecureRequests: process.env.NODE_ENV === "production" ? null : [true]
       },
     })
 ); 
