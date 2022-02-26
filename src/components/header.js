@@ -52,7 +52,6 @@ class Header extends React.Component {
                     })
                 }
             })
-            .catch( err => console.log(err))
         } else {
             this.setSessionFromCookie()
         }
@@ -64,8 +63,11 @@ class Header extends React.Component {
             fetch('/api/v1/auth')
             .then (res => {
                 if (res.ok) {
-                    this.props.setSession(authCookie)
-                    this.initializeCharacter()
+                    res.json().then(res => {
+                        this.props.setSession(res)
+                        Cookies.set('authorization',res,{expires: 30})
+                        this.initializeCharacter()
+                    })
                 } else {
                     this.props.logout()
                     this.props.changeTab('roster')

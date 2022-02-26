@@ -42,12 +42,11 @@ router.post('/login/:code', async (req,res) => {
     let result = await dbUserService.saveDiscordUserToDatabase(discordUser,userToken)
     
     if (result && (result.modifiedCount === 1 || result.upsertedCount === 1)) {
-        let jwtToken = tokenService.getJWTToken(discordUser,userToken)
+        let jwtToken = tokenService.getJWTToken(discordUser)
         res.json(jwtToken)
     } else {
         return res.status(401).send('Unable to upsert user: ' + discordProfileName)
     }
-
 
 })
 

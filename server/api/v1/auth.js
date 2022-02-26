@@ -3,7 +3,7 @@ var router = express.Router()
 var tokenService = require('../../services/tokenService')
 var dbUserService = require('../../services/dbUserService')
 
-router.get('/',(req,res) => {
+router.get('/',async (req,res) => {
     if(!req.cookies.authorization) {
         return res.sendStatus(401)
     }
@@ -14,15 +14,19 @@ router.get('/',(req,res) => {
         return res.status(401).send("Invalid token")
     }
 
-    let user = dbUserService.getUserById(decodedWebToken.id)
+    let user = await dbUserService.getUserById(decodedWebToken.id)
 
     if (!user) {
         return res.status(401).send("User not in database")
     }
 
     dbUserService.updateLastLoginById(decodedWebToken.id)
+    const newToken = tokenService.getJWTTokenForUser(user)
+    if (!newToken) {
+        return res.status(401).send("Unable to refresh token")
+    }
 
-    res.sendStatus(200)
+    res.json(newToken)
 })
 
 module.exports = router;

@@ -22,4 +22,18 @@ function getJWTToken(discordUser){
                 expiresIn: THIRTY_DAYS})
 }
 
-module.exports = {decodeWebToken, getJWTToken}
+function getJWTTokenForUser(user) {
+    if (user && user.id && user.avatar) {
+        return jwt.sign({userName: user.user_name,
+            id: user.id,
+            avatar: user.avatar,
+            is_admin: user.is_admin,
+            expiresAt: Date.now() + THIRTY_DAYS},
+                jwtKey,{algorithm: "HS256",
+                expiresIn: THIRTY_DAYS})  
+    } else {
+        return null
+    }
+}
+
+module.exports = {decodeWebToken, getJWTToken, getJWTTokenForUser}

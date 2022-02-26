@@ -9,8 +9,7 @@ router.get('/', async (req,res) => {
         return res.status(401).send("No authorization token provided")
     }
 
-    let user = await authenticateAndGetUserFromDB(req.cookies.authorization,res)
-
+    let user = await authenticateAndGetUserFromDB(req.cookies.authorization)
 
     if (!user || !user.id) {
         return res.sendStatus(401).send("User not in database")
