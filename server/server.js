@@ -74,10 +74,9 @@ httpServer.listen(8080)
         })
     );
 
-    const privateKey = fs.readFileSync("client-key.pem")
-    const certicate = fs.readFileSync("client-cert.pem")
-    const certificateAuthority = fs.readFileSync("ca-bundle.pem")
-    const credentials = {key: privateKey, cert: certicate, ca: certificateAuthority}
+    const privateKey = fs.readFileSync("dntroster.com.key")
+    const certicate = fs.readFileSync("dntroster.com_2022.crt")
+    const credentials = {key: privateKey, cert: certicate}
 
     const httpsServer = https.createServer(credentials, app)
 

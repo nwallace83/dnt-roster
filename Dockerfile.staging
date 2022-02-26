@@ -3,9 +3,8 @@ FROM node:current-alpine3.15
 WORKDIR /home/node/app
 COPY package*.json ./
 COPY server ./
-COPY certificates/client-cert.pem ./
-COPY certificates/client-key.pem ./
-COPY certificates/ca-bundle.pem ./
+COPY certificates/dntroster.com_2022.crt ./
+COPY certificates/dntroster.com.key ./ 
 RUN npm install
 EXPOSE 3001
 CMD ["node", "server.js"]
