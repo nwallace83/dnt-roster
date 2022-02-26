@@ -4,6 +4,7 @@ const path = require('path')
 const cookieParser = require("cookie-parser")
 const bodyParser = require('body-parser')
 const helmet = require('helmet')
+const compression = require('compression')
 
 if (!process.env.CLIENT_SECRET || !process.env.REDIRECT_URI || !process.env.JWT_KEY) {
     console.error('Missing environmental variable verify they exist: ')
@@ -14,6 +15,7 @@ if (!process.env.CLIENT_SECRET || !process.env.REDIRECT_URI || !process.env.JWT_
     process.exit(1)
 }
 
+app.use(compression())
 app.use(cookieParser())
 app.use(bodyParser.json())
 
