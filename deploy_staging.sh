@@ -15,6 +15,6 @@ docker rmi dntroster-staging:temp
 docker run -d --network dntroster-staging --hostname dntroster \
 	--env NODE_ENV=staging \
 	--env CLIENT_SECRET=$CLIENT_SECRET \
-	--env REDIRECT_URI="http://dntroster.com:3001" \
+	--env REDIRECT_URI="https://dntroster.com:3001" \
 	--env JWT_KEY=$JWT_KEY \
 	--restart=always -p 3001:3001 --name dntroster-staging dntroster-staging
