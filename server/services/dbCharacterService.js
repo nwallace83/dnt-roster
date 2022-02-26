@@ -13,8 +13,19 @@ async function updateCharacterById(userID,character) {
     }
 }
 
+async function updateCharacter(character) {
+    try {
+        let result = await Character.CharacterModel.updateOne({id: character.id},character,{runValidators: true})
+        return result
+    } catch(err) {
+        console.log(err)
+        return null
+    }
+}
+
+
 async function findCharacters() {
     return await Character.CharacterModel.find();
 }
 
-module.exports = {findCharacterById, updateCharacterById, findCharacters}
+module.exports = {findCharacterById, updateCharacterById, findCharacters, updateCharacter}

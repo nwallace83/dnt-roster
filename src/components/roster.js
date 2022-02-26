@@ -12,15 +12,17 @@ import spear from '../images/weapons/spear.png'
 import sword from '../images/weapons/sword.png'
 import voidGauntlet from '../images/weapons/voidgauntlet.png'
 import warHammer from '../images/weapons/warhammer.png'
+import { toastr } from 'react-redux-toastr';
 import { connect } from 'react-redux';
-import { setRoster, clearRoster, applyFilter } from '../reducers/rosterSlice';
+import { setRoster, clearRoster, applyFilter, replaceCharacter } from '../reducers/rosterSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
-
+import { confirm } from "react-confirm-box";
 
 const mapStateToProps = (state) => {
     return {
         roster: state.roster.filteredRoster,
+        showInactive: state.roster.showInactive,
         session: state.session
     }
 }
@@ -29,7 +31,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         setRoster: (roster) => dispatch(setRoster(roster)),
         clearRoster: () => dispatch(clearRoster()),
-        applyFilter: (filterText) => dispatch(applyFilter(filterText))
+        applyFilter: (filterText) => dispatch(applyFilter(filterText)),
+        replaceCharacter: (character) => dispatch(replaceCharacter(character))
     }
 }
 
@@ -51,7 +54,7 @@ class Roster extends React.Component {
                 <table className="table table-striped table-bordered ">
                         <RosterHeader session={this.props.session} />
                     <tbody>
-                        {this.props.roster.map( (player,index) => {return <Player session={this.props.session} player={player} key={index} />})}
+                        {this.props.roster.map( (player,index) => {return <Player replaceCharacter={this.props.replaceCharacter} session={this.props.session} player={player} key={index} />})}
                     </tbody>
                 </table>
             </div>
@@ -62,9 +65,15 @@ class Roster extends React.Component {
 class RosterFilter extends React.Component {
     render() {
         return (
-            <div className="col-md-12" id="roster-filter">
-                <span>Filter:</span>
-                <input id="rosterfilterinput" type="text" onChange={this.applyFilter} />
+            <div className="row roster-filter-div">
+                <div className="col-md-12" id="roster-filter">
+                    <span>Filter:</span>
+                    <input id="rosterfilterinput" type="text" onChange={this.applyFilter} />
+                </div>
+                <div class="col-md-12 showinactive-div">
+                    <input class="form-check-input" name ="showinactive" type="checkbox" value="" id="showinactive" />
+                    <label class="form-check-label" for="showinactive">Show Inactive</label>
+                </div>
             </div>
         )
     }
@@ -88,7 +97,7 @@ class RosterHeader extends React.Component {
                 <th scope="col">Discord</th>
                 <th scope="col" colSpan="5">Main</th>
                 <th scope="col" colSpan="5">Alt</th>
-                {this.props.session.isAdmin ? <th scope="col">Active</th> : null}
+                <th scope="col">Active</th>
             </tr>
         </thead>
         )
@@ -137,7 +146,7 @@ class Player extends React.Component {
                 <td>
                     <span>{this.props.player.secondaryGS}</span>
                 </td>
-                {this.props.session.isAdmin ? <ActiveStatus player={this.props.player} /> : null}
+                <ActiveStatus replaceCharacter={this.props.replaceCharacter} session={this.props.session} player={this.props.player} />
             </tr>
         )
     }
@@ -194,13 +203,43 @@ class ActiveStatus extends React.Component {
     render() {
         return (
             <td className="txt-center">
-                <FontAwesomeIcon className={this.getClasses(this.props.player.inactive)} icon={this.props.player.inactive ? faThumbsDown : faThumbsUp} />
+                <FontAwesomeIcon onClick={() => this.changeActiveStatus()} className={this.getClasses()} icon={this.props.player.inactive ? faThumbsDown : faThumbsUp} />
             </td>
         )
     }
 
-    getClasses(isInactive) {
-        return isInactive ? "inactive-player-icon" : "active-player-icon"
+    getClasses() {
+        if (this.props.session.isAdmin) {
+            return this.props.player.inactive ? "inactive-player-icon-admin" : "active-player-icon-admin"
+        } else {
+            return this.props.player.inactive ? "inactive-player-icon" : "active-player-icon"
+        }    
+    }
+
+    async changeActiveStatus(){
+        if (!this.props.session.isAdmin) {
+            return null
+        }
+
+        const options = {
+            labels: {
+              confirmable: "Yes",
+              cancellable: "No"
+            }
+          }
+
+        const result = await confirm('Change ' + this.props.player.characterName + ' to ' + (this.props.player.inactive ? 'active' : 'inactive'));
+        if (result) {
+            const endPoint = '/api/v1/admin/character/inactive/' + this.props.player.id + '/' + !this.props.player.inactive
+            fetch(endPoint,{method: 'POST'}).then(res => {
+                if (res.ok) {
+                    res.json().then(res => {
+                        this.props.replaceCharacter(res)
+                        toastr.success('success', this.props.player.characterName + ' is now ' + (this.props.player.inactive ? 'active' : 'inactive'))
+                    })
+                }
+            })
+        }
     }
 }
 

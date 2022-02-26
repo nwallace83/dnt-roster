@@ -30,7 +30,6 @@
 }
 
 #roster-filter {
-    padding-bottom: 15px;
     padding-top: 5px;
 }
 
@@ -43,15 +42,29 @@
 }
 
 .active-player-icon {
-    color: green
+    color: green;
 }
 
 .inactive-player-icon {
     color: red;
 }
+.active-player-icon-admin {
+    color: green;
+    cursor: pointer;
+}
+
+.inactive-player-icon-admin {
+    color: red;
+    cursor: pointer;
+}
+
+.showinactive-div {
+    padding-left: 55px;
+}
 
 .round-image {
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .nav-tabs .nav-link.active {
