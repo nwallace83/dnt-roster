@@ -54,11 +54,32 @@ if (process.env.NODE_ENV === "production") {
     httpServer.disable('x-powered-by')
     httpServer.get('*', function(req, res) {  
         res.redirect('https://' + req.headers.host + req.url);
-})
+    })
 
 httpsServer.listen(8443)
 httpServer.listen(8080)
 
+} else if (process.env.NODE_ENV === "staging") {
+    const https = require('https')
+    const fs = require('fs')
+
+    app.use(helmet({crossOriginEmbedderPolicy: false}))
+    app.use(
+        helmet.contentSecurityPolicy({
+            directives: {
+            "img-src": ["'self'","*.discordapp.com","data:"]
+            },
+        })
+    );
+
+    const privateKey = fs.readFileSync("client-key.pem")
+    const certicate = fs.readFileSync("client-cert.pem")
+    const certificateAuthority = [fs.readFileSync("ca-cert.pem"),fs.readFileSync("server-cert.pem")]
+    const credentials = {key: privateKey, cert: certicate, ca: certificateAuthority}
+
+    const httpsServer = https.createServer(credentials, app)
+
+    httpsServer.listen(3001)
 } else {
     const http = require('http')
     const httpServer = http.createServer(app)
