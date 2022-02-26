@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch) => {
 class CharacterBody extends React.Component {
     render() {
         return (
-            <div className="container bg-light-grey">
+            <div className="row bg-light-grey">
                 <div className="row txt-center">
                     <div>
                         <hr />

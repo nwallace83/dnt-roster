@@ -14,10 +14,14 @@ import voidGauntlet from '../images/weapons/voidgauntlet.png'
 import warHammer from '../images/weapons/warhammer.png'
 import { connect } from 'react-redux';
 import { setRoster, clearRoster, applyFilter } from '../reducers/rosterSlice';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
+
 
 const mapStateToProps = (state) => {
     return {
         roster: state.roster.filteredRoster,
+        session: state.session
     }
 }
 
@@ -42,12 +46,12 @@ class Roster extends React.Component {
 
     render() {
         return (
-            <div className="container bg-light-grey padding-top-4">
+            <div className="row bg-light-grey padding-top-4">
                 <RosterFilter roster={this.props.roster} applyFilter={this.props.applyFilter} />
                 <table className="table table-striped table-bordered ">
-                        <RosterHeader />
+                        <RosterHeader session={this.props.session} />
                     <tbody>
-                        {this.props.roster.map( (player,index) => {return <Player player={player} key={index} />})}
+                        {this.props.roster.map( (player,index) => {return <Player session={this.props.session} player={player} key={index} />})}
                     </tbody>
                 </table>
             </div>
@@ -84,6 +88,7 @@ class RosterHeader extends React.Component {
                 <th scope="col">Discord</th>
                 <th scope="col" colSpan="5">Main</th>
                 <th scope="col" colSpan="5">Alt</th>
+                {this.props.session.isAdmin ? <th scope="col">Active</th> : null}
             </tr>
         </thead>
         )
@@ -132,6 +137,7 @@ class Player extends React.Component {
                 <td>
                     <span>{this.props.player.secondaryGS}</span>
                 </td>
+                {this.props.session.isAdmin ? <ActiveStatus player={this.props.player} /> : null}
             </tr>
         )
     }
@@ -181,6 +187,20 @@ class Player extends React.Component {
         }
 
         return weaponIcon;
+    }
+}
+
+class ActiveStatus extends React.Component {
+    render() {
+        return (
+            <td className="txt-center">
+                <FontAwesomeIcon className={this.getClasses(this.props.player.inactive)} icon={this.props.player.inactive ? faThumbsDown : faThumbsUp} />
+            </td>
+        )
+    }
+
+    getClasses(isInactive) {
+        return isInactive ? "inactive-player-icon" : "active-player-icon"
     }
 }
 

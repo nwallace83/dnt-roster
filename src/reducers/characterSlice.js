@@ -14,6 +14,7 @@ const initialState =  {
         secondaryArmor: "",
         secondaryGS: "",
         discordUserName: "",
+        inactive: false,
         crafting: {
                 weaponSmithing: false,
                 armoring: false,

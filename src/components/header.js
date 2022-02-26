@@ -105,23 +105,20 @@ class Header extends React.Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-8" id="nav-menu">
-                        <img src={logo} height="40px" id="logo"/>
-                        <ul className="nav nav-tabs">
-                            <li className="nav-item" onClick={() => this.props.changeTab('roster')}>
-                                <a className={this.getButtonClasses('roster')} aria-current="page" href="#">Roster</a>
-                            </li>
-                            {this.showEditCharacersTab()}
-                        </ul>
-                    </div>
-                    <div className="col-md-4 txt-right" id="login-logout-div">
-                        <LoginLogoutButton session={this.props.session} logout={this.props.logout} />
-                    </div>
+            <div className="row">
+                <div className="col-md-8" id="nav-menu">
+                    <img src={logo} height="40px" id="logo"/>
+                    <ul className="nav nav-tabs">
+                        <li className="nav-item" onClick={() => this.props.changeTab('roster')}>
+                            <a className={this.getButtonClasses('roster')} aria-current="page" href="#">Roster</a>
+                        </li>
+                        {this.showEditCharacersTab()}
+                    </ul>
+                </div>
+                <div className="col-md-4 txt-right" id="login-logout-div">
+                    <LoginLogoutButton session={this.props.session} logout={this.props.logout} />
                 </div>
             </div>
-
         )
     }
 }

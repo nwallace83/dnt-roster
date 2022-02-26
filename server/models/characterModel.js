@@ -14,6 +14,7 @@ const characterSchema = db.mongoose.Schema({
     secondaryArmor: {type: String, default: '', enum:['','Heavy','Medium','Light']},
     secondaryGS: {type: Number, default: 500},
     discordUserName: {type: String, default: ''},
+    inactive: {type: Boolean, default: false},
     crafting: {
             weaponSmithing: {type: Boolean, default: false},
             armoring: {type: Boolean, default: false},

@@ -42,6 +42,14 @@
     border-bottom: 0px;     
 }
 
+.active-player-icon {
+    color: green
+}
+
+.inactive-player-icon {
+    color: red;
+}
+
 .round-image {
     border-radius: 50%;
 }

@@ -7,7 +7,8 @@ export const sessionSlice = createSlice({
         id: "",
         sessionToken: "",
         userName:"",
-        avatarURL:""
+        avatarURL:"",
+        isAdmin:false
     },
     reducers: {
         setSession: (state,session) => {
@@ -16,6 +17,7 @@ export const sessionSlice = createSlice({
                 sessionToken: session.payload,
                 id: decodedWebToken.id,
                 userName: decodedWebToken.userName,
+                isAdmin: decodedWebToken.isAdmin,
                 avatarURL: "https://cdn.discordapp.com/avatars/" + decodedWebToken.id + "/" + decodedWebToken.avatar,
             }
         },

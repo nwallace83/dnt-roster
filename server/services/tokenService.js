@@ -16,7 +16,7 @@ function getJWTToken(discordUser){
     return jwt.sign({userName: discordUser.username + '#' + discordUser.discriminator,
             id: discordUser.id,
             avatar: discordUser.avatar,
-            is_admin: false,
+            isAdmin: false,
             expiresAt: Date.now() + THIRTY_DAYS},
                 jwtKey,{algorithm: "HS256",
                 expiresIn: THIRTY_DAYS})
@@ -27,7 +27,7 @@ function getJWTTokenForUser(user) {
         return jwt.sign({userName: user.user_name,
             id: user.id,
             avatar: user.avatar,
-            is_admin: user.is_admin,
+            isAdmin: user.is_admin,
             expiresAt: Date.now() + THIRTY_DAYS},
                 jwtKey,{algorithm: "HS256",
                 expiresIn: THIRTY_DAYS})  

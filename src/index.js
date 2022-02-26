@@ -12,7 +12,7 @@ import ReduxToastr from 'react-redux-toastr'
 // ========================================
   
   ReactDOM.render(
-      <div className="container" id="app">
+      <div className="container-fluid" id="app">
           <Provider store={store}>
               <Header/>
               <ContentBody />
