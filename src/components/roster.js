@@ -242,7 +242,7 @@ class ActiveStatus extends React.Component {
                 if (res.ok) {
                     res.json().then(res => {
                         this.props.replaceCharacter(res)
-                        toastr.success('success', this.props.player.characterName + ' is now ' + (this.props.player.inactive ? 'active' : 'inactive'))
+                        toastr.success('success', this.props.player.characterName + ' is now ' + (this.props.player.inactive ? 'inactive' : 'active'))
                     })
                 } else {
                     toastr.error('Error','Tell Kavion where you touched it')
