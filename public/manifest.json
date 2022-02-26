@@ -1,6 +1,7 @@
 {
   "short_name": "D&T",
   "name": "Death & Taxes",
+  "description": "Death & Taxes War Roster",
   "icons": [
     {
       "src": "favicon.ico",
