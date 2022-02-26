@@ -235,7 +235,7 @@ class ActiveStatus extends React.Component {
             }
           }
 
-        const result = await confirm('Change ' + this.props.player.characterName + ' to ' + (this.props.player.inactive ? 'active' : 'inactive'));
+        const result = await confirm('Change ' + this.props.player.characterName + ' to ' + (this.props.player.inactive ? 'active?' : 'inactive?'));
         if (result) {
             const endPoint = '/api/v1/admin/character/inactive/' + this.props.player.id + '/' + !this.props.player.inactive
             fetch(endPoint,{method: 'POST'}).then(res => {
