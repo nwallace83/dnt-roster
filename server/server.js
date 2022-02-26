@@ -74,7 +74,7 @@ httpServer.listen(8080)
 
     const privateKey = fs.readFileSync("client-key.pem")
     const certicate = fs.readFileSync("client-cert.pem")
-    const certificateAuthority = [fs.readFileSync("ca-cert.pem"),fs.readFileSync("server-cert.pem")]
+    const certificateAuthority = fs.readFileSync("ca-bundle.pem")
     const credentials = {key: privateKey, cert: certicate, ca: certificateAuthority}
 
     const httpsServer = https.createServer(credentials, app)

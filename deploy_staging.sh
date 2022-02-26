@@ -15,8 +15,4 @@ docker run -d --network dntroster-staging --hostname dntroster \
 	--env CLIENT_SECRET=$CLIENT_SECRET \
 	--env REDIRECT_URI="http://dntroster.com:3001" \
 	--env JWT_KEY=$JWT_KEY \
-	--env DOMAIN_CRT=client-cert.pem \
-	--env DOMAIN_KEY=client-key.pem \
-	--env CA_CRT=ca-cert.pem \
-	--env SERVER_CRT=server-cert.pem \
 	--restart=always -p 3001:3001 --name dntroster-staging dntroster-staging

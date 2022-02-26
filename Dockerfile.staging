@@ -5,8 +5,7 @@ COPY package*.json ./
 COPY server ./
 COPY certificates/client-cert.pem ./
 COPY certificates/client-key.pem ./
-COPY certificates/ca-cert.pem ./
-COPY certificates/server-cert.pem ./
+COPY certificates/ca-bundle.pem ./
 RUN npm install
 EXPOSE 3001
 CMD ["node", "server.js"]
