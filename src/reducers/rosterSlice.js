@@ -27,10 +27,13 @@ export const rosterSlice = createSlice({
         setRoster: (state,roster) => {
             let sortedRoster = sortRoster(roster.payload)
 
-            return {...state,showInactive: state.showInactive,roster: sortedRoster,filteredRoster: removeInactive(sortedRoster)}
+            return {...state,roster: sortedRoster,filteredRoster: removeInactive(sortedRoster)}
         },
         clearRoster:() => {
             return this.initialState
+        },
+        toggleShowInactive:(state) => {
+            return {...state,showInactive: !state.showInactive}
         },
         replaceCharacter:(state,character) => {
             let roster = removeCharacter(current(state.roster),character.payload)
@@ -42,7 +45,7 @@ export const rosterSlice = createSlice({
             let rosterSorted = sortRoster(roster)
             let filteredRosterSorted = sortRoster(filteredRoster)
 
-            return {roster: rosterSorted, filteredRoster: filteredRosterSorted}
+            return {...state,roster: rosterSorted, filteredRoster: filteredRosterSorted}
 
         },
         applyFilter: (state,filterValue) => {
@@ -51,29 +54,33 @@ export const rosterSlice = createSlice({
                 if (!state.showInactive) {
                     filteredCharacters = removeInactive(current(state.roster))
                 }
-                return {roster: [...state.roster],filteredRoster: filteredCharacters}
+                return {...state,filteredRoster: filteredCharacters}
             }
 
             let roster = current(state.roster)
 
             filteredCharacters = _.filter(roster,(character) => {
-                return character.characterName.toUpperCase().indexOf(filterValue.payload.toUpperCase()) > -1 || 
-                            character.primaryRole.toUpperCase().indexOf(filterValue.payload.toUpperCase()) > -1 || 
-                            character.primaryArmor.toUpperCase().indexOf(filterValue.payload.toUpperCase()) > -1 || 
-                            character.primaryWeapon1.toUpperCase().indexOf(filterValue.payload.toUpperCase()) > -1 || 
-                            character.primaryWeapon2.toUpperCase().indexOf(filterValue.payload.toUpperCase()) > -1 || 
-                            character.discordUserName.toUpperCase().indexOf(filterValue.payload.toUpperCase()) > -1
+                let dataString = character.characterName +
+                                     character.primaryRole +
+                                     character.primaryArmor +
+                                     character.primaryWeapon1 +
+                                     character.primaryWeapon2 +
+                                     character.discordUserName +
+                                     character.primaryGS +
+                                     character.secondaryGS
+                dataString = dataString.toUpperCase()
+                return dataString.indexOf(filterValue.payload.toUpperCase()) > -1
             })
 
             if (!state.showInactive) {
                 filteredCharacters = removeInactive(filteredCharacters)
             }
 
-            return {roster: [...state.roster],filteredRoster: filteredCharacters}
+            return {...state,filteredRoster: filteredCharacters}
         }
     }
 })
 
-export const { setRoster, clearRoster, applyFilter, replaceCharacter }  = rosterSlice.actions
+export const { setRoster, clearRoster, applyFilter, replaceCharacter, toggleShowInactive }  = rosterSlice.actions
 
 export default rosterSlice.reducer

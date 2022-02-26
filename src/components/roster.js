@@ -14,7 +14,7 @@ import voidGauntlet from '../images/weapons/voidgauntlet.png'
 import warHammer from '../images/weapons/warhammer.png'
 import { toastr } from 'react-redux-toastr';
 import { connect } from 'react-redux';
-import { setRoster, clearRoster, applyFilter, replaceCharacter } from '../reducers/rosterSlice';
+import { setRoster, clearRoster, applyFilter, replaceCharacter, toggleShowInactive } from '../reducers/rosterSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
 import { confirm } from "react-confirm-box";
@@ -32,7 +32,8 @@ const mapDispatchToProps = (dispatch) => {
         setRoster: (roster) => dispatch(setRoster(roster)),
         clearRoster: () => dispatch(clearRoster()),
         applyFilter: (filterText) => dispatch(applyFilter(filterText)),
-        replaceCharacter: (character) => dispatch(replaceCharacter(character))
+        replaceCharacter: (character) => dispatch(replaceCharacter(character)),
+        toggleShowInactive: () => dispatch(toggleShowInactive())
     }
 }
 
@@ -50,7 +51,7 @@ class Roster extends React.Component {
     render() {
         return (
             <div className="row bg-light-grey padding-top-4">
-                <RosterFilter roster={this.props.roster} applyFilter={this.props.applyFilter} />
+                <RosterFilter toggleShowInactive={this.props.toggleShowInactive} showInactive={this.props.showInactive} roster={this.props.roster} applyFilter={this.props.applyFilter} />
                 <table className="table table-striped table-bordered ">
                         <RosterHeader session={this.props.session} />
                     <tbody>
@@ -71,7 +72,7 @@ class RosterFilter extends React.Component {
                     <input id="rosterfilterinput" type="text" onChange={this.applyFilter} />
                 </div>
                 <div class="col-md-12 showinactive-div">
-                    <input class="form-check-input" name ="showinactive" type="checkbox" value="" id="showinactive" />
+                    <input class="form-check-input" name ="showinactive" type="checkbox" value="" onClick={this.applyInactiveFilter} id="showinactive" checked={this.props.showInactive} />
                     <label class="form-check-label" for="showinactive">Show Inactive</label>
                 </div>
             </div>
@@ -85,6 +86,12 @@ class RosterFilter extends React.Component {
                 this.props.applyFilter(filterValue)
             }
         },250)
+    }
+
+    applyInactiveFilter = () => {
+        this.props.toggleShowInactive()
+        let filterValue = document.getElementById('rosterfilterinput').value.trim()
+        this.props.applyFilter(filterValue)
     }
 }
 
@@ -237,6 +244,8 @@ class ActiveStatus extends React.Component {
                         this.props.replaceCharacter(res)
                         toastr.success('success', this.props.player.characterName + ' is now ' + (this.props.player.inactive ? 'active' : 'inactive'))
                     })
+                } else {
+                    toastr.error('Error','Tell Kavion where you touched it')
                 }
             })
         }
