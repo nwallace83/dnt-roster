@@ -82,6 +82,10 @@
     border: 1px solid black;
 }
 
+.confirm-box {
+    position:fixed !important;
+}
+
 .margin-all-5 {
     margin-top: 5px;
     margin-right: 5px;
