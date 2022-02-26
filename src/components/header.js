@@ -133,7 +133,7 @@ class LoginLogoutButton extends React.Component {
                     </button>
              )
         } else {
-            let discord_url = 'https://discord.com/oauth2/authorize?response_type=code&client_id=944735010311786537&scope=identify%20guilds&state=BACONISGOOD&prompt=none&redirect_uri=' + encodeURIComponent(window.location.protocol + '//' + window.location.host)
+            let discord_url = 'https://discord.com/oauth2/authorize?response_type=code&client_id=944735010311786537&scope=identify%20guilds&state=BACONISGOOD&prompt=consent&redirect_uri=' + encodeURIComponent(window.location.protocol + '//' + window.location.host)
             return (          
                 <a href={discord_url}>
                     <button type="button" className="btn btn-success" >
