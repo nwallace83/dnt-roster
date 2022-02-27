@@ -16,18 +16,48 @@ function sortRoster(roster) {
     })
 }
 
+function getCraftersForSkill(roster,skill) {
+    let crafters = []
+    roster.forEach(character => {
+        if (!character.inactive) {
+            if (character && character.crafting && character.crafting[skill]) {
+                crafters.push(character.characterName)
+            }
+        }
+    })
+    return crafters
+}
+
 export const rosterSlice = createSlice({
     name:'roster',
     initialState: {
         roster:[],
         filteredRoster: [],
+        crafters: {
+                weaponSmithing: [],
+                armoring: [],
+                engineering: [],
+                jewelCrafting: [],
+                arcana: [],
+                cooking: [],
+                furnishing: []
+        },
         showInactive: false
     },
     reducers: {
         setRoster: (state,roster) => {
             let sortedRoster = sortRoster(roster.payload)
+            let crafters = {
+                weaponSmithing: getCraftersForSkill(sortedRoster,'weaponSmithing'),
+                armoring: getCraftersForSkill(sortedRoster,'armoring'),
+                engineering: getCraftersForSkill(sortedRoster,'engineering'),
+                jewelCrafting: getCraftersForSkill(sortedRoster,'jewelCrafting'),
+                arcana: getCraftersForSkill(sortedRoster,'arcana'),
+                cooking: getCraftersForSkill(sortedRoster,'cooking'),
+                furnishing: getCraftersForSkill(sortedRoster,'furnishing')
+            }
 
-            return {...state,roster: sortedRoster,filteredRoster: removeInactive(sortedRoster)}
+            return {...state,crafters: crafters, roster: sortedRoster,filteredRoster: removeInactive(sortedRoster)}
         },
         clearRoster:() => {
             return this.initialState

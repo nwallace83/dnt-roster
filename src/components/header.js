@@ -4,6 +4,7 @@ import discordLogo from '../images/discordLogo.png'
 import { connect } from 'react-redux'
 import { setSession, clearSession } from '../reducers/sessionSlice';
 import { clearCharacter, saveCharacter } from '../reducers/characterSlice';
+import { setRoster } from '../reducers/rosterSlice';
 import { changeTab } from '../reducers/menuSlice'
 import Cookies from 'js-cookie'
 import { toastr } from 'react-redux-toastr';
@@ -20,6 +21,7 @@ const mapDispatchToProps = (dispatch) => {
         changeTab: (tabName) => dispatch(changeTab(tabName)),
         setSession: (session) => dispatch(setSession(session)),
         saveCharacter: (character) => dispatch(saveCharacter(character)),
+        setRoster: (roster) => dispatch(setRoster(roster)),
         logout: () => {
             dispatch(clearSession())
             dispatch(clearCharacter())
@@ -33,6 +35,17 @@ const mapDispatchToProps = (dispatch) => {
 class Header extends React.Component {
     componentDidMount() {
         this.initializeSession()
+        this.initializeRoster()
+    }
+
+    initializeRoster() {
+        fetch('/api/v1/roster').then(res => {
+            if (res.ok) {
+                res.json().then(res => this.props.setRoster(res))
+            } else {
+                window.alert('Problem loading roster, tell Kavion where you touched it')
+            }
+        })
     }
 
     initializeSession() {
@@ -111,6 +124,9 @@ class Header extends React.Component {
                     <ul className="nav nav-tabs">
                         <li className="nav-item" onClick={() => this.props.changeTab('roster')}>
                             <a className={this.getButtonClasses('roster')} aria-current="page" href="#">Roster</a>
+                        </li>
+                        <li className="nav-item" onClick={() => this.props.changeTab('crafters')}>
+                            <a className={this.getButtonClasses('crafters')} aria-current="page" href="#">Crafters</a>
                         </li>
                         {this.showEditCharacersTab()}
                     </ul>
