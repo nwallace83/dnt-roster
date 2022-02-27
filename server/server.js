@@ -33,6 +33,8 @@ app.use('/api/v1/admin/character',characterAdmin)
 
 app.use('/',express.static(path.join(__dirname, 'html')))
 
+
+
 if (process.env.NODE_ENV === "production") {
     const https = require('https')
     const fs = require('fs')
@@ -48,7 +50,16 @@ if (process.env.NODE_ENV === "production") {
 
     const privateKey = fs.readFileSync("dntroster.com.key")
     const certicate = fs.readFileSync("dntroster.com_2022.crt")
-    const credentials = {key: privateKey, cert: certicate}
+    const ciphers= [
+        "ECDHE-RSA-AES128-SHA256",
+        "DHE-RSA-AES128-SHA256",
+        "AES128-GCM-SHA256",
+        "RC4",
+        "HIGH",
+        "!MD5",
+        "!aNULL"
+            ].join(':'),
+    const credentials = {key: privateKey, cert: certicate, ciphers: ciphers}
 
     const httpsServer = https.createServer(credentials, app)
 
@@ -77,6 +88,17 @@ httpServer.listen(8080)
     const privateKey = fs.readFileSync("dntroster.com.key")
     const certicate = fs.readFileSync("dntroster.com_2022.crt")
     const credentials = {key: privateKey, cert: certicate}
+    const ciphers= [
+        "ECDHE-RSA-AES128-SHA256",
+        "DHE-RSA-AES128-SHA256",
+        "AES128-GCM-SHA256",
+        "RC4",
+        "HIGH",
+        "!MD5",
+        "!aNULL"
+            ].join(':'),
+    const credentials = {key: privateKey, cert: certicate, ca: certificateAuthority, ciphers: ciphers}
+
 
     const httpsServer = https.createServer(credentials, app)
 
