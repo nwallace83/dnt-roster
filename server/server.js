@@ -50,6 +50,7 @@ if (process.env.NODE_ENV === "production") {
 
     const privateKey = fs.readFileSync("dntroster.com.key")
     const certicate = fs.readFileSync("dntroster.com_2022.crt")
+    const caCert = fs.readFileSync("CA.crt")
     const ciphers= [
         "DHE-RSA-AES256-SHA384",
         "ECDHE-RSA-AES256-SHA256",
@@ -68,7 +69,7 @@ if (process.env.NODE_ENV === "production") {
         "!SRP",
         "!CAMELLIA"
          ].join(':')
-        const credentials = {key: privateKey, cert: certicate, ciphers: ciphers}
+        const credentials = {key: privateKey, cert: certicate, ca:caCert, ciphers: ciphers}
 
     const httpsServer = https.createServer(credentials, app)
 
@@ -96,6 +97,7 @@ httpServer.listen(8080)
 
     const privateKey = fs.readFileSync("dntroster.com.key")
     const certicate = fs.readFileSync("dntroster.com_2022.crt")
+    const caCert = fs.readFileSync("CA.crt")
     const ciphers= [
         "DHE-RSA-AES256-SHA384",
         "ECDHE-RSA-AES256-SHA256",
@@ -114,7 +116,7 @@ httpServer.listen(8080)
         "!SRP",
         "!CAMELLIA"
          ].join(':')
-        const credentials = {key: privateKey, cert: certicate, ciphers: ciphers}
+        const credentials = {key: privateKey, cert: certicate, ca: caCert, ciphers: ciphers}
 
     const httpsServer = https.createServer(credentials, app)
 

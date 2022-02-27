@@ -14,7 +14,7 @@ import voidGauntlet from '../images/weapons/voidgauntlet.png'
 import warHammer from '../images/weapons/warhammer.png'
 import { toastr } from 'react-redux-toastr';
 import { connect } from 'react-redux';
-import { setRoster, clearRoster, applyFilter, replaceCharacter, toggleShowInactive } from '../reducers/rosterSlice';
+import { setRoster, applyFilter, replaceCharacter, toggleShowInactive } from '../reducers/rosterSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
 import { confirm } from "react-confirm-box";
@@ -30,7 +30,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         setRoster: (roster) => dispatch(setRoster(roster)),
-        clearRoster: () => dispatch(clearRoster()),
         applyFilter: (filterText) => dispatch(applyFilter(filterText)),
         replaceCharacter: (character) => dispatch(replaceCharacter(character)),
         toggleShowInactive: () => dispatch(toggleShowInactive())
@@ -38,16 +37,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 class Roster extends React.Component {
-    componentDidMount() {
-        fetch('/api/v1/roster').then(res => {
-            if (res.ok) {
-                res.json().then(res => this.props.setRoster(res))
-            } else {
-                window.alert('problem loading roster')
-            }
-        })
-    }
-
     render() {
         return (
             <div className="row bg-light-grey padding-top-4">

@@ -41,6 +41,10 @@
     border-bottom: 0px;     
 }
 
+#crafter-table {
+    vertical-align: top;
+}
+
 .active-player-icon {
     color: green;
 }
@@ -68,13 +72,20 @@
 }
 
 .nav-tabs .nav-link.active {
-    border-color: green green transparent green;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid transparent;
     background-color: lightgrey;
     color: black;
 }
 
 .nav-tabs .nav-link.inactive {
     background-color: white;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid transparent;
     color: black;
 }
 
@@ -117,6 +128,10 @@
 
 .txt-center {
     text-align: center;
+}
+
+.txt-left {
+    text-align: left;
 }
 
 .txt-right {
