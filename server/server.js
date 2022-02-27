@@ -53,8 +53,11 @@ if (process.env.NODE_ENV === "production") {
     const ciphers= [
         "DHE-RSA-AES256-SHA384",
         "ECDHE-RSA-AES256-SHA256",
+        "ECDHE-RSA-AES256-SHA384",
+        "ECDHE-RSA-AES128-SHA256",
         "DHE-RSA-AES256-SHA256",
         "DHE-RSA-AES128-SHA256",
+        "HIGH",
         "!aNULL",
         "!eNULL",
         "!EXPORT",
@@ -96,8 +99,11 @@ httpServer.listen(8080)
     const ciphers= [
         "DHE-RSA-AES256-SHA384",
         "ECDHE-RSA-AES256-SHA256",
+        "ECDHE-RSA-AES256-SHA384",
+        "ECDHE-RSA-AES128-SHA256",
         "DHE-RSA-AES256-SHA256",
         "DHE-RSA-AES128-SHA256",
+        "HIGH",
         "!aNULL",
         "!eNULL",
         "!EXPORT",
