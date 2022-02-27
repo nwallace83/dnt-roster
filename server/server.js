@@ -96,7 +96,7 @@ httpServer.listen(8080)
         "!MD5",
         "!aNULL"
             ].join(':')
-    const credentials = {key: privateKey, cert: certicate, ca: certificateAuthority, ciphers: ciphers}
+            const credentials = {key: privateKey, cert: certicate, ciphers: ciphers}
 
 
     const httpsServer = https.createServer(credentials, app)
