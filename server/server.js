@@ -51,13 +51,10 @@ if (process.env.NODE_ENV === "production") {
     const privateKey = fs.readFileSync("dntroster.com.key")
     const certicate = fs.readFileSync("dntroster.com_2022.crt")
     const ciphers= [
-        "ECDHE-RSA-AES256-SHA384",
         "DHE-RSA-AES256-SHA384",
         "ECDHE-RSA-AES256-SHA256",
         "DHE-RSA-AES256-SHA256",
-        "ECDHE-RSA-AES128-SHA256",
         "DHE-RSA-AES128-SHA256",
-        "HIGH",
         "!aNULL",
         "!eNULL",
         "!EXPORT",
@@ -97,13 +94,10 @@ httpServer.listen(8080)
     const privateKey = fs.readFileSync("dntroster.com.key")
     const certicate = fs.readFileSync("dntroster.com_2022.crt")
     const ciphers= [
-        "ECDHE-RSA-AES256-SHA384",
         "DHE-RSA-AES256-SHA384",
         "ECDHE-RSA-AES256-SHA256",
         "DHE-RSA-AES256-SHA256",
-        "ECDHE-RSA-AES128-SHA256",
         "DHE-RSA-AES128-SHA256",
-        "HIGH",
         "!aNULL",
         "!eNULL",
         "!EXPORT",
