@@ -87,7 +87,6 @@ httpServer.listen(8080)
 
     const privateKey = fs.readFileSync("dntroster.com.key")
     const certicate = fs.readFileSync("dntroster.com_2022.crt")
-    const credentials = {key: privateKey, cert: certicate}
     const ciphers= [
         "ECDHE-RSA-AES128-SHA256",
         "DHE-RSA-AES128-SHA256",
