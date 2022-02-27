@@ -51,14 +51,23 @@ if (process.env.NODE_ENV === "production") {
     const privateKey = fs.readFileSync("dntroster.com.key")
     const certicate = fs.readFileSync("dntroster.com_2022.crt")
     const ciphers= [
+        "ECDHE-RSA-AES256-SHA384",
+        "DHE-RSA-AES256-SHA384",
+        "ECDHE-RSA-AES256-SHA256",
+        "DHE-RSA-AES256-SHA256",
         "ECDHE-RSA-AES128-SHA256",
         "DHE-RSA-AES128-SHA256",
-        "AES128-GCM-SHA256",
-        "!RC4", // RC4 be gone
         "HIGH",
+        "!aNULL",
+        "!eNULL",
+        "!EXPORT",
+        "!DES",
+        "!RC4",
         "!MD5",
-        "!aNULL"
-        ].join(':')
+        "!PSK",
+        "!SRP",
+        "!CAMELLIA"
+         ].join(':')
         const credentials = {key: privateKey, cert: certicate, ciphers: ciphers}
 
     const httpsServer = https.createServer(credentials, app)
@@ -88,14 +97,23 @@ httpServer.listen(8080)
     const privateKey = fs.readFileSync("dntroster.com.key")
     const certicate = fs.readFileSync("dntroster.com_2022.crt")
     const ciphers= [
+        "ECDHE-RSA-AES256-SHA384",
+        "DHE-RSA-AES256-SHA384",
+        "ECDHE-RSA-AES256-SHA256",
+        "DHE-RSA-AES256-SHA256",
         "ECDHE-RSA-AES128-SHA256",
         "DHE-RSA-AES128-SHA256",
-        "AES128-GCM-SHA256",
-        "!RC4", // RC4 be gone
         "HIGH",
+        "!aNULL",
+        "!eNULL",
+        "!EXPORT",
+        "!DES",
+        "!RC4",
         "!MD5",
-        "!aNULL"
-        ].join(':')
+        "!PSK",
+        "!SRP",
+        "!CAMELLIA"
+         ].join(':')
         const credentials = {key: privateKey, cert: certicate, ciphers: ciphers}
 
     const httpsServer = https.createServer(credentials, app)
