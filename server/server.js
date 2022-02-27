@@ -58,7 +58,7 @@ if (process.env.NODE_ENV === "production") {
         "HIGH",
         "!MD5",
         "!aNULL"
-        ].join(':'),
+        ].join(':')
         const credentials = {key: privateKey, cert: certicate, ciphers: ciphers}
 
     const httpsServer = https.createServer(credentials, app)
@@ -95,8 +95,8 @@ httpServer.listen(8080)
         "HIGH",
         "!MD5",
         "!aNULL"
-        ].join(':'),
-            const credentials = {key: privateKey, cert: certicate, ciphers: ciphers}
+        ].join(':')
+        const credentials = {key: privateKey, cert: certicate, ciphers: ciphers}
 
     const httpsServer = https.createServer(credentials, app)
 
