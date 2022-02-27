@@ -54,12 +54,12 @@ if (process.env.NODE_ENV === "production") {
         "ECDHE-RSA-AES128-SHA256",
         "DHE-RSA-AES128-SHA256",
         "AES128-GCM-SHA256",
-        "RC4",
+        "!RC4", // RC4 be gone
         "HIGH",
         "!MD5",
         "!aNULL"
-            ].join(':')
-    const credentials = {key: privateKey, cert: certicate, ciphers: ciphers}
+        ].join(':'),
+        const credentials = {key: privateKey, cert: certicate, ciphers: ciphers}
 
     const httpsServer = https.createServer(credentials, app)
 
@@ -91,13 +91,12 @@ httpServer.listen(8080)
         "ECDHE-RSA-AES128-SHA256",
         "DHE-RSA-AES128-SHA256",
         "AES128-GCM-SHA256",
-        "RC4",
+        "!RC4", // RC4 be gone
         "HIGH",
         "!MD5",
         "!aNULL"
-            ].join(':')
+        ].join(':'),
             const credentials = {key: privateKey, cert: certicate, ciphers: ciphers}
-
 
     const httpsServer = https.createServer(credentials, app)
 
