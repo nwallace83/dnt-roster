@@ -119,7 +119,8 @@ class Header extends React.Component {
     render() {
         return (
             <div className="row">
-                <div className="col-md-8" id="nav-menu">
+                <div className="col-md-12 d-md-none"><img src={logo} height="40px" id="logo"/></div>
+                <div className="col-md-8 d-none d-md-inline-block" id="nav-menu">
                     <img src={logo} height="40px" id="logo"/>
                     <ul className="nav nav-tabs">
                         <li className="nav-item" onClick={() => this.props.changeTab('roster')}>
@@ -131,7 +132,7 @@ class Header extends React.Component {
                         {this.showEditCharacersTab()}
                     </ul>
                 </div>
-                <div className="col-md-4 txt-right" id="login-logout-div">
+                <div className="col-md-4 txt-right d-none d-md-inline-block" id="login-logout-div">
                     <LoginLogoutButton session={this.props.session} logout={this.props.logout} />
                 </div>
             </div>

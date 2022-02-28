@@ -90,10 +90,10 @@ class RosterHeader extends React.Component {
             <thead>
             <tr>
                 <th scope="col">Name</th>
-                <th scope="col">Discord</th>
+                <th className="d-none d-md-table-cell" scope="col">Discord</th>
                 <th scope="col" colSpan="5">Main</th>
-                <th scope="col" colSpan="5">Alt</th>
-                <th scope="col">Active</th>
+                <th className="d-none d-md-table-cell" scope="col" colSpan="5">Alt</th>
+                <th className="d-none d-md-table-cell" scope="col">Active</th>
             </tr>
         </thead>
         )
