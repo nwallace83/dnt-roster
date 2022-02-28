@@ -162,7 +162,7 @@ class Header extends React.Component {
                     <div className="col-auto"><img src={logoSquare} height="24px" id="logo"/></div>
                     <div className="col-auto" onClick={() => this.props.changeTab('roster')} style={this.getMobileButtonStyle('roster')}><span>&#8226;roster&#8226;</span></div>
                     <div className="col-auto" onClick={() => this.props.changeTab('crafters')} style={this.getMobileButtonStyle('crafters')}><span>&#8226;crafters&#8226;</span></div>
-                    {this.props.session.sessionToken ? <div className="col-4" onClick={() => this.props.changeTab('editCharacter')} style={this.getMobileButtonStyle('crafeditCharacterters')}><span>&#8226;character&#8226;</span></div> : null }  
+                    {this.props.session.sessionToken ? <div className="col-auto" onClick={() => this.props.changeTab('editCharacter')} style={this.getMobileButtonStyle('crafeditCharacterters')}><span>&#8226;character&#8226;</span></div> : null }  
                     <MobileLoginLogoutButton discordURL={this.state.discordURL} session={this.props.session} logout={this.props.logout}/>
                 </div>
             </div>
