@@ -174,13 +174,13 @@ class MobileLoginLogoutButton extends React.Component {
     render() {
         if (this.props.session.sessionToken && this.props.session.userName) {
             return (
-                <div className="col-auto">
+                <div className="col-1">
                      <img className="round-image" src={this.props.session.avatarURL} height='24px'/>
                 </div>
             )
         } else {
             return (
-                <div className="col-auto">
+                <div className="col-1">
                     <a href={this.props.discordURL}><FontAwesomeIcon icon={faUser} style={{color:'green'}}/></a>
                 </div>
             )
