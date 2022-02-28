@@ -90,10 +90,10 @@ class RosterHeader extends React.Component {
             <thead>
             <tr>
                 <th scope="col">Name</th>
-                <th scope="col">Discord</th>
+                <th className="d-none d-lg-table-cell" scope="col">Discord</th>
                 <th scope="col" colSpan="5">Main</th>
-                <th scope="col" colSpan="5">Alt</th>
-                <th scope="col">Active</th>
+                <th className="d-none d-lg-table-cell" scope="col" colSpan="5">Alt</th>
+                <th className="d-none d-lg-table-cell" scope="col">Active</th>
             </tr>
         </thead>
         )
@@ -105,41 +105,47 @@ class Player extends React.Component {
         return (
             <tr>
                 <th>{this.props.player.characterName}</th>
-                <td>
+                <td className="d-none d-lg-table-cell">
                     {this.props.player.discordUserName}
                 </td>
                 <td>
-                    <img className='padding-bottom-4' height='15px' src={this.getWeaponIcon(this.props.player.primaryWeapon1)} />
+                    <img className="padding-bottom-4" height='15px' src={this.getWeaponIcon(this.props.player.primaryWeapon1)} />
                     <span>{this.props.player.primaryWeapon1}</span>
+
+                    <br/><img className="padding-bottom-4 d-md-none" height='15px' src={this.getWeaponIcon(this.props.player.primaryWeapon2)} />
+                    <span className="d-lg-none">{this.props.player.primaryWeapon2}</span>
+                    <span className="d-lg-none"><br/>{this.props.player.primaryArmor}</span>
+                    <span className="d-lg-none"><br/>{this.props.player.primaryRole}</span>
+                    <span className="d-lg-none"><br/>{this.props.player.primaryGS}</span>
                 </td>
-                <td>
-                    <img className='padding-bottom-4' height='15px' src={this.getWeaponIcon(this.props.player.primaryWeapon2)} />
+                <td className="d-none d-lg-table-cell">
+                    <img className="padding-bottom-4" height='15px' src={this.getWeaponIcon(this.props.player.primaryWeapon2)} />
                     <span>{this.props.player.primaryWeapon2}</span>
                 </td>
-                <td>
+                <td className="d-none d-lg-table-cell">
                     <span>{this.props.player.primaryArmor}</span>
                 </td>
-                <td>
+                <td className="d-none d-lg-table-cell">
                     <span>{this.props.player.primaryRole}</span>
                 </td>
-                <td>
+                <td className="d-none d-lg-table-cell">
                     <span>{this.props.player.primaryGS}</span>
                 </td>
-                <td>
+                <td className="d-none d-lg-table-cell">
                     <img className='padding-bottom-4' height='15px' src={this.getWeaponIcon(this.props.player.secondaryWeapon1)} />
                     <span>{this.props.player.secondaryWeapon1}</span>
                 </td>
-                <td>
+                <td className="d-none d-lg-table-cell">
                     <img className='padding-bottom-4' height='15px' src={this.getWeaponIcon(this.props.player.secondaryWeapon2)} />
                     <span>{this.props.player.secondaryWeapon2}</span>
                 </td>
-                <td>
+                <td className="d-none d-lg-table-cell">
                     <span>{this.props.player.secondaryArmor}</span>
                 </td>
-                <td>
+                <td className="d-none d-lg-table-cell">
                     <span>{this.props.player.secondaryRole}</span>
                 </td>
-                <td>
+                <td className="d-none d-lg-table-cell">
                     <span>{this.props.player.secondaryGS}</span>
                 </td>
                 <ActiveStatus replaceCharacter={this.props.replaceCharacter} session={this.props.session} player={this.props.player} />
@@ -198,7 +204,7 @@ class Player extends React.Component {
 class ActiveStatus extends React.Component {
     render() {
         return (
-            <td className="txt-center">
+            <td className="txt-center d-none d-lg-table-cell">
                 <FontAwesomeIcon onClick={() => this.changeActiveStatus()} className={this.getClasses()} icon={this.props.player.inactive ? faThumbsDown : faThumbsUp} />
             </td>
         )

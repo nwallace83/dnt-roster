@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../images/logo-green.png'
+import logoSquare from '../images/logo-square.png'
 import discordLogo from '../images/discordLogo.png'
 import { connect } from 'react-redux'
 import { setSession, clearSession } from '../reducers/sessionSlice';
@@ -8,6 +9,8 @@ import { setRoster } from '../reducers/rosterSlice';
 import { changeTab } from '../reducers/menuSlice'
 import Cookies from 'js-cookie'
 import { toastr } from 'react-redux-toastr';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 const mapStateToProps = (state) => {
     return {
@@ -33,6 +36,23 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 class Header extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            discordURL: 'https://discord.com/oauth2/authorize?response_type=code&client_id=944735010311786537&scope=identify%20guilds&state=' + this.randomhash() + '&prompt=consent&redirect_uri=' + encodeURIComponent(window.location.protocol + '//' + window.location.host)
+        }
+    }
+
+    randomhash() {
+        let text = ''
+        let possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+        for (let i = 0; i < 40; i++) {
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+        return text
+    }
+
     componentDidMount() {
         this.initializeSession()
         this.initializeRoster()
@@ -116,10 +136,14 @@ class Header extends React.Component {
         return "nav-link " + (this.props.activeTab === tabName ? "active" : "inactive")
     }
 
+    getMobileButtonStyle(tabName) { 
+        return {color: this.props.activeTab === tabName ? 'green' : 'white'}
+    }
+
     render() {
         return (
             <div className="row">
-                <div className="col-md-8" id="nav-menu">
+                <div className="col-md-8 d-none d-lg-inline-block" id="nav-menu">
                     <img src={logo} height="40px" id="logo"/>
                     <ul className="nav nav-tabs">
                         <li className="nav-item" onClick={() => this.props.changeTab('roster')}>
@@ -131,11 +155,36 @@ class Header extends React.Component {
                         {this.showEditCharacersTab()}
                     </ul>
                 </div>
-                <div className="col-md-4 txt-right" id="login-logout-div">
-                    <LoginLogoutButton session={this.props.session} logout={this.props.logout} />
+                <div className="col-md-4 txt-right d-none d-lg-inline-block" id="login-logout-div">
+                    <LoginLogoutButton discordURL={this.state.discordURL} session={this.props.session} logout={this.props.logout} />
+                </div>
+                <div className="row d-lg-none">
+                    <div className="col-auto"><img src={logoSquare} height="24px" id="logo"/></div>
+                    <div className="col-auto" onClick={() => this.props.changeTab('roster')} style={this.getMobileButtonStyle('roster')}><span>&#8226;roster&#8226;</span></div>
+                    <div className="col-auto" onClick={() => this.props.changeTab('crafters')} style={this.getMobileButtonStyle('crafters')}><span>&#8226;crafters&#8226;</span></div>
+                    {this.props.session.sessionToken ? <div className="col-4" onClick={() => this.props.changeTab('editCharacter')} style={this.getMobileButtonStyle('crafeditCharacterters')}><span>&#8226;character&#8226;</span></div> : null }  
+                    <MobileLoginLogoutButton discordURL={this.state.discordURL} session={this.props.session} logout={this.props.logout}/>
                 </div>
             </div>
         )
+    }
+}
+
+class MobileLoginLogoutButton extends React.Component {
+    render() {
+        if (this.props.session.sessionToken && this.props.session.userName) {
+            return (
+                <div className="col-auto">
+                     <img className="round-image" src={this.props.session.avatarURL} height='24px'/>
+                </div>
+            )
+        } else {
+            return (
+                <div className="col-auto">
+                    <a href={this.props.discordURL}><FontAwesomeIcon icon={faUser} style={{color:'green'}}/></a>
+                </div>
+            )
+        }
     }
 }
 
@@ -149,9 +198,8 @@ class LoginLogoutButton extends React.Component {
                     </button>
              )
         } else {
-            let discord_url = 'https://discord.com/oauth2/authorize?response_type=code&client_id=944735010311786537&scope=identify%20guilds&state=BACONISGOOD&prompt=consent&redirect_uri=' + encodeURIComponent(window.location.protocol + '//' + window.location.host)
             return (          
-                <a href={discord_url}>
+                <a href={this.props.discordURL}>
                     <button type="button" className="btn btn-success" >
                         <img src={discordLogo} height='20px' />
                         <span>Login</span>
