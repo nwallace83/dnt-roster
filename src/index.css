@@ -119,6 +119,14 @@
     padding-bottom: 4px;
 }
 
+/* .war-roster-ul::before {
+    content: '';
+} */
+
+.war-roster-li:hover {
+    background-color: lightgrey;
+}
+
 .padding-top-4 {
     padding-top: 4px;
 }

@@ -122,11 +122,11 @@ class Header extends React.Component {
         })
     }
 
-    showEditCharacersTab() {
+    showTab(tabName,tabTitle) {
         if (this.props.session.sessionToken && this.props.session.userName) {
             return(
-                <li className="nav-item" onClick={() => this.props.changeTab('editCharacter')}>
-                    <a className={this.getButtonClasses('editCharacter')} aria-current="page" href="#">Edit Character</a>
+                <li className="nav-item" onClick={() => this.props.changeTab(tabName)}>
+                    <a className={this.getButtonClasses(tabName)} aria-current="page" href="#">{tabTitle}</a>
                 </li>
             )
         }
@@ -152,7 +152,8 @@ class Header extends React.Component {
                         <li className="nav-item" onClick={() => this.props.changeTab('crafters')}>
                             <a className={this.getButtonClasses('crafters')} aria-current="page" href="#">Crafters</a>
                         </li>
-                        {this.showEditCharacersTab()}
+                        {this.props.session.sessionToken ? this.showTab('editCharacter','Edit Character') : null}
+                        {this.props.session.isAdmin? this.showTab('warRoster','War Roster') : null}
                     </ul>
                 </div>
                 <div className="col-md-4 txt-right d-none d-lg-inline-block" id="login-logout-div">
