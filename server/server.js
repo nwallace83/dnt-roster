@@ -4,17 +4,26 @@ const path = require('path')
 const cookieParser = require("cookie-parser")
 const bodyParser = require('body-parser')
 const helmet = require('helmet')
-const compression = require('compression')
 
-if (!process.env.CLIENT_SECRET || !process.env.REDIRECT_URI || !process.env.JWT_KEY) {
+if (!process.env.CLIENT_SECRET || !process.env.JWT_KEY) {
     console.error('Missing environmental variable verify they exist: ')
     process.env.CLIENT_SECRET ?  console.log('CLIENT_SECRET: Found') : console.log('CLIENT_SECRET: missing')
     process.env.JWT_KEY ?  console.log('JWT_KEY: Found') : console.log('JWT_KEY: missing')
-    console.error('CLIENT_SECRET, REDIRECT_URI, JWT_KEY')
+    console.error('CLIENT_SECRET, JWT_KEY')
     process.exit(1)
 }
 
-app.use(compression())
+if (process.env.NODE_ENV === "ebproduction") {
+    app.use((req,res,next) => {
+        if (!req.secure) {
+            console.log(req.secure)
+            console.log("sending redirect: " + "https://" + req.headers.host + req.url)
+            return res.redirect("https://" + req.headers.host + req.url);
+        }
+        next()
+    })
+}
+
 app.use(cookieParser())
 app.use(bodyParser.json())
 
@@ -121,15 +130,9 @@ httpServer.listen(8080)
 
     httpsServer.listen(3001)
 }  else if (process.env.NODE_ENV === "ebproduction") {
-    app.use(function(req,res,next) {
-        if (!req.secure) {
-            return response.redirect("https://" + request.headers.host + request.url);
-        }
-        next()
-    })
     const http = require('http')
     const httpServer = http.createServer(app)
-    httpServer.listen(80)
+    httpServer.listen(5000)
 } else {
     const http = require('http')
     const httpServer = http.createServer(app)
