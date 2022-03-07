@@ -9,7 +9,6 @@ const compression = require('compression')
 if (!process.env.CLIENT_SECRET || !process.env.REDIRECT_URI || !process.env.JWT_KEY) {
     console.error('Missing environmental variable verify they exist: ')
     process.env.CLIENT_SECRET ?  console.log('CLIENT_SECRET: Found') : console.log('CLIENT_SECRET: missing')
-    process.env.REDIRECT_URI ?  console.log('REDIRECT_URI: Found') : console.log('REDIRECT_URI: missing')
     process.env.JWT_KEY ?  console.log('JWT_KEY: Found') : console.log('JWT_KEY: missing')
     console.error('CLIENT_SECRET, REDIRECT_URI, JWT_KEY')
     process.exit(1)
@@ -121,6 +120,16 @@ httpServer.listen(8080)
     const httpsServer = https.createServer(credentials, app)
 
     httpsServer.listen(3001)
+}  else if (process.env.NODE_ENV === "ebproduction") {
+    app.use(function(req,res,next) {
+        if (!req.secure) {
+            return response.redirect("https://" + request.headers.host + request.url);
+        }
+        next()
+    })
+    const http = require('http')
+    const httpServer = http.createServer(app)
+    httpServer.listen(80)
 } else {
     const http = require('http')
     const httpServer = http.createServer(app)
