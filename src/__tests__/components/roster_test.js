@@ -4,7 +4,7 @@ import Roster from '../../components/roster'
 import { Provider } from 'react-redux'
 import store from '../../store'
 import { setRoster } from '../../reducers/rosterSlice'
-import renderer from 'react-test-renderer';
+import renderer from 'react-test-renderer'
 
 describe('Roster',() => {
     let container
@@ -54,18 +54,17 @@ describe('Roster',() => {
     })
 
     test('Show inactive players',() => {
+        expect(screen.getAllByRole('row').length).toEqual(4)
         fireEvent.click(screen.getByRole('checkbox',{name: 'Show Inactive'}))
         expect(screen.getAllByRole('row').length).toEqual(5)
         expect(container.toJSON()).toMatchSnapshot()
     })
 
-    test('Filter players',() => {
+    test('Filter players',async () => {
             fireEvent.change(screen.getByLabelText(/filter:/i),{target: {value: 'discordusername'}})
-            setTimeout(() => {
-                expect(screen.getAllByRole('row').length).toEqual(4)
-                expect(container.toJSON()).toMatchSnapshot()
-            }, 300);
-        
+            await new Promise((r) => setTimeout(r, 500))
+            expect(screen.getAllByRole('row').length).toEqual(4)
+            expect(container.toJSON()).toMatchSnapshot()
     })
 
 })

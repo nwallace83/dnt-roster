@@ -30,7 +30,7 @@ describe('ContentBody',() => {
         container = renderer.create(<Provider store={store}><ContentBody /></Provider>)
     })
 
-    test('editCharacter is rendered',async () => {
+    test('editCharacter is rendered', () => {
         act(() => {
             store.dispatch(changeTab('editCharacter'))
         })
@@ -38,7 +38,7 @@ describe('ContentBody',() => {
         expect(container.toJSON()).toMatchSnapshot()
     })
     
-    test('crafters is rendered',async () => {
+    test('crafters is rendered', () => {
         act(() => {
             store.dispatch(changeTab('crafters'))
         })
@@ -46,7 +46,7 @@ describe('ContentBody',() => {
         expect(container.toJSON()).toMatchSnapshot()
     })
     
-    test('roster is rendered',async () => {
+    test('roster is rendered', () => {
         act(() => {
             store.dispatch(changeTab(''))
         })
