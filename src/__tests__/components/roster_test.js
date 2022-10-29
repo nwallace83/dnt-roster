@@ -55,7 +55,6 @@ describe('Roster',() => {
 
     test('Show inactive players',() => {
         fireEvent.click(screen.getByRole('checkbox',{name: 'Show Inactive'}))
-        console.log(component.innerHTML)
         expect(screen.getAllByRole('row').length).toEqual(5)
         expect(component.innerHTML).toMatchSnapshot()
     })
