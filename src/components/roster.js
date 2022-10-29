@@ -57,12 +57,12 @@ class RosterFilter extends React.Component {
         return (
             <div className="row roster-filter-div">
                 <div className="col-md-12" id="roster-filter">
-                    <span>Filter:</span>
-                    <input id="rosterfilterinput" type="text" onChange={this.applyFilter} />
+                    <label className="form-check-label" for="rosterfilterinput">Filter:</label>
+                    <input id="rosterfilterinput" type="text" name="filter" onChange={this.applyFilter} />
                 </div>
-                <div class="col-md-12 showinactive-div">
-                    <input class="form-check-input" name ="showinactive" type="checkbox" value="" onClick={this.applyInactiveFilter} id="showinactive" checked={this.props.showInactive} />
-                    <label class="form-check-label" for="showinactive">Show Inactive</label>
+                <div className="col-md-12 showinactive-div">
+                    <input className="form-check-input" name ="showinactive" type="checkbox" value="" onClick={this.applyInactiveFilter} id="showinactive" checked={this.props.showInactive} />
+                    <label className="form-check-label" for="showinactive">Show Inactive</label>
                 </div>
             </div>
         )

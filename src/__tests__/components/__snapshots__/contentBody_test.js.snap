@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContentBody crafters is rendered 1`] = `
+<mock-crafters
+  data-testid="crafters"
+/>
+`;
+
+exports[`ContentBody editCharacter is rendered 1`] = `
+<mock-editCharacter
+  data-testid="edit-character"
+/>
+`;
+
+exports[`ContentBody roster is rendered 1`] = `
+<mock-roster
+  data-testid="roster"
+/>
+`;
