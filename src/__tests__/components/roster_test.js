@@ -4,7 +4,6 @@ import Roster from '../../components/roster'
 import { Provider } from 'react-redux'
 import store from '../../store'
 import { setRoster } from '../../reducers/rosterSlice'
-import renderer from 'react-test-renderer';
 
 describe('Roster',() => {
     let component
