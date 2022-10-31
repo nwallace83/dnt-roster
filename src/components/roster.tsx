@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import '../index.css'
 import lifeStaff from '../images/weapons/lifestaff.png'
 import bow from '../images/weapons/bow.png'
@@ -12,14 +12,27 @@ import spear from '../images/weapons/spear.png'
 import sword from '../images/weapons/sword.png'
 import voidGauntlet from '../images/weapons/voidgauntlet.png'
 import warHammer from '../images/weapons/warhammer.png'
+import Character from '../interfaces/character'
+import Session from '../interfaces/session'
 import { toastr } from 'react-redux-toastr';
 import { connect } from 'react-redux';
 import { setRoster, applyFilter, replaceCharacter, toggleShowInactive } from '../reducers/rosterSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
-import { confirm } from "react-confirm-box";
+import { confirm } from "react-confirm-box"
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
-const mapStateToProps = (state) => {
+interface State {
+    roster: {
+        filteredRoster: string,
+        showInactive: boolean
+    },
+    session: {
+        session: string
+    }
+}
+
+const mapStateToProps = (state: any) => {
     return {
         roster: state.roster.filteredRoster,
         showInactive: state.roster.showInactive,
@@ -27,16 +40,27 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: any) => {
     return {
-        setRoster: (roster) => dispatch(setRoster(roster)),
-        applyFilter: (filterText) => dispatch(applyFilter(filterText)),
-        replaceCharacter: (character) => dispatch(replaceCharacter(character)),
+        setRoster: (roster: Array<Character>) => dispatch(setRoster(roster)),
+        applyFilter: (filterText: string) => dispatch(applyFilter(filterText)),
+        replaceCharacter: (character: Character) => dispatch(replaceCharacter(character)),
         toggleShowInactive: () => dispatch(toggleShowInactive())
     }
 }
 
-class Roster extends React.Component {
+interface RosterProps {
+    roster: Array<Character>,
+    showInactive: boolean,
+    session: Session
+}
+interface RosterActionProps {
+    setRoster: (c: Array<Character>) => void,
+    applyFilter: (s: string) => void,
+    replaceCharacter: (c: Character) => void,
+    toggleShowInactive: () => void
+}
+class Roster extends React.Component<RosterProps & RosterActionProps> {
     render() {
         return (
             <div className="row bg-light-grey padding-top-4">
@@ -52,26 +76,37 @@ class Roster extends React.Component {
     }
 }
 
-class RosterFilter extends React.Component {
+interface RosterFilterProps {
+    toggleShowInactive: any,
+    showInactive: any,
+    roster: any,
+    applyFilter: any
+}
+class RosterFilter extends React.Component<RosterFilterProps> {
     render() {
         return (
             <div className="row roster-filter-div">
                 <div className="col-md-12" id="roster-filter">
-                    <label className="form-check-label" for="rosterfilterinput">Filter:</label>
+                    <label className="form-check-label" htmlFor="rosterfilterinput">Filter:</label>
                     <input id="rosterfilterinput" type="text" name="filter" onChange={this.applyFilter} />
                 </div>
                 <div className="col-md-12 showinactive-div">
                     <input className="form-check-input" name ="showinactive" type="checkbox" value="" onClick={this.applyInactiveFilter} id="showinactive" checked={this.props.showInactive} />
-                    <label className="form-check-label" for="showinactive">Show Inactive</label>
+                    <label className="form-check-label" htmlFor="showinactive">Show Inactive</label>
                 </div>
             </div>
         )
     }
 
      applyFilter = () => {
-        let filterValue = document.getElementById('rosterfilterinput').value.trim()
+        let getFilterValueFromHTML = () => {
+            let element: HTMLInputElement = document.getElementById('rosterfilterinput') as HTMLInputElement
+            return element ? element.value.trim() : ''
+        }
+
+        let filterValue = getFilterValueFromHTML()
         setTimeout(() => {
-            if (filterValue === document.getElementById('rosterfilterinput').value.trim()) {
+            if (filterValue === getFilterValueFromHTML()) {
                 this.props.applyFilter(filterValue)
             }
         },250)
@@ -79,20 +114,26 @@ class RosterFilter extends React.Component {
 
     applyInactiveFilter = () => {
         this.props.toggleShowInactive()
-        let filterValue = document.getElementById('rosterfilterinput').value.trim()
-        this.props.applyFilter(filterValue)
+        let element: HTMLInputElement = document.getElementById('rosterfilterinput') as HTMLInputElement
+        if (element) {
+            let filterValue: string = element.value.trim()
+            this.props.applyFilter(filterValue)
+        }
     }
 }
 
-class RosterHeader extends React.Component {
+interface RosterHeaderProps {
+    session: Session
+}
+class RosterHeader extends React.Component<RosterHeaderProps> {
     render() {
         return (
             <thead>
             <tr>
                 <th scope="col">Name</th>
                 <th className="d-none d-lg-table-cell" scope="col">Discord</th>
-                <th scope="col" colSpan="5">Main</th>
-                <th className="d-none d-lg-table-cell" scope="col" colSpan="5">Alt</th>
+                <th scope="col" colSpan={5}>Main</th>
+                <th className="d-none d-lg-table-cell" scope="col" colSpan={5}>Alt</th>
                 <th className="d-none d-lg-table-cell" scope="col">Active</th>
             </tr>
         </thead>
@@ -100,7 +141,12 @@ class RosterHeader extends React.Component {
     }
 }
 
-class Player extends React.Component {
+interface PlayerProps {
+    replaceCharacter: any,
+    session: Session,
+    player: Character
+}
+class Player extends React.Component<PlayerProps> {
     render() {
         return (
             <tr>
@@ -153,7 +199,7 @@ class Player extends React.Component {
         )
     }
 
-    getWeaponIcon(weapon) {
+    getWeaponIcon(weapon: string) {
         let weaponIcon=''
 
         switch(weapon) {
@@ -201,11 +247,17 @@ class Player extends React.Component {
     }
 }
 
-class ActiveStatus extends React.Component {
+
+interface ActiveStatusProps {
+    replaceCharacter: any,
+    session: Session,
+    player: Character
+}
+class ActiveStatus extends React.Component<ActiveStatusProps> {
     render() {
         return (
             <td className="txt-center d-none d-lg-table-cell">
-                <FontAwesomeIcon onClick={() => this.changeActiveStatus()} className={this.getClasses()} icon={this.props.player.inactive ? faThumbsDown : faThumbsUp} />
+                <FontAwesomeIcon onClick={() => this.changeActiveStatus()} className={this.getClasses()} icon={this.props.player.inactive ? faThumbsDown as IconProp: faThumbsUp as IconProp} />
             </td>
         )
     }

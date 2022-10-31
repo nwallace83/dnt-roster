@@ -3,31 +3,33 @@ import logo from '../images/logo-green.png'
 import logoSquare from '../images/logo-square.png'
 import discordLogo from '../images/discordLogo.png'
 import { connect } from 'react-redux'
-import { setSession, clearSession } from '../reducers/sessionSlice';
-import { clearCharacter, saveCharacter } from '../reducers/characterSlice';
-import { setRoster } from '../reducers/rosterSlice';
+import { setSession, clearSession, Session } from '../reducers/sessionSlice'
+import { clearCharacter, saveCharacter } from '../reducers/characterSlice'
+import { setRoster } from '../reducers/rosterSlice'
 import { changeTab } from '../reducers/menuSlice'
 import Cookies from 'js-cookie'
-import { toastr } from 'react-redux-toastr';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { toastr } from 'react-redux-toastr'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+import Character from '../interfaces/character';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: any) => {
     return {
         activeTab: state.menu.activeTab,
         session: state.session
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: any) => {
     return {
-        changeTab: (tabName) => dispatch(changeTab(tabName)),
-        setSession: (session) => dispatch(setSession(session)),
-        saveCharacter: (character) => dispatch(saveCharacter(character)),
-        setRoster: (roster) => dispatch(setRoster(roster)),
+        changeTab: (tabName: string) => dispatch(changeTab(tabName)),
+        setSession: (session: string) => dispatch(setSession(session)),
+        saveCharacter: (character: Character) => dispatch(saveCharacter(character)),
+        setRoster: (roster: Array<Character>) => dispatch(setRoster(roster)),
         logout: () => {
-            dispatch(clearSession())
-            dispatch(clearCharacter())
+            dispatch(clearSession(null))
+            dispatch(clearCharacter(null))
             dispatch(changeTab('roster'))
             Cookies.remove("authorization")
             toastr.success('Logged Out','Successfully logged out')
@@ -35,17 +37,31 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-class Header extends React.Component {
-    constructor(props){
+interface HeaderProps {
+    activeTab: string,
+    session: Session
+}
+interface HeaderActionProps {
+    changeTab: (s: string) => void,
+    setSession: (s: string) => void,
+    saveCharacter: (c: Character) => void,
+    setRoster: (r: Array<Character>) => void,
+    logout: () => void
+}
+interface HeaderState {
+    discordURL: string
+}
+class Header extends React.Component<HeaderProps & HeaderActionProps, HeaderState> {
+    constructor(props: any){
         super(props)
         this.state = {
             discordURL: 'https://discord.com/oauth2/authorize?response_type=code&client_id=944735010311786537&scope=identify%20guilds&state=' + this.randomhash() + '&prompt=consent&redirect_uri=' + encodeURIComponent(window.location.protocol + '//' + window.location.host)
         }
     }
 
-    randomhash() {
-        let text = ''
-        let possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    randomhash(): string {
+        let text: string = ''
+        let possible: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
         for (let i = 0; i < 40; i++) {
             text += possible.charAt(Math.floor(Math.random() * possible.length));
@@ -69,8 +85,8 @@ class Header extends React.Component {
     }
 
     initializeSession() {
-        const queryString = window.location.search
-        const urlParams = new URLSearchParams(queryString)
+        const queryString: string = window.location.search
+        const urlParams: URLSearchParams = new URLSearchParams(queryString)
 
         if (urlParams.get('code')) {
             fetch('/api/v1/discord/login/' + urlParams.get('code'),{method: "POST"})
@@ -91,7 +107,8 @@ class Header extends React.Component {
     }
 
     setSessionFromCookie() {
-        const authCookie = Cookies.get("authorization")
+        const authCookie: string | undefined = Cookies.get("authorization")
+
         if (authCookie) {
             fetch('/api/v1/auth')
             .then (res => {
@@ -132,11 +149,12 @@ class Header extends React.Component {
         }
     }
 
-    getButtonClasses(tabName) {
+    getButtonClasses(tabName: string): string {
         return "nav-link " + (this.props.activeTab === tabName ? "active" : "inactive")
     }
 
-    getMobileButtonStyle(tabName) { 
+    
+    getMobileButtonStyle(tabName: string): any { 
         return {color: this.props.activeTab === tabName ? 'green' : 'white'}
     }
 
@@ -170,7 +188,12 @@ class Header extends React.Component {
     }
 }
 
-class MobileLoginLogoutButton extends React.Component {
+interface MobileLoginLogoutButtonProps {
+    discordURL: string,
+    session: Session,
+    logout: () => void
+}
+class MobileLoginLogoutButton extends React.Component<MobileLoginLogoutButtonProps> {
     render() {
         if (this.props.session.sessionToken && this.props.session.userName) {
             return (
@@ -181,14 +204,20 @@ class MobileLoginLogoutButton extends React.Component {
         } else {
             return (
                 <div className="col-1">
-                    <a href={this.props.discordURL}><FontAwesomeIcon icon={faUser} style={{color:'green'}}/></a>
+                    <a href={this.props.discordURL}><FontAwesomeIcon icon={faUser as IconProp} style={{color:'green'}}/></a>
                 </div>
             )
         }
     }
 }
 
-class LoginLogoutButton extends React.Component {
+
+interface LoginLogoutButtonProps {
+    discordURL: string,
+    session: Session,
+    logout: () => void
+}
+class LoginLogoutButton extends React.Component<LoginLogoutButtonProps> {
     render() {
         if (this.props.session.sessionToken && this.props.session.userName) {
             return (

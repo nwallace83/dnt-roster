@@ -1,3 +1,5 @@
+'use strict'
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -21,7 +23,6 @@ import ReduxToastr from 'react-redux-toastr'
               newestOnTop={false}
               preventDuplicates
               position="bottom-right"
-              getState={(state) => state.toastr}
               transitionIn="fadeIn"
               transitionOut="fadeOut"
               closeOnToastrClick />

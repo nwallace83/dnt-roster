@@ -1,6 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, Slice } from '@reduxjs/toolkit'
 
-export const menuSlice = createSlice({
+export const menuSlice: Slice<any>= createSlice({
     name:'menu',
     initialState: {
         activeTab: localStorage.getItem("activeTab") ? localStorage.getItem("activeTab") : "roster"

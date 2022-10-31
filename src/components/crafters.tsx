@@ -1,5 +1,5 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from "react"
+import { connect } from "react-redux"
 import weaponSmithing from '../images/tradeskills/weaponsmithing.png'
 import armoring from '../images/tradeskills/armoring.png'
 import engineering from '../images/tradeskills/engineering.png'
@@ -7,14 +7,18 @@ import jewelCrafting from '../images/tradeskills/jewelcrafting.png'
 import arcana from '../images/tradeskills/arcana.png'
 import cooking from '../images/tradeskills/cooking.png'
 import furnishing from '../images/tradeskills/furnishing.png'
+import CraftersInterface from "../interfaces/crafters"
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: any) => {
     return {
         crafters: state.roster.crafters,
     }
 }
 
-class Crafters extends React.Component {
+interface CraftersProps {
+    crafters: CraftersInterface
+}
+class Crafters extends React.Component<CraftersProps> {
     render() {
         return (
             <div className="row bg-light-grey padding-top-4">

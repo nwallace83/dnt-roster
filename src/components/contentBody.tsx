@@ -4,13 +4,19 @@ import EditCharacter from './editCharacter'
 import Crafters from './crafters'
 import { connect } from 'react-redux'
 
-const mapStateToProps = (state) => {
-    return {
-        activeTab: state.menu.activeTab,
+interface State {
+    menu: {
+        activeTab: string;
     }
 }
 
-class ContentBody extends React.Component {
+const mapStateToProps = (state: State) => {
+    return {
+        activeTab: state.menu.activeTab
+    }
+}
+
+class ContentBody extends React.Component<{activeTab: string}> {
     render() {
             if (this.props.activeTab === 'editCharacter') {
                 return <EditCharacter />

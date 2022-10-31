@@ -13,7 +13,7 @@ exports[`Roster Filter players 1`] = `
     >
       <label
         className="form-check-label"
-        for="rosterfilterinput"
+        htmlFor="rosterfilterinput"
       >
         Filter:
       </label>
@@ -38,7 +38,7 @@ exports[`Roster Filter players 1`] = `
       />
       <label
         className="form-check-label"
-        for="showinactive"
+        htmlFor="showinactive"
       >
         Show Inactive
       </label>
@@ -61,14 +61,14 @@ exports[`Roster Filter players 1`] = `
           Discord
         </th>
         <th
-          colSpan="5"
+          colSpan={5}
           scope="col"
         >
           Main
         </th>
         <th
           className="d-none d-lg-table-cell"
-          colSpan="5"
+          colSpan={5}
           scope="col"
         >
           Alt
@@ -547,7 +547,7 @@ exports[`Roster Headers are displayed 1`] = `
     >
       <label
         className="form-check-label"
-        for="rosterfilterinput"
+        htmlFor="rosterfilterinput"
       >
         Filter:
       </label>
@@ -572,7 +572,7 @@ exports[`Roster Headers are displayed 1`] = `
       />
       <label
         className="form-check-label"
-        for="showinactive"
+        htmlFor="showinactive"
       >
         Show Inactive
       </label>
@@ -595,14 +595,14 @@ exports[`Roster Headers are displayed 1`] = `
           Discord
         </th>
         <th
-          colSpan="5"
+          colSpan={5}
           scope="col"
         >
           Main
         </th>
         <th
           className="d-none d-lg-table-cell"
-          colSpan="5"
+          colSpan={5}
           scope="col"
         >
           Alt
@@ -1081,7 +1081,7 @@ exports[`Roster Players are displayed 1`] = `
     >
       <label
         className="form-check-label"
-        for="rosterfilterinput"
+        htmlFor="rosterfilterinput"
       >
         Filter:
       </label>
@@ -1106,7 +1106,7 @@ exports[`Roster Players are displayed 1`] = `
       />
       <label
         className="form-check-label"
-        for="showinactive"
+        htmlFor="showinactive"
       >
         Show Inactive
       </label>
@@ -1129,14 +1129,14 @@ exports[`Roster Players are displayed 1`] = `
           Discord
         </th>
         <th
-          colSpan="5"
+          colSpan={5}
           scope="col"
         >
           Main
         </th>
         <th
           className="d-none d-lg-table-cell"
-          colSpan="5"
+          colSpan={5}
           scope="col"
         >
           Alt
@@ -1615,7 +1615,7 @@ exports[`Roster Players are sorted 1`] = `
     >
       <label
         className="form-check-label"
-        for="rosterfilterinput"
+        htmlFor="rosterfilterinput"
       >
         Filter:
       </label>
@@ -1640,7 +1640,7 @@ exports[`Roster Players are sorted 1`] = `
       />
       <label
         className="form-check-label"
-        for="showinactive"
+        htmlFor="showinactive"
       >
         Show Inactive
       </label>
@@ -1663,14 +1663,14 @@ exports[`Roster Players are sorted 1`] = `
           Discord
         </th>
         <th
-          colSpan="5"
+          colSpan={5}
           scope="col"
         >
           Main
         </th>
         <th
           className="d-none d-lg-table-cell"
-          colSpan="5"
+          colSpan={5}
           scope="col"
         >
           Alt
@@ -2149,7 +2149,7 @@ exports[`Roster Show inactive players 1`] = `
     >
       <label
         className="form-check-label"
-        for="rosterfilterinput"
+        htmlFor="rosterfilterinput"
       >
         Filter:
       </label>
@@ -2174,7 +2174,7 @@ exports[`Roster Show inactive players 1`] = `
       />
       <label
         className="form-check-label"
-        for="showinactive"
+        htmlFor="showinactive"
       >
         Show Inactive
       </label>
@@ -2197,14 +2197,14 @@ exports[`Roster Show inactive players 1`] = `
           Discord
         </th>
         <th
-          colSpan="5"
+          colSpan={5}
           scope="col"
         >
           Main
         </th>
         <th
           className="d-none d-lg-table-cell"
-          colSpan="5"
+          colSpan={5}
           scope="col"
         >
           Alt
