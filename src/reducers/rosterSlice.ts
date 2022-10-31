@@ -34,22 +34,22 @@ let initialState: State = {
     }
 }
 
-function removeCharacter(roster: Array<Character>,character: Character) {
+function removeCharacter(roster: Array<Character>,character: Character): Array<Character> {
     return _.filter(roster,char => {return char.id !== character.id})
 }
 
-function removeInactive(roster: Array<Character>) {
+function removeInactive(roster: Array<Character>): Array<Character> {
     return _.filter(roster,char => {return !char.inactive })
 }
 
-function sortRoster(roster: Array<Character>) {
+function sortRoster(roster: Array<Character>): Array<Character> {
     return _.sortBy(roster,(character: Character) => {
         return character.characterName
     })
 }
 
 
-function getCraftersForSkill(roster: Array<Character>,skill: string) {
+function getCraftersForSkill(roster: Array<Character>,skill: string): Array<string> {
     let crafters: Array<string> = []
 
     roster.forEach(character => {
@@ -66,7 +66,7 @@ export const rosterSlice = createSlice({
     name:'roster',
     initialState: initialState,
     reducers: {
-        setRoster: (state,roster: {type: string, payload: Array<Character>}) => {
+        setRoster: (state,roster: {type: string, payload: Array<Character>}): State => {
             let sortedRoster: Array<Character> = sortRoster(roster.payload)
             let crafters: Crafters = {
                 weaponSmithing: getCraftersForSkill(sortedRoster,'weaponSmithing'),
@@ -80,13 +80,13 @@ export const rosterSlice = createSlice({
 
             return {...state,crafters: crafters, roster: sortedRoster,filteredRoster: removeInactive(sortedRoster)}
         },
-        clearRoster:() => {
+        clearRoster:(): State => {
             return initialState
         },
-        toggleShowInactive:(state) => {
+        toggleShowInactive:(state): State => {
             return {...state,showInactive: !state.showInactive}
         },
-        replaceCharacter:(state,character: {type: string, payload: Character}) => {
+        replaceCharacter:(state,character: {type: string, payload: Character}): State => {
             let roster: Array<Character> = removeCharacter(current(state.roster),character.payload)
             let filteredRoster: Array<Character> = removeCharacter(current(state.filteredRoster),character.payload)
 
@@ -99,7 +99,7 @@ export const rosterSlice = createSlice({
             return {...state,roster: rosterSorted, filteredRoster: filteredRosterSorted}
 
         },
-        applyFilter: (state,filterValue: {type: string, payload: string}) => {
+        applyFilter: (state,filterValue: {type: string, payload: string}): State => {
             let filteredCharacters: Array<Character>
 
             if (filterValue.payload.length === 0) {

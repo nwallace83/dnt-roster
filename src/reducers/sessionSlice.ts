@@ -29,7 +29,7 @@ export const sessionSlice: Slice<any> = createSlice({
     name:'session',
     initialState: initialState,
     reducers: {
-        setSession: (state,session: {type: string, payload: string}) => {
+        setSession: (state,session: {type: string, payload: string}): Session => {
             try {
                 const decodedWebToken: DecodedWebToken = jwt_decode(session.payload)
                 return {...state,
@@ -43,7 +43,7 @@ export const sessionSlice: Slice<any> = createSlice({
                 return initialState
             }
         },
-        clearSession:() => {
+        clearSession:(): Session => {
             return initialState
         }
     }

@@ -22,16 +22,6 @@ import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
 import { confirm } from "react-confirm-box"
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
-interface State {
-    roster: {
-        filteredRoster: string,
-        showInactive: boolean
-    },
-    session: {
-        session: string
-    }
-}
-
 const mapStateToProps = (state: any) => {
     return {
         roster: state.roster.filteredRoster,
@@ -98,13 +88,13 @@ class RosterFilter extends React.Component<RosterFilterProps> {
         )
     }
 
-     applyFilter = () => {
-        let getFilterValueFromHTML = () => {
+     applyFilter = (): void => {
+        let getFilterValueFromHTML = (): string => {
             let element: HTMLInputElement = document.getElementById('rosterfilterinput') as HTMLInputElement
             return element ? element.value.trim() : ''
         }
 
-        let filterValue = getFilterValueFromHTML()
+        let filterValue: string = getFilterValueFromHTML()
         setTimeout(() => {
             if (filterValue === getFilterValueFromHTML()) {
                 this.props.applyFilter(filterValue)
@@ -199,7 +189,7 @@ class Player extends React.Component<PlayerProps> {
         )
     }
 
-    getWeaponIcon(weapon: string) {
+    getWeaponIcon(weapon: string): string {
         let weaponIcon=''
 
         switch(weapon) {
@@ -262,7 +252,7 @@ class ActiveStatus extends React.Component<ActiveStatusProps> {
         )
     }
 
-    getClasses() {
+    getClasses(): string {
         if (this.props.session.isAdmin) {
             return this.props.player.inactive ? "inactive-player-icon-admin" : "active-player-icon-admin"
         } else {
@@ -270,7 +260,7 @@ class ActiveStatus extends React.Component<ActiveStatusProps> {
         }    
     }
 
-    async changeActiveStatus(){
+    async changeActiveStatus(): Promise<any> {
         if (!this.props.session.isAdmin) {
             return null
         }

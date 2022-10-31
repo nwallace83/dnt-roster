@@ -55,7 +55,7 @@ export const characterSlice: Slice<any> = createSlice({
     name:'character',
     initialState: initialState,
     reducers: {
-        saveCharacter: (state,character) => {
+        saveCharacter: (state,character): State => {
             if (character.payload && character.payload.characterName && character.payload.crafting) {
                 return character.payload
             } else {
@@ -66,9 +66,9 @@ export const characterSlice: Slice<any> = createSlice({
         clearCharacter: (state) => {
             return initialState
         },
-        toggleTradeSkill: (state,tradeSkill) => {
+        toggleTradeSkill: (state,tradeSkill): State => {
             let currentState: State = current(state)
-            let newValue = !currentState.crafting[tradeSkill.payload as keyof CharacterCrafting]
+            let newValue: boolean = !currentState.crafting[tradeSkill.payload as keyof CharacterCrafting]
             return {...state,crafting: {...state.crafting,[tradeSkill.payload]: newValue}}
         }
     }

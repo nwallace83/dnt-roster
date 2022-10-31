@@ -1,12 +1,16 @@
 import { createSlice, Slice } from '@reduxjs/toolkit'
 
-export const menuSlice: Slice<any>= createSlice({
+interface State {
+    activeTab: string | null
+}
+
+const initialState: State = {activeTab: localStorage.getItem("activeTab") ? localStorage.getItem("activeTab") : "roster"}
+
+export const menuSlice: Slice<any> = createSlice({
     name:'menu',
-    initialState: {
-        activeTab: localStorage.getItem("activeTab") ? localStorage.getItem("activeTab") : "roster"
-    },
+    initialState: initialState,
     reducers: {
-        changeTab: (state,tab) => {
+        changeTab: (state,tab: {type: string, payload: string}): State => {
             localStorage.setItem("activeTab",tab.payload)
             return {...state,activeTab: tab.payload}
         }

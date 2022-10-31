@@ -74,7 +74,7 @@ class Header extends React.Component<HeaderProps & HeaderActionProps, HeaderStat
         this.initializeRoster()
     }
 
-    initializeRoster() {
+    initializeRoster(): void {
         fetch('/api/v1/roster').then(res => {
             if (res.ok) {
                 res.json().then(res => this.props.setRoster(res))
@@ -84,7 +84,7 @@ class Header extends React.Component<HeaderProps & HeaderActionProps, HeaderStat
         })
     }
 
-    initializeSession() {
+    initializeSession(): void {
         const queryString: string = window.location.search
         const urlParams: URLSearchParams = new URLSearchParams(queryString)
 
@@ -106,7 +106,7 @@ class Header extends React.Component<HeaderProps & HeaderActionProps, HeaderStat
         }
     }
 
-    setSessionFromCookie() {
+    setSessionFromCookie(): void {
         const authCookie: string | undefined = Cookies.get("authorization")
 
         if (authCookie) {
@@ -128,7 +128,7 @@ class Header extends React.Component<HeaderProps & HeaderActionProps, HeaderStat
         }
     }
 
-    initializeCharacter() {
+    initializeCharacter(): void {
         fetch('/api/v1/character/').then(res => {
             if (res.ok) {
                 res.json().then(res => this.props.saveCharacter(res))
@@ -139,7 +139,7 @@ class Header extends React.Component<HeaderProps & HeaderActionProps, HeaderStat
         })
     }
 
-    showEditCharacersTab() {
+    showEditCharacersTab(): JSX.Element | undefined {
         if (this.props.session.sessionToken && this.props.session.userName) {
             return(
                 <li className="nav-item" onClick={() => this.props.changeTab('editCharacter')}>
