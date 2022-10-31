@@ -73,27 +73,27 @@ class EditCharacterForm extends React.Component<EditCharacterFormProps> {
         }
 
         // @ts-ignore
-        charToSave.characterName = document.characterform.charactername.value ? document.characterform.charactername.value.trim() : ""
+        charToSave.characterName = document.characterform.charactername.value ? document.characterform.charactername.value.trim() : ''
         // @ts-ignore
-        charToSave.primaryWeapon1 = document.characterform.primaryweapon1.value ? document.characterform.primaryweapon1.value : ""
+        charToSave.primaryWeapon1 = document.characterform.primaryweapon1.value ? document.characterform.primaryweapon1.value : ''
         // @ts-ignore
-        charToSave.primaryWeapon2 = document.characterform.primaryweapon2.value ? document.characterform.primaryweapon2.value : ""
+        charToSave.primaryWeapon2 = document.characterform.primaryweapon2.value ? document.characterform.primaryweapon2.value : ''
         // @ts-ignore
-        charToSave.primaryRole = document.characterform.primaryrole.value ? document.characterform.primaryrole.value : ""
+        charToSave.primaryRole = document.characterform.primaryrole.value ? document.characterform.primaryrole.value : ''
         // @ts-ignore
-        charToSave.primaryArmor = document.characterform.primaryarmor.value ? document.characterform.primaryarmor.value : ""
+        charToSave.primaryArmor = document.characterform.primaryarmor.value ? document.characterform.primaryarmor.value : ''
         // @ts-ignore
-        charToSave.primaryGS = document.characterform.primarygs.value ? document.characterform.primarygs.value : "500"
+        charToSave.primaryGS = document.characterform.primarygs.value ? document.characterform.primarygs.value : '500'
         // @ts-ignore
-        charToSave.secondaryWeapon1 = document.characterform.secondaryweapon1.value ? document.characterform.secondaryweapon1.value : ""
+        charToSave.secondaryWeapon1 = document.characterform.secondaryweapon1.value ? document.characterform.secondaryweapon1.value : ''
         // @ts-ignore
-        charToSave.secondaryWeapon2 = document.characterform.secondaryweapon2.value ? document.characterform.secondaryweapon2.value : ""
+        charToSave.secondaryWeapon2 = document.characterform.secondaryweapon2.value ? document.characterform.secondaryweapon2.value : ''
         // @ts-ignore
-        charToSave.secondaryRole = document.characterform.secondaryrole.value ? document.characterform.secondaryrole.value : ""
+        charToSave.secondaryRole = document.characterform.secondaryrole.value ? document.characterform.secondaryrole.value : ''
         // @ts-ignore
-        charToSave.secondaryArmor = document.characterform.secondaryarmor.value ? document.characterform.secondaryarmor.value : ""
+        charToSave.secondaryArmor = document.characterform.secondaryarmor.value ? document.characterform.secondaryarmor.value : ''
         // @ts-ignore
-        charToSave.secondaryGS = document.characterform.secondarygs.value ? document.characterform.secondarygs.value : "500"
+        charToSave.secondaryGS = document.characterform.secondarygs.value ? document.characterform.secondarygs.value : '500'
         // @ts-ignore
         charToSave.crafting.weaponSmithing = document.characterform.weaponsmithing.checked ? true: false
         // @ts-ignore
@@ -110,7 +110,7 @@ class EditCharacterForm extends React.Component<EditCharacterFormProps> {
         charToSave.crafting.furnishing = document.characterform.furnishing.checked ? true : false
 
         if (charToSave.characterName.length > 2 && charToSave.primaryWeapon1.length > 1 && charToSave.primaryWeapon2.length > 1 && charToSave.primaryRole.length > 1){
-            fetch('/api/v1/character',{method: "POST", headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(charToSave)}).then(res => {
+            fetch('/api/v1/character',{method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(charToSave)}).then(res => {
                 if (res.ok) {
                     this.props.saveCharacter(charToSave)
                     toastr.success('Character Saved','')

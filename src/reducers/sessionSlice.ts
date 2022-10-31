@@ -1,6 +1,5 @@
-import { createSlice, Slice } from '@reduxjs/toolkit'
-import jwt_decode from "jwt-decode"
-
+import { createSlice } from '@reduxjs/toolkit'
+import jwt_decode from 'jwt-decode'
 
 export interface Session {
     id: string,
@@ -11,10 +10,10 @@ export interface Session {
 }
 
 const initialState: Session = {
-    id: "",
-    sessionToken: "",
-    userName:"",
-    avatarURL:"",
+    id: '',
+    sessionToken: '',
+    userName:'',
+    avatarURL:'',
     isAdmin: false
 }
 
@@ -25,25 +24,26 @@ interface DecodedWebToken {
     avatar: string
 }
 
-export const sessionSlice: Slice<any> = createSlice({
+export const sessionSlice = createSlice({
     name:'session',
     initialState: initialState,
     reducers: {
-        setSession: (state,session: {type: string, payload: string}): Session => {
+        setSession: (state,payload: {type: string, payload: string}) => {
+            const session = payload.payload
             try {
-                const decodedWebToken: DecodedWebToken = jwt_decode(session.payload)
+                const decodedWebToken: DecodedWebToken = jwt_decode(session)
                 return {...state,
-                    sessionToken: session.payload,
+                    sessionToken: session,
                     id: decodedWebToken.id,
                     userName: decodedWebToken.userName,
                     isAdmin: decodedWebToken.isAdmin,
-                    avatarURL: "https://cdn.discordapp.com/avatars/" + decodedWebToken.id + "/" + decodedWebToken.avatar,
+                    avatarURL: 'https://cdn.discordapp.com/avatars/' + decodedWebToken.id + '/' + decodedWebToken.avatar,
                 }
             } catch {
                 return initialState
             }
         },
-        clearSession:(): Session => {
+        clearSession:() => {
             return initialState
         }
     }

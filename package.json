@@ -7,7 +7,6 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^29.2.0",
     "@types/js-cookie": "^3.0.2",
     "@types/node": "^18.11.8",
     "@types/react": "^18.0.24",
@@ -44,7 +43,21 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "semi": [
+        "error",
+        "never"
+      ],
+      "jsx-quotes": [
+        "error",
+        "prefer-double"
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ]
+    }
   },
   "browserslist": {
     "production": [
@@ -59,8 +72,10 @@
     ]
   },
   "devDependencies": {
+    "@types/jest": "^29.2.0",
     "@types/lodash": "^4.14.186",
     "@types/react-redux-toastr": "^7.6.2",
+    "@types/react-test-renderer": "^18.0.0",
     "redux-mock-store": "^1.5.4"
   }
 }

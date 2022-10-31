@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React from 'react'
 import logo from '../images/logo-green.png'
 import logoSquare from '../images/logo-square.png'
 import discordLogo from '../images/discordLogo.png'
@@ -11,8 +12,8 @@ import Cookies from 'js-cookie'
 import { toastr } from 'react-redux-toastr'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
-import Character from '../interfaces/character';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import Character from '../interfaces/character'
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
 const mapStateToProps = (state: any) => {
     return {
@@ -28,10 +29,10 @@ const mapDispatchToProps = (dispatch: any) => {
         saveCharacter: (character: Character) => dispatch(saveCharacter(character)),
         setRoster: (roster: Array<Character>) => dispatch(setRoster(roster)),
         logout: () => {
-            dispatch(clearSession(null))
-            dispatch(clearCharacter(null))
+            dispatch(clearSession())
+            dispatch(clearCharacter())
             dispatch(changeTab('roster'))
-            Cookies.remove("authorization")
+            Cookies.remove('authorization')
             toastr.success('Logged Out','Successfully logged out')
         }
     }
@@ -59,12 +60,12 @@ class Header extends React.Component<HeaderProps & HeaderActionProps, HeaderStat
         }
     }
 
-    randomhash(): string {
+    randomhash() {
         let text: string = ''
-        let possible: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let possible: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 
         for (let i = 0; i < 40; i++) {
-            text += possible.charAt(Math.floor(Math.random() * possible.length));
+            text += possible.charAt(Math.floor(Math.random() * possible.length))
         }
         return text
     }
@@ -74,7 +75,7 @@ class Header extends React.Component<HeaderProps & HeaderActionProps, HeaderStat
         this.initializeRoster()
     }
 
-    initializeRoster(): void {
+    initializeRoster() {
         fetch('/api/v1/roster').then(res => {
             if (res.ok) {
                 res.json().then(res => this.props.setRoster(res))
@@ -84,14 +85,14 @@ class Header extends React.Component<HeaderProps & HeaderActionProps, HeaderStat
         })
     }
 
-    initializeSession(): void {
+    initializeSession() {
         const queryString: string = window.location.search
         const urlParams: URLSearchParams = new URLSearchParams(queryString)
 
         if (urlParams.get('code')) {
-            fetch('/api/v1/discord/login/' + urlParams.get('code'),{method: "POST"})
+            fetch('/api/v1/discord/login/' + urlParams.get('code'),{method: 'POST'})
             .then( res => {
-                window.history.replaceState({}, document.title, "/")
+                window.history.replaceState({}, document.title, '/')
                 if (res.ok) {
                     res.json().then(res => {
                         this.props.setSession(res)
@@ -106,8 +107,8 @@ class Header extends React.Component<HeaderProps & HeaderActionProps, HeaderStat
         }
     }
 
-    setSessionFromCookie(): void {
-        const authCookie: string | undefined = Cookies.get("authorization")
+    setSessionFromCookie() {
+        const authCookie: string | undefined = Cookies.get('authorization')
 
         if (authCookie) {
             fetch('/api/v1/auth')
@@ -128,7 +129,7 @@ class Header extends React.Component<HeaderProps & HeaderActionProps, HeaderStat
         }
     }
 
-    initializeCharacter(): void {
+    initializeCharacter() {
         fetch('/api/v1/character/').then(res => {
             if (res.ok) {
                 res.json().then(res => this.props.saveCharacter(res))
@@ -150,7 +151,7 @@ class Header extends React.Component<HeaderProps & HeaderActionProps, HeaderStat
     }
 
     getButtonClasses(tabName: string): string {
-        return "nav-link " + (this.props.activeTab === tabName ? "active" : "inactive")
+        return 'nav-link ' + (this.props.activeTab === tabName ? 'active' : 'inactive')
     }
 
     
@@ -162,9 +163,10 @@ class Header extends React.Component<HeaderProps & HeaderActionProps, HeaderStat
         return (
             <div className="row">
                 <div className="col-md-8 d-none d-lg-inline-block" id="nav-menu">
-                    <img src={logo} height="40px" id="logo"/>
+                    <img src={logo} height="40px" id="logo" alt="logo"/>
                     <ul className="nav nav-tabs">
                         <li className="nav-item" onClick={() => this.props.changeTab('roster')}>
+                            
                             <a className={this.getButtonClasses('roster')} aria-current="page" href="#">Roster</a>
                         </li>
                         <li className="nav-item" onClick={() => this.props.changeTab('crafters')}>
@@ -177,7 +179,7 @@ class Header extends React.Component<HeaderProps & HeaderActionProps, HeaderStat
                     <LoginLogoutButton discordURL={this.state.discordURL} session={this.props.session} logout={this.props.logout} />
                 </div>
                 <div className="row d-lg-none">
-                    <div className="col-auto"><img src={logoSquare} height="24px" id="logo"/></div>
+                    <div className="col-auto"><img src={logoSquare} height="24px" id="logo" alt="logo"/></div>
                     <div className="col-auto" onClick={() => this.props.changeTab('roster')} style={this.getMobileButtonStyle('roster')}><span>&#8226;roster&#8226;</span></div>
                     <div className="col-auto" onClick={() => this.props.changeTab('crafters')} style={this.getMobileButtonStyle('crafters')}><span>&#8226;crafters&#8226;</span></div>
                     {this.props.session.sessionToken ? <div className="col-auto" onClick={() => this.props.changeTab('editCharacter')} style={this.getMobileButtonStyle('editCharacter')}><span>&#8226;character&#8226;</span></div> : null }  
@@ -198,7 +200,7 @@ class MobileLoginLogoutButton extends React.Component<MobileLoginLogoutButtonPro
         if (this.props.session.sessionToken && this.props.session.userName) {
             return (
                 <div className="col-1" onClick={this.props.logout}>
-                     <img className="round-image" src={this.props.session.avatarURL} height='24px'/>
+                     <img className="round-image" src={this.props.session.avatarURL} height="24px" alt="discord avatar"/>
                 </div>
             )
         } else {
@@ -222,7 +224,7 @@ class LoginLogoutButton extends React.Component<LoginLogoutButtonProps> {
         if (this.props.session.sessionToken && this.props.session.userName) {
             return (
                     <button type="button" className="btn btn-success" onClick={this.props.logout}>
-                        <img className="round-image" src={this.props.session.avatarURL} height='25px'/>
+                        <img className="round-image" src={this.props.session.avatarURL} height="25px"alt="discord avatar"/>
                         <span>Logout</span>
                     </button>
              )
@@ -230,7 +232,7 @@ class LoginLogoutButton extends React.Component<LoginLogoutButtonProps> {
             return (          
                 <a href={this.props.discordURL}>
                     <button type="button" className="btn btn-success" >
-                        <img src={discordLogo} height='20px' />
+                        <img src={discordLogo} height="20px" alt="discord logo"/>
                         <span>Login</span>
                     </button>
                 </a>

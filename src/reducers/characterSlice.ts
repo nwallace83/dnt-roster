@@ -1,6 +1,6 @@
-import { createSlice, Slice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 import { current } from 'immer'
-import { CharacterCrafting } from '../interfaces/character'
+import Character, { CharacterCrafting } from '../interfaces/character'
 
 interface State {
     characterName: string,
@@ -27,18 +27,18 @@ interface State {
     } 
 }
 const initialState: State =  {
-        characterName: "",
-        primaryWeapon1: "",
-        primaryWeapon2: "",
-        primaryRole: "",
-        primaryArmor: "",
-        primaryGS: "",
-        secondaryWeapon1: "",
-        secondaryWeapon2: "",
-        secondaryRole: "",
-        secondaryArmor: "",
-        secondaryGS: "",
-        discordUserName: "",
+        characterName: '',
+        primaryWeapon1: '',
+        primaryWeapon2: '',
+        primaryRole: '',
+        primaryArmor: '',
+        primaryGS: '',
+        secondaryWeapon1: '',
+        secondaryWeapon2: '',
+        secondaryRole: '',
+        secondaryArmor: '',
+        secondaryGS: '',
+        discordUserName: '',
         inactive: false,
         crafting: {
                 weaponSmithing: false,
@@ -51,25 +51,26 @@ const initialState: State =  {
         }
     }
 
-export const characterSlice: Slice<any> = createSlice({
+export const characterSlice = createSlice({
     name:'character',
     initialState: initialState,
     reducers: {
-        saveCharacter: (state,character): State => {
-            if (character.payload && character.payload.characterName && character.payload.crafting) {
-                return character.payload
+        saveCharacter: (state,payload: {type: string, payload: Character}) => {
+            const character = payload.payload
+            if (character && character.characterName && character.crafting) {
+                return character
             } else {
-                return initialState
+                return {...state,initialState}
             }
-
         },
-        clearCharacter: (state) => {
+        clearCharacter: () => {
             return initialState
         },
-        toggleTradeSkill: (state,tradeSkill): State => {
+        toggleTradeSkill: (state,payload: {type: string, payload: string}) => {
+            const tradeSkill = payload.payload
             let currentState: State = current(state)
-            let newValue: boolean = !currentState.crafting[tradeSkill.payload as keyof CharacterCrafting]
-            return {...state,crafting: {...state.crafting,[tradeSkill.payload]: newValue}}
+            let newValue: boolean = !currentState.crafting[tradeSkill as keyof CharacterCrafting]
+            return {...state,crafting: {...state.crafting,[tradeSkill]: newValue}}
         }
     }
 })

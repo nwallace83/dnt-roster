@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit'
 import { current } from 'immer'
 import Character, { CharacterCrafting } from '../interfaces/character'
 import Crafters from '../interfaces/crafters'
-import _ from 'lodash'
+import filter from 'lodash/filter'
+import sortBy from 'lodash/sortBy'
 
 interface State {
     roster: Array<Character>,
@@ -35,15 +36,15 @@ let initialState: State = {
 }
 
 function removeCharacter(roster: Array<Character>,character: Character): Array<Character> {
-    return _.filter(roster,char => {return char.id !== character.id})
+    return filter(roster,char => {return char.id !== character.id})
 }
 
 function removeInactive(roster: Array<Character>): Array<Character> {
-    return _.filter(roster,char => {return !char.inactive })
+    return filter(roster,char => {return !char.inactive })
 }
 
 function sortRoster(roster: Array<Character>): Array<Character> {
-    return _.sortBy(roster,(character: Character) => {
+    return sortBy(roster,(character: Character) => {
         return character.characterName
     })
 }
@@ -66,8 +67,9 @@ export const rosterSlice = createSlice({
     name:'roster',
     initialState: initialState,
     reducers: {
-        setRoster: (state,roster: {type: string, payload: Array<Character>}): State => {
-            let sortedRoster: Array<Character> = sortRoster(roster.payload)
+        setRoster: (state,payload: {type: string, payload: Array<Character>}): State => {
+            const roster = payload.payload
+            let sortedRoster: Array<Character> = sortRoster(roster)
             let crafters: Crafters = {
                 weaponSmithing: getCraftersForSkill(sortedRoster,'weaponSmithing'),
                 armoring: getCraftersForSkill(sortedRoster,'armoring'),
@@ -83,7 +85,7 @@ export const rosterSlice = createSlice({
         clearRoster:(): State => {
             return initialState
         },
-        toggleShowInactive:(state): State => {
+        toggleShowInactive:(state) => {
             return {...state,showInactive: !state.showInactive}
         },
         replaceCharacter:(state,character: {type: string, payload: Character}): State => {
@@ -113,7 +115,7 @@ export const rosterSlice = createSlice({
 
             let roster: Array<Character> = current(state.roster)
 
-            filteredCharacters = _.filter(roster,(character) => {
+            filteredCharacters = filter(roster,(character) => {
                 let dataString: string = character.characterName +
                                      character.primaryRole +
                                      character.primaryArmor +

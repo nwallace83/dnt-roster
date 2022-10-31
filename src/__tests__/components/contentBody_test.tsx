@@ -4,33 +4,34 @@ import ContentBody from '../../components/contentBody'
 import { Provider } from 'react-redux'
 import store from '../../store'
 import { changeTab } from '../../reducers/menuSlice'
-import renderer from 'react-test-renderer';
+import renderer from 'react-test-renderer'
 import { act } from 'react-dom/test-utils'
 
-jest.mock("../../components/editCharacter", () => () => {  
-        return <mock-editCharacter data-testid="edit-character" />
+jest.mock('../../components/editCharacter', () => () => {  
+        return <div data-testid="edit-character" />
     }
 )
 
-jest.mock("../../components/crafters", () => () => {  
-        return <mock-crafters data-testid="crafters" />
+jest.mock('../../components/crafters', (): any => (): any => {  
+        return <div data-testid="crafters" />
     }
 )
 
-jest.mock("../../components/roster", () => () => {  
-        return <mock-roster data-testid="roster" />
+jest.mock('../../components/roster', () => () => {  
+        return <div data-testid="roster" />
     }
 )
 
 describe('ContentBody',() => {
-    let container
+    let container: renderer.ReactTestRenderer
 
-    beforeEach(() => {
+    const setup = () => {
         render(<Provider store={store}><ContentBody /></Provider>)
         container = renderer.create(<Provider store={store}><ContentBody /></Provider>)
-    })
+    }
 
     test('editCharacter is rendered', () => {
+        setup()
         act(() => {
             store.dispatch(changeTab('editCharacter'))
         })
@@ -39,6 +40,7 @@ describe('ContentBody',() => {
     })
     
     test('crafters is rendered', () => {
+        setup()
         act(() => {
             store.dispatch(changeTab('crafters'))
         })
@@ -47,6 +49,7 @@ describe('ContentBody',() => {
     })
     
     test('roster is rendered', () => {
+        setup()
         act(() => {
             store.dispatch(changeTab(''))
         })

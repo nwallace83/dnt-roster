@@ -93,6 +93,7 @@ exports[`Roster Filter players 1`] = `
         </td>
         <td>
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -102,6 +103,7 @@ exports[`Roster Filter players 1`] = `
           </span>
           <br />
           <img
+            alt=""
             className="padding-bottom-4 d-md-none"
             height="15px"
             src="sword.png"
@@ -134,6 +136,7 @@ exports[`Roster Filter players 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -167,6 +170,7 @@ exports[`Roster Filter players 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -179,6 +183,7 @@ exports[`Roster Filter players 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -242,6 +247,7 @@ exports[`Roster Filter players 1`] = `
         </td>
         <td>
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -251,6 +257,7 @@ exports[`Roster Filter players 1`] = `
           </span>
           <br />
           <img
+            alt=""
             className="padding-bottom-4 d-md-none"
             height="15px"
             src="sword.png"
@@ -283,6 +290,7 @@ exports[`Roster Filter players 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -316,6 +324,7 @@ exports[`Roster Filter players 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -328,6 +337,7 @@ exports[`Roster Filter players 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -391,6 +401,7 @@ exports[`Roster Filter players 1`] = `
         </td>
         <td>
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -400,6 +411,7 @@ exports[`Roster Filter players 1`] = `
           </span>
           <br />
           <img
+            alt=""
             className="padding-bottom-4 d-md-none"
             height="15px"
             src="sword.png"
@@ -432,6 +444,7 @@ exports[`Roster Filter players 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -465,6 +478,7 @@ exports[`Roster Filter players 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -477,6 +491,7 @@ exports[`Roster Filter players 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -627,6 +642,7 @@ exports[`Roster Headers are displayed 1`] = `
         </td>
         <td>
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -636,6 +652,7 @@ exports[`Roster Headers are displayed 1`] = `
           </span>
           <br />
           <img
+            alt=""
             className="padding-bottom-4 d-md-none"
             height="15px"
             src="sword.png"
@@ -668,6 +685,7 @@ exports[`Roster Headers are displayed 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -701,6 +719,7 @@ exports[`Roster Headers are displayed 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -713,6 +732,7 @@ exports[`Roster Headers are displayed 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -776,6 +796,7 @@ exports[`Roster Headers are displayed 1`] = `
         </td>
         <td>
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -785,6 +806,7 @@ exports[`Roster Headers are displayed 1`] = `
           </span>
           <br />
           <img
+            alt=""
             className="padding-bottom-4 d-md-none"
             height="15px"
             src="sword.png"
@@ -817,6 +839,7 @@ exports[`Roster Headers are displayed 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -850,6 +873,7 @@ exports[`Roster Headers are displayed 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -862,6 +886,7 @@ exports[`Roster Headers are displayed 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -925,6 +950,7 @@ exports[`Roster Headers are displayed 1`] = `
         </td>
         <td>
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -934,6 +960,7 @@ exports[`Roster Headers are displayed 1`] = `
           </span>
           <br />
           <img
+            alt=""
             className="padding-bottom-4 d-md-none"
             height="15px"
             src="sword.png"
@@ -966,6 +993,7 @@ exports[`Roster Headers are displayed 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -999,6 +1027,7 @@ exports[`Roster Headers are displayed 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -1011,6 +1040,7 @@ exports[`Roster Headers are displayed 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -1161,6 +1191,7 @@ exports[`Roster Players are displayed 1`] = `
         </td>
         <td>
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -1170,6 +1201,7 @@ exports[`Roster Players are displayed 1`] = `
           </span>
           <br />
           <img
+            alt=""
             className="padding-bottom-4 d-md-none"
             height="15px"
             src="sword.png"
@@ -1202,6 +1234,7 @@ exports[`Roster Players are displayed 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -1235,6 +1268,7 @@ exports[`Roster Players are displayed 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -1247,6 +1281,7 @@ exports[`Roster Players are displayed 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -1310,6 +1345,7 @@ exports[`Roster Players are displayed 1`] = `
         </td>
         <td>
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -1319,6 +1355,7 @@ exports[`Roster Players are displayed 1`] = `
           </span>
           <br />
           <img
+            alt=""
             className="padding-bottom-4 d-md-none"
             height="15px"
             src="sword.png"
@@ -1351,6 +1388,7 @@ exports[`Roster Players are displayed 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -1384,6 +1422,7 @@ exports[`Roster Players are displayed 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -1396,6 +1435,7 @@ exports[`Roster Players are displayed 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -1459,6 +1499,7 @@ exports[`Roster Players are displayed 1`] = `
         </td>
         <td>
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -1468,6 +1509,7 @@ exports[`Roster Players are displayed 1`] = `
           </span>
           <br />
           <img
+            alt=""
             className="padding-bottom-4 d-md-none"
             height="15px"
             src="sword.png"
@@ -1500,6 +1542,7 @@ exports[`Roster Players are displayed 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -1533,6 +1576,7 @@ exports[`Roster Players are displayed 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -1545,6 +1589,7 @@ exports[`Roster Players are displayed 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -1695,6 +1740,7 @@ exports[`Roster Players are sorted 1`] = `
         </td>
         <td>
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -1704,6 +1750,7 @@ exports[`Roster Players are sorted 1`] = `
           </span>
           <br />
           <img
+            alt=""
             className="padding-bottom-4 d-md-none"
             height="15px"
             src="sword.png"
@@ -1736,6 +1783,7 @@ exports[`Roster Players are sorted 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -1769,6 +1817,7 @@ exports[`Roster Players are sorted 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -1781,6 +1830,7 @@ exports[`Roster Players are sorted 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -1844,6 +1894,7 @@ exports[`Roster Players are sorted 1`] = `
         </td>
         <td>
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -1853,6 +1904,7 @@ exports[`Roster Players are sorted 1`] = `
           </span>
           <br />
           <img
+            alt=""
             className="padding-bottom-4 d-md-none"
             height="15px"
             src="sword.png"
@@ -1885,6 +1937,7 @@ exports[`Roster Players are sorted 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -1918,6 +1971,7 @@ exports[`Roster Players are sorted 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -1930,6 +1984,7 @@ exports[`Roster Players are sorted 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -1993,6 +2048,7 @@ exports[`Roster Players are sorted 1`] = `
         </td>
         <td>
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -2002,6 +2058,7 @@ exports[`Roster Players are sorted 1`] = `
           </span>
           <br />
           <img
+            alt=""
             className="padding-bottom-4 d-md-none"
             height="15px"
             src="sword.png"
@@ -2034,6 +2091,7 @@ exports[`Roster Players are sorted 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -2067,6 +2125,7 @@ exports[`Roster Players are sorted 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -2079,6 +2138,7 @@ exports[`Roster Players are sorted 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -2229,6 +2289,7 @@ exports[`Roster Show inactive players 1`] = `
         </td>
         <td>
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -2238,6 +2299,7 @@ exports[`Roster Show inactive players 1`] = `
           </span>
           <br />
           <img
+            alt=""
             className="padding-bottom-4 d-md-none"
             height="15px"
             src="sword.png"
@@ -2270,6 +2332,7 @@ exports[`Roster Show inactive players 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -2303,6 +2366,7 @@ exports[`Roster Show inactive players 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -2315,6 +2379,7 @@ exports[`Roster Show inactive players 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -2378,6 +2443,7 @@ exports[`Roster Show inactive players 1`] = `
         </td>
         <td>
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -2387,6 +2453,7 @@ exports[`Roster Show inactive players 1`] = `
           </span>
           <br />
           <img
+            alt=""
             className="padding-bottom-4 d-md-none"
             height="15px"
             src="sword.png"
@@ -2419,6 +2486,7 @@ exports[`Roster Show inactive players 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -2452,6 +2520,7 @@ exports[`Roster Show inactive players 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -2464,6 +2533,7 @@ exports[`Roster Show inactive players 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -2527,6 +2597,7 @@ exports[`Roster Show inactive players 1`] = `
         </td>
         <td>
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -2536,6 +2607,7 @@ exports[`Roster Show inactive players 1`] = `
           </span>
           <br />
           <img
+            alt=""
             className="padding-bottom-4 d-md-none"
             height="15px"
             src="sword.png"
@@ -2568,6 +2640,7 @@ exports[`Roster Show inactive players 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -2601,6 +2674,7 @@ exports[`Roster Show inactive players 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -2613,6 +2687,7 @@ exports[`Roster Show inactive players 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -2676,6 +2751,7 @@ exports[`Roster Show inactive players 1`] = `
         </td>
         <td>
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -2685,6 +2761,7 @@ exports[`Roster Show inactive players 1`] = `
           </span>
           <br />
           <img
+            alt=""
             className="padding-bottom-4 d-md-none"
             height="15px"
             src="sword.png"
@@ -2717,6 +2794,7 @@ exports[`Roster Show inactive players 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"
@@ -2750,6 +2828,7 @@ exports[`Roster Show inactive players 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="lifestaff.png"
@@ -2762,6 +2841,7 @@ exports[`Roster Show inactive players 1`] = `
           className="d-none d-lg-table-cell"
         >
           <img
+            alt=""
             className="padding-bottom-4"
             height="15px"
             src="sword.png"

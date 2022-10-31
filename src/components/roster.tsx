@@ -14,12 +14,12 @@ import voidGauntlet from '../images/weapons/voidgauntlet.png'
 import warHammer from '../images/weapons/warhammer.png'
 import Character from '../interfaces/character'
 import Session from '../interfaces/session'
-import { toastr } from 'react-redux-toastr';
-import { connect } from 'react-redux';
-import { setRoster, applyFilter, replaceCharacter, toggleShowInactive } from '../reducers/rosterSlice';
+import { toastr } from 'react-redux-toastr'
+import { connect } from 'react-redux'
+import { setRoster, applyFilter, replaceCharacter, toggleShowInactive } from '../reducers/rosterSlice'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
-import { confirm } from "react-confirm-box"
+import { confirm } from 'react-confirm-box'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
 const mapStateToProps = (state: any) => {
@@ -145,17 +145,17 @@ class Player extends React.Component<PlayerProps> {
                     {this.props.player.discordUserName}
                 </td>
                 <td>
-                    <img className="padding-bottom-4" height='15px' src={this.getWeaponIcon(this.props.player.primaryWeapon1)} />
+                    <img className="padding-bottom-4" height="15px" src={this.getWeaponIcon(this.props.player.primaryWeapon1)} alt=""/>
                     <span>{this.props.player.primaryWeapon1}</span>
 
-                    <br/><img className="padding-bottom-4 d-md-none" height='15px' src={this.getWeaponIcon(this.props.player.primaryWeapon2)} />
+                    <br/><img className="padding-bottom-4 d-md-none" height="15px" src={this.getWeaponIcon(this.props.player.primaryWeapon2)} alt=""/>
                     <span className="d-lg-none">{this.props.player.primaryWeapon2}</span>
                     <span className="d-lg-none"><br/>{this.props.player.primaryArmor}</span>
                     <span className="d-lg-none"><br/>{this.props.player.primaryRole}</span>
                     <span className="d-lg-none"><br/>{this.props.player.primaryGS}</span>
                 </td>
                 <td className="d-none d-lg-table-cell">
-                    <img className="padding-bottom-4" height='15px' src={this.getWeaponIcon(this.props.player.primaryWeapon2)} />
+                    <img className="padding-bottom-4" height="15px" src={this.getWeaponIcon(this.props.player.primaryWeapon2)} alt=""/>
                     <span>{this.props.player.primaryWeapon2}</span>
                 </td>
                 <td className="d-none d-lg-table-cell">
@@ -168,11 +168,11 @@ class Player extends React.Component<PlayerProps> {
                     <span>{this.props.player.primaryGS}</span>
                 </td>
                 <td className="d-none d-lg-table-cell">
-                    <img className='padding-bottom-4' height='15px' src={this.getWeaponIcon(this.props.player.secondaryWeapon1)} />
+                    <img className="padding-bottom-4" height="15px" src={this.getWeaponIcon(this.props.player.secondaryWeapon1)} alt=""/>
                     <span>{this.props.player.secondaryWeapon1}</span>
                 </td>
                 <td className="d-none d-lg-table-cell">
-                    <img className='padding-bottom-4' height='15px' src={this.getWeaponIcon(this.props.player.secondaryWeapon2)} />
+                    <img className="padding-bottom-4" height="15px" src={this.getWeaponIcon(this.props.player.secondaryWeapon2)} alt=""/>
                     <span>{this.props.player.secondaryWeapon2}</span>
                 </td>
                 <td className="d-none d-lg-table-cell">
@@ -194,46 +194,46 @@ class Player extends React.Component<PlayerProps> {
 
         switch(weapon) {
             case 'Life Staff': 
-                weaponIcon = lifeStaff; 
-                break;
+                weaponIcon = lifeStaff
+                break
             case 'Bow': 
-                weaponIcon = bow; 
-                break;
+                weaponIcon = bow
+                break
             case 'Fire Staff': 
-                weaponIcon = fireStaff; 
-                break;
+                weaponIcon = fireStaff
+                break
             case 'Great Axe': 
-                weaponIcon = greatAxe; 
-                break;
+                weaponIcon = greatAxe
+                break
             case 'Hatchet': 
-                weaponIcon = hatchet; 
-                break;
+                weaponIcon = hatchet
+                break
             case 'Ice Gauntlet': 
-                weaponIcon = iceGauntlet; 
-                break;
+                weaponIcon = iceGauntlet
+                break
             case 'Musket': 
-                weaponIcon = musket; 
-                break;
+                weaponIcon = musket
+                break
             case 'Rapier': 
-                weaponIcon = rapier; 
-                break;
+                weaponIcon = rapier
+                break
             case 'Spear': 
-                weaponIcon = spear; 
-                break;
+                weaponIcon = spear
+                break
             case 'Sword': 
-                weaponIcon = sword; 
-                break;
+                weaponIcon = sword
+                break
             case 'Void Gauntlet': 
-                weaponIcon = voidGauntlet; 
-                break;
+                weaponIcon = voidGauntlet
+                break
             case 'War Hammer': 
-                weaponIcon = warHammer; 
-                break;
+                weaponIcon = warHammer
+                break
             default:
-                weaponIcon = '';
+                weaponIcon = ''
         }
 
-        return weaponIcon;
+        return weaponIcon
     }
 }
 
@@ -254,9 +254,9 @@ class ActiveStatus extends React.Component<ActiveStatusProps> {
 
     getClasses(): string {
         if (this.props.session.isAdmin) {
-            return this.props.player.inactive ? "inactive-player-icon-admin" : "active-player-icon-admin"
+            return this.props.player.inactive ? 'inactive-player-icon-admin' : 'active-player-icon-admin'
         } else {
-            return this.props.player.inactive ? "inactive-player-icon" : "active-player-icon"
+            return this.props.player.inactive ? 'inactive-player-icon' : 'active-player-icon'
         }    
     }
 
@@ -265,14 +265,7 @@ class ActiveStatus extends React.Component<ActiveStatusProps> {
             return null
         }
 
-        const options = {
-            labels: {
-              confirmable: "Yes",
-              cancellable: "No"
-            }
-          }
-
-        const result = await confirm('Change ' + this.props.player.characterName + ' to ' + (this.props.player.inactive ? 'active?' : 'inactive?'));
+        const result = await confirm('Change ' + this.props.player.characterName + ' to ' + (this.props.player.inactive ? 'active?' : 'inactive?'))
         if (result) {
             const endPoint = '/api/v1/admin/character/inactive/' + this.props.player.id + '/' + !this.props.player.inactive
             fetch(endPoint,{method: 'POST'}).then(res => {

@@ -1,12 +1,10 @@
-'use strict'
-
-import React from 'react';
-import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './index.css'
 import 'react-redux-toastr/lib/css/react-redux-toastr.min.css'
-import store from './store.js';
-import { Provider } from 'react-redux';
+import store from './store.js'
+import { Provider } from 'react-redux'
 import Header from './components/header'
 import ContentBody from './components/contentBody'
 import ReduxToastr from 'react-redux-toastr'
@@ -29,5 +27,5 @@ import ReduxToastr from 'react-redux-toastr'
           </Provider>
       </div>,
     document.getElementById('root')
-  );
+  )
   
