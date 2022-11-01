@@ -171,7 +171,6 @@ function MobileLoginLogoutButton(props: MobileLoginLogoutButtonProps) {
     }
 }
 
-
 interface LoginLogoutButtonProps {
     discordURL: string,
     session: SessionState,

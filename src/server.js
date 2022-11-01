@@ -96,7 +96,7 @@ let testPlayers = [
   { 'id': '431869608866086922', 'characterName': '4mbii', 'crafting': { 'weaponSmithing': false, 'armoring': true, 'engineering': false, 'jewelCrafting': false, 'arcana': true, 'cooking': true, 'furnishing': false }, 'discordUserName': '4mbii#9140', 'inactive': false, 'primaryArmor': 'Medium', 'primaryGS': 616, 'primaryRole': 'DPS', 'primaryWeapon1': 'Void Gauntlet', 'primaryWeapon2': 'Ice Gauntlet', 'secondaryArmor': 'Light', 'secondaryGS': 600, 'secondaryRole': 'DPS', 'secondaryWeapon1': 'Fire Staff', 'secondaryWeapon2': 'Ice Gauntlet' },
   { 'id': '301207924288520192', 'characterName': 'ShadowZonee', 'crafting': { 'weaponSmithing': false, 'armoring': false, 'engineering': false, 'jewelCrafting': false, 'arcana': false, 'cooking': false, 'furnishing': false }, 'discordUserName': 'ShadowZonee#7242', 'inactive': false, 'primaryArmor': 'Medium', 'primaryGS': 601, 'primaryRole': 'DPS', 'primaryWeapon1': 'Hatchet', 'primaryWeapon2': 'Bow', 'secondaryArmor': 'Light', 'secondaryGS': 585, 'secondaryRole': 'Healer', 'secondaryWeapon1': 'Life Staff', 'secondaryWeapon2': 'Rapier' },
   { 'id': '139870216543797259', 'characterName': 'I am Vengeful', 'crafting': { 'weaponSmithing': false, 'armoring': false, 'engineering': true, 'jewelCrafting': false, 'arcana': true, 'cooking': true, 'furnishing': false }, 'discordUserName': 'Venge#6039', 'inactive': false, 'primaryArmor': 'Light', 'primaryGS': 608, 'primaryRole': 'DPS', 'primaryWeapon1': 'Ice Gauntlet', 'primaryWeapon2': 'Void Gauntlet', 'secondaryArmor': '', 'secondaryGS': 500, 'secondaryRole': '', 'secondaryWeapon1': '', 'secondaryWeapon2': '' },
-  { 'id': '138098004040220673', 'characterName': 'Coop', 'crafting': { 'weaponSmithing': false, 'armoring': false, 'engineering': false, 'jewelCrafting': false, 'arcana': false, 'cooking': false, 'furnishing': false }, 'discordUserName': 'Coop#0960', 'inactive': false, 'primaryArmor': 'Light', 'primaryGS': 597, 'primaryRole': 'DPS', 'primaryWeapon1': 'Fire Staff', 'primaryWeapon2': 'Ice Gauntlet', 'secondaryArmor': 'Light', 'secondaryGS': 590, 'secondaryRole': 'DPS', 'secondaryWeapon1': 'Great Axe', 'secondaryWeapon2': 'War Hammer' },
+  { 'id': '138098004040220673', 'characterName': 'Coop', 'crafting': { 'weaponSmithing': false, 'armoring': false, 'engineering': false, 'jewelCrafting': false, 'arcana': false, 'cook(pin)ing': false, 'furnishing': false }, 'discordUserName': 'Coop#0960', 'inactive': false, 'primaryArmor': 'Light', 'primaryGS': 597, 'primaryRole': 'DPS', 'primaryWeapon1': 'Fire Staff', 'primaryWeapon2': 'Ice Gauntlet', 'secondaryArmor': 'Light', 'secondaryGS': 590, 'secondaryRole': 'DPS', 'secondaryWeapon1': 'Great Axe', 'secondaryWeapon2': 'War Hammer' },
   { 'id': '177608019549356032', 'characterName': 'Shogunate', 'crafting': { 'weaponSmithing': false, 'armoring': false, 'engineering': false, 'jewelCrafting': false, 'arcana': false, 'cooking': true, 'furnishing': false }, 'discordUserName': 'Shogun#3358', 'inactive': false, 'primaryArmor': 'Medium', 'primaryGS': 592, 'primaryRole': 'DPS', 'primaryWeapon1': 'Great Axe', 'primaryWeapon2': 'War Hammer', 'secondaryArmor': 'Medium', 'secondaryGS': 500, 'secondaryRole': 'DPS', 'secondaryWeapon1': 'Hatchet', 'secondaryWeapon2': 'Sword' },
   { 'id': '339884078452965388', 'characterName': 'fenixassassin', 'crafting': { 'weaponSmithing': false, 'armoring': false, 'engineering': false, 'jewelCrafting': false, 'arcana': false, 'cooking': false, 'furnishing': false }, 'discordUserName': 'fenixassassin#5015', 'inactive': false, 'primaryArmor': 'Medium', 'primaryGS': 604, 'primaryRole': 'DPS', 'primaryWeapon1': 'War Hammer', 'primaryWeapon2': 'Hatchet', 'secondaryArmor': 'Medium', 'secondaryGS': 605, 'secondaryRole': 'DPS', 'secondaryWeapon1': 'Great Axe', 'secondaryWeapon2': 'War Hammer' },
   { 'id': '248532534554525696', 'characterName': 'Sir Patch', 'crafting': { 'weaponSmithing': false, 'armoring': true, 'engineering': false, 'jewelCrafting': true, 'arcana': true, 'cooking': false, 'furnishing': false }, 'discordUserName': 'patch#4821', 'inactive': false, 'primaryArmor': 'Medium', 'primaryGS': 619, 'primaryRole': 'DPS', 'primaryWeapon1': 'Great Axe', 'primaryWeapon2': 'War Hammer', 'secondaryArmor': 'Medium', 'secondaryGS': 617, 'secondaryRole': 'DPS', 'secondaryWeapon1': 'Great Axe', 'secondaryWeapon2': 'Void Gauntlet' },
@@ -113,7 +113,33 @@ let testPlayers = [
   { 'id': '186679070514216960', 'characterName': 'xPerunga', 'crafting': { 'weaponSmithing': false, 'armoring': false, 'engineering': false, 'jewelCrafting': false, 'arcana': false, 'cooking': false, 'furnishing': false }, 'discordUserName': 'Perunga#5754', 'inactive': false, 'primaryArmor': 'Heavy', 'primaryGS': 604, 'primaryRole': 'Tank', 'primaryWeapon1': 'War Hammer', 'primaryWeapon2': 'Ice Gauntlet', 'secondaryArmor': 'Medium', 'secondaryGS': 602, 'secondaryRole': 'DPS', 'secondaryWeapon1': 'Bow', 'secondaryWeapon2': 'Spear' },
 ]
 
-let token = new Response(200, {}, {token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEZXZlbG9wbWVudCIsImlhdCI6MTY2NzI3NjE0MywiZXhwIjo0ODIyOTUwMDY5LCJhdWQiOiJsb2NhbGhvc3QiLCJzdWIiOiJub25lIiwidXNlck5hbWUiOiJLYXZpb24jODc3NyIsImlkIjoiS2F2aW9uIiwiYXZhdGFyIjoiaHR0cHM6Ly9tZWRpYS53aXJlZC5jb20vcGhvdG9zLzVjZGVmYzI4YjI1Njk4OTJjMDZiMmFlNC9tYXN0ZXIvd18yNTYwJTJDY19saW1pdC9DdWx0dXJlLUdydW1weS1DYXQtNDg3Mzg2MTIxLTIuanBnIiwiaXNBZG1pbiI6IlRydWUifQ.52Ab-8Rot_Kk-HFTH6-eWOVbQe-1_Epz3-Wk3F614ik'})
+let character = {
+  id:'541507250020155392',
+  characterName:'Kavion',
+  discordUserName:'Kavion#8777',
+  primaryArmor:'Light',
+  primaryGS:614,
+  primaryRole:'Healer',
+  primaryWeapon1:'Life Staff',
+  primaryWeapon2:'Rapier',
+  secondaryArmor:'Medium',
+  secondaryGS:600,
+  secondaryRole:'Healer',
+  secondaryWeapon1:'Life Staff',
+  secondaryWeapon2:'Rapier',
+  inactive:false,
+  crafting: {
+    weaponSmithing:false,
+    armoring:false,
+    engineering:false,
+    jewelCrafting:false,
+    arcana:false,
+    cooking:false,
+    furnishing:false
+  }
+}
+
+let token = new Response(200, {}, {token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkZXZlbG9wbWVudCIsImlhdCI6MTY2NzMzNDAzMSwiZXhwIjo0ODU0NTQzNjMxLCJhdWQiOiJsb2NhbGhvc3QiLCJzdWIiOiJkZXZlbG9wbWVudCIsInVzZXJOYW1lIjoiS2F2aW9uIzg3NzciLCJpZCI6IjU0MTUwNzI1MDAyMDE1NTM5MiIsImF2YXRhciI6ImNjOTZkNjQyZjNjYWE5ZDM0YWMxYmJjYTY2NDU2Zjk1IiwiaXNBZG1pbiI6InRydWUifQ.CTYrzVC2R6xNzE7yGq_QgCWzfbjg2X3HrmRwxVHri88'})
 
 export function makeServer({ environment = 'test' } = {}) {
   let server = createServer()
@@ -121,6 +147,7 @@ export function makeServer({ environment = 'test' } = {}) {
   server.post('/api/v1/discord/login/:code', token)
   server.get('/api/v1/auth', token)
   server.post('/api/v1/character',new Response(200,{},{}))
-  server.get('/api/v1/character',new Response(200,{},{}))
+  server.get('/api/v1/character',new Response(200,{},character))
+  server.post('/api/v1/admin/character/inactive/:id/:flag',new Response(200,{},{}))
   return server
 }
