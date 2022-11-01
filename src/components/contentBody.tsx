@@ -1,31 +1,17 @@
-import React from 'react'
 import Roster from './roster'
 import EditCharacter from './editCharacter'
 import Crafters from './crafters'
-import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
+import { RootState } from '../store'
 
-interface State {
-    menu: {
-        activeTab: string;
+export default function ContentBody()  {
+    const activeTab = useSelector((state: RootState) => state.menu.activeTab)
+
+    if (activeTab === 'editCharacter') {
+        return <EditCharacter />
+    } else if (activeTab === 'crafters') {
+        return <Crafters />
+    } else {
+        return <Roster />
     }
 }
-
-const mapStateToProps = (state: State) => {
-    return {
-        activeTab: state.menu.activeTab
-    }
-}
-
-class ContentBody extends React.Component<{activeTab: string}> {
-    render() {
-            if (this.props.activeTab === 'editCharacter') {
-                return <EditCharacter />
-            } else if (this.props.activeTab === 'crafters') {
-                return <Crafters />
-            } else {
-                return <Roster />
-            }
-    }
-}
-
-export default connect(mapStateToProps)(ContentBody)

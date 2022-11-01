@@ -2,31 +2,11 @@ import { createSlice } from '@reduxjs/toolkit'
 import { current } from 'immer'
 import Character, { CharacterCrafting } from '../interfaces/character'
 
-interface State {
-    characterName: string,
-    primaryWeapon1: string,
-    primaryWeapon2: string,
-    primaryRole: string,
-    primaryArmor: string,
-    primaryGS: string,
-    secondaryWeapon1: string,
-    secondaryWeapon2: string,
-    secondaryRole: string,
-    secondaryArmor: string,
-    secondaryGS: string,
-    discordUserName: string,
-    inactive: boolean,
-    crafting: {
-            weaponSmithing: boolean,
-            armoring: boolean,
-            engineering: boolean,
-            jewelCrafting: boolean,
-            arcana: boolean,
-            cooking: boolean,
-            furnishing: boolean,
-    } 
+interface CharacterState extends Character {
+
 }
-const initialState: State =  {
+
+const initialState: CharacterState =  {
         characterName: '',
         primaryWeapon1: '',
         primaryWeapon2: '',
@@ -68,7 +48,7 @@ export const characterSlice = createSlice({
         },
         toggleTradeSkill: (state,payload: {type: string, payload: string}) => {
             const tradeSkill = payload.payload
-            let currentState: State = current(state)
+            let currentState: CharacterState = current(state)
             let newValue: boolean = !currentState.crafting[tradeSkill as keyof CharacterCrafting]
             return {...state,crafting: {...state.crafting,[tradeSkill]: newValue}}
         }

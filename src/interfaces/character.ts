@@ -11,7 +11,7 @@ export default interface Character {
         secondaryArmor: string,
         secondaryGS: string,
         discordUserName: string,
-        id: string,
+        id?: string,
         inactive: boolean,
         crafting: CharacterCrafting
 }

@@ -5,7 +5,7 @@ import Crafters from '../interfaces/crafters'
 import filter from 'lodash/filter'
 import sortBy from 'lodash/sortBy'
 
-interface State {
+interface RosterState {
     roster: Array<Character>,
     filteredRoster:  Array<Character>,
     showInactive: boolean,
@@ -20,7 +20,7 @@ interface State {
     }
 }
 
-let initialState: State = {
+let initialState: RosterState = {
     roster:[],
     filteredRoster: [],
     showInactive: false,
@@ -67,7 +67,7 @@ export const rosterSlice = createSlice({
     name:'roster',
     initialState: initialState,
     reducers: {
-        setRoster: (state,payload: {type: string, payload: Array<Character>}): State => {
+        setRoster: (state,payload: {type: string, payload: Array<Character>}): RosterState => {
             const roster = payload.payload
             let sortedRoster: Array<Character> = sortRoster(roster)
             let crafters: Crafters = {
@@ -82,13 +82,13 @@ export const rosterSlice = createSlice({
 
             return {...state,crafters: crafters, roster: sortedRoster,filteredRoster: removeInactive(sortedRoster)}
         },
-        clearRoster:(): State => {
+        clearRoster:(): RosterState => {
             return initialState
         },
         toggleShowInactive:(state) => {
             return {...state,showInactive: !state.showInactive}
         },
-        replaceCharacter:(state,character: {type: string, payload: Character}): State => {
+        replaceCharacter:(state,character: {type: string, payload: Character}): RosterState => {
             let roster: Array<Character> = removeCharacter(current(state.roster),character.payload)
             let filteredRoster: Array<Character> = removeCharacter(current(state.filteredRoster),character.payload)
 
@@ -101,7 +101,7 @@ export const rosterSlice = createSlice({
             return {...state,roster: rosterSorted, filteredRoster: filteredRosterSorted}
 
         },
-        applyFilter: (state,filterValue: {type: string, payload: string}): State => {
+        applyFilter: (state,filterValue: {type: string, payload: string}): RosterState => {
             let filteredCharacters: Array<Character>
 
             if (filterValue.payload.length === 0) {

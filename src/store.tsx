@@ -3,9 +3,9 @@ import menuReducer from './reducers/menuSlice'
 import sessionReducer from './reducers/sessionSlice'
 import characterReducer from './reducers/characterSlice'
 import rosterReducer from './reducers/rosterSlice'
-import {reducer as toastrReducer} from 'react-redux-toastr'
+import { reducer as toastrReducer } from 'react-redux-toastr'
 
-export default configureStore({
+let store =  configureStore({
     reducer: {
         menu: menuReducer,
         session: sessionReducer,
@@ -14,3 +14,8 @@ export default configureStore({
         toastr: toastrReducer
     }
 })
+
+export default store
+
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch

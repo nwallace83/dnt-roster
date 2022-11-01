@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import jwt_decode from 'jwt-decode'
 
-export interface Session {
+export interface SessionState {
     id: string,
     sessionToken: string,
     userName:string,
@@ -9,7 +9,7 @@ export interface Session {
     isAdmin: boolean
 }
 
-const initialState: Session = {
+const initialState: SessionState = {
     id: '',
     sessionToken: '',
     userName:'',

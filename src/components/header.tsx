@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
+import React, { useCallback, useEffect } from 'react'
 import logo from '../images/logo-green.png'
 import logoSquare from '../images/logo-square.png'
 import discordLogo from '../images/discordLogo.png'
-import { connect } from 'react-redux'
-import { setSession, clearSession, Session } from '../reducers/sessionSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { setSession, clearSession, SessionState } from '../reducers/sessionSlice'
 import { clearCharacter, saveCharacter } from '../reducers/characterSlice'
 import { setRoster } from '../reducers/rosterSlice'
 import { changeTab } from '../reducers/menuSlice'
@@ -12,102 +12,45 @@ import Cookies from 'js-cookie'
 import { toastr } from 'react-redux-toastr'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
-import Character from '../interfaces/character'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import { RootState } from '../store'
 
-const mapStateToProps = (state: any) => {
-    return {
-        activeTab: state.menu.activeTab,
-        session: state.session
-    }
-}
+export default function Header() {
+    const discordURL: string = 'https://discord.com/oauth2/authorize?response_type=code&client_id=944735010311786537&scope=identify%20guilds&state=ABCDEF&prompt=consent&redirect_uri=' + encodeURIComponent(window.location.protocol + '//' + window.location.host)
+    const dispatch = useDispatch()
+    const activeTab = useSelector((state: RootState) => state.menu.activeTab)
+    const session = useSelector((state: RootState) => state.session)
 
-const mapDispatchToProps = (dispatch: any) => {
-    return {
-        changeTab: (tabName: string) => dispatch(changeTab(tabName)),
-        setSession: (session: string) => dispatch(setSession(session)),
-        saveCharacter: (character: Character) => dispatch(saveCharacter(character)),
-        setRoster: (roster: Array<Character>) => dispatch(setRoster(roster)),
-        logout: () => {
-            dispatch(clearSession())
-            dispatch(clearCharacter())
-            dispatch(changeTab('roster'))
-            Cookies.remove('authorization')
-            toastr.success('Logged Out','Successfully logged out')
-        }
-    }
-}
+    const logout = useCallback(() => {
+        dispatch(clearSession())
+        dispatch(clearCharacter())
+        dispatch(changeTab('roster'))
+        Cookies.remove('authorization')
+        toastr.success('Logged Out','Successfully logged out')
+    },[dispatch])
 
-interface HeaderProps {
-    activeTab: string,
-    session: Session
-}
-interface HeaderActionProps {
-    changeTab: (s: string) => void,
-    setSession: (s: string) => void,
-    saveCharacter: (c: Character) => void,
-    setRoster: (r: Array<Character>) => void,
-    logout: () => void
-}
-interface HeaderState {
-    discordURL: string
-}
-class Header extends React.Component<HeaderProps & HeaderActionProps, HeaderState> {
-    constructor(props: any){
-        super(props)
-        this.state = {
-            discordURL: 'https://discord.com/oauth2/authorize?response_type=code&client_id=944735010311786537&scope=identify%20guilds&state=' + this.randomhash() + '&prompt=consent&redirect_uri=' + encodeURIComponent(window.location.protocol + '//' + window.location.host)
-        }
-    }
-
-    randomhash() {
-        let text: string = ''
-        let possible: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-
-        for (let i = 0; i < 40; i++) {
-            text += possible.charAt(Math.floor(Math.random() * possible.length))
-        }
-        return text
-    }
-
-    componentDidMount() {
-        this.initializeSession()
-        this.initializeRoster()
-    }
-
-    initializeRoster() {
+    const initializeRoster = useCallback(() => {
         fetch('/api/v1/roster').then(res => {
             if (res.ok) {
-                res.json().then(res => this.props.setRoster(res))
+                res.json().then(res => dispatch(setRoster(res))).catch(res => console.error(res))
             } else {
                 window.alert('Problem loading roster, tell Kavion where you touched it')
             }
         })
-    }
+    },[dispatch])
 
-    initializeSession() {
-        const queryString: string = window.location.search
-        const urlParams: URLSearchParams = new URLSearchParams(queryString)
+    const initializeCharacter = useCallback(() => {
+        fetch('/api/v1/character/').then(res => {
+            if (res.ok) {
+                res.json().then(res => dispatch(saveCharacter(res)))
+            } else {
+                logout()
+                toastr.error('Error','Unable to get your character, refresh page and yell at Kavion')
+            }
+        })
+    },[dispatch, logout])
 
-        if (urlParams.get('code')) {
-            fetch('/api/v1/discord/login/' + urlParams.get('code'),{method: 'POST'})
-            .then( res => {
-                window.history.replaceState({}, document.title, '/')
-                if (res.ok) {
-                    res.json().then(res => {
-                        this.props.setSession(res)
-                        Cookies.set('authorization',res,{expires: 30})
-                        this.initializeCharacter()
-                        toastr.success('Logged in', 'Welcome ' + this.props.session.userName)
-                    })
-                }
-            })
-        } else {
-            this.setSessionFromCookie()
-        }
-    }
-
-    setSessionFromCookie() {
+    const setSessionFromCookie = useCallback(() => {
         const authCookie: string | undefined = Cookies.get('authorization')
 
         if (authCookie) {
@@ -115,122 +58,140 @@ class Header extends React.Component<HeaderProps & HeaderActionProps, HeaderStat
             .then (res => {
                 if (res.ok) {
                     res.json().then(res => {
-                        this.props.setSession(res)
-                        Cookies.set('authorization',res,{expires: 30})
-                        this.initializeCharacter()
+                        dispatch(setSession(res.token))
+                        Cookies.set('authorization',res.token,{expires: 30})
+                        initializeCharacter()
                     })
                 } else {
-                    this.props.logout()
-                    this.props.changeTab('roster')
+                    logout()
+                    dispatch(changeTab('roster'))
+                }
+            })
+        } 
+    },[dispatch, initializeCharacter, logout])
+
+    const initializeSession = useCallback(() => {
+        const queryString: string = window.location.search
+        const urlParams: URLSearchParams = new URLSearchParams(queryString)
+
+        if (urlParams.get('code')) {
+            fetch('/api/v1/discord/login/' + urlParams.get('code'),{method: 'POST'})
+            .then( res => {
+                if (res.ok) {
+                    window.history.replaceState({}, document.title, '/')
+                    res.json().then(res => {
+                        const token = res.token
+                        dispatch(setSession(token))
+                        Cookies.set('authorization',token,{expires: 30})
+                        initializeCharacter()
+                        toastr.success('Logged in', 'Welcome ' + session.userName)
+                    }).catch(res => console.error(res))
                 }
             })
         } else {
-            this.props.changeTab('roster')
+            setSessionFromCookie()
         }
-    }
+    },[dispatch, initializeCharacter, session.userName, setSessionFromCookie])
 
-    initializeCharacter() {
-        fetch('/api/v1/character/').then(res => {
-            if (res.ok) {
-                res.json().then(res => this.props.saveCharacter(res))
-            } else {
-                this.props.logout()
-                toastr.error('Error','Unable to get your character, refresh page and yell at Kavion')
-            }
-        })
-    }
+    useEffect(() => {
+        if (!session.sessionToken) {
+            initializeSession()
+        }
+        initializeRoster()  
+    },[session, initializeRoster, initializeSession])
 
-    showEditCharacersTab(): JSX.Element | undefined {
-        if (this.props.session.sessionToken && this.props.session.userName) {
+    return (
+        <div className="row">
+            <div className="col-md-8 d-none d-lg-inline-block" id="nav-menu">
+                <img src={logo} height="40px" id="logo" alt="logo"/>
+                <ul className="nav nav-tabs">
+                    <li className="nav-item" onClick={() => dispatch(changeTab('roster'))}>
+                        
+                        <a className={getButtonClasses('roster')} aria-current="page" href="#">Roster</a>
+                    </li>
+                    <li className="nav-item" onClick={() => dispatch(changeTab('crafters'))}>
+                        <a className={getButtonClasses('crafters')} aria-current="page" href="#">Crafters</a>
+                    </li>
+                    {showEditCharacersTab()}
+                </ul>
+            </div>
+            <div className="col-md-4 txt-right d-none d-lg-inline-block" id="login-logout-div">
+                <LoginLogoutButton discordURL={discordURL} session={session} logout={logout} />
+            </div>
+            <div className="row d-lg-none">
+                <div className="col-auto"><img src={logoSquare} height="24px" id="logo" alt="logo"/></div>
+                <div className="col-auto" onClick={() => dispatch(changeTab('roster'))} style={getMobileButtonStyle('roster')}><span>&#8226;roster&#8226;</span></div>
+                <div className="col-auto" onClick={() => dispatch(changeTab('crafters'))} style={getMobileButtonStyle('crafters')}><span>&#8226;crafters&#8226;</span></div>
+                {session.sessionToken ? <div className="col-auto" onClick={() => dispatch(changeTab('editCharacter'))} style={getMobileButtonStyle('editCharacter')}><span>&#8226;character&#8226;</span></div> : null }  
+                <MobileLoginLogoutButton discordURL={discordURL} session={session} logout={logout}/>
+            </div>
+        </div>
+    )
+
+    function showEditCharacersTab() {
+        if (session.sessionToken && session.userName) {
             return(
-                <li className="nav-item" onClick={() => this.props.changeTab('editCharacter')}>
-                    <a className={this.getButtonClasses('editCharacter')} aria-current="page" href="#">Edit Character</a>
+                <li className="nav-item" onClick={() => dispatch(changeTab('editCharacter'))}>
+                    <a className={getButtonClasses('editCharacter')} aria-current="page" href="#">Edit Character</a>
                 </li>
             )
         }
     }
 
-    getButtonClasses(tabName: string): string {
-        return 'nav-link ' + (this.props.activeTab === tabName ? 'active' : 'inactive')
+    function getButtonClasses(tabName: string): string {
+        return 'nav-link ' + (activeTab === tabName ? 'active' : 'inactive')
     }
-
     
-    getMobileButtonStyle(tabName: string): any { 
-        return {color: this.props.activeTab === tabName ? 'green' : 'white'}
+    interface GetMobileButtonStyle {
+        color: string
     }
-
-    render() {
-        return (
-            <div className="row">
-                <div className="col-md-8 d-none d-lg-inline-block" id="nav-menu">
-                    <img src={logo} height="40px" id="logo" alt="logo"/>
-                    <ul className="nav nav-tabs">
-                        <li className="nav-item" onClick={() => this.props.changeTab('roster')}>
-                            
-                            <a className={this.getButtonClasses('roster')} aria-current="page" href="#">Roster</a>
-                        </li>
-                        <li className="nav-item" onClick={() => this.props.changeTab('crafters')}>
-                            <a className={this.getButtonClasses('crafters')} aria-current="page" href="#">Crafters</a>
-                        </li>
-                        {this.showEditCharacersTab()}
-                    </ul>
-                </div>
-                <div className="col-md-4 txt-right d-none d-lg-inline-block" id="login-logout-div">
-                    <LoginLogoutButton discordURL={this.state.discordURL} session={this.props.session} logout={this.props.logout} />
-                </div>
-                <div className="row d-lg-none">
-                    <div className="col-auto"><img src={logoSquare} height="24px" id="logo" alt="logo"/></div>
-                    <div className="col-auto" onClick={() => this.props.changeTab('roster')} style={this.getMobileButtonStyle('roster')}><span>&#8226;roster&#8226;</span></div>
-                    <div className="col-auto" onClick={() => this.props.changeTab('crafters')} style={this.getMobileButtonStyle('crafters')}><span>&#8226;crafters&#8226;</span></div>
-                    {this.props.session.sessionToken ? <div className="col-auto" onClick={() => this.props.changeTab('editCharacter')} style={this.getMobileButtonStyle('editCharacter')}><span>&#8226;character&#8226;</span></div> : null }  
-                    <MobileLoginLogoutButton discordURL={this.state.discordURL} session={this.props.session} logout={this.props.logout}/>
-                </div>
-            </div>
-        )
+    function getMobileButtonStyle(tabName: string): GetMobileButtonStyle { 
+        return {color: activeTab === tabName ? 'green' : 'white'}
     }
 }
 
 interface MobileLoginLogoutButtonProps {
     discordURL: string,
-    session: Session,
+    session: SessionState,
     logout: () => void
 }
-class MobileLoginLogoutButton extends React.Component<MobileLoginLogoutButtonProps> {
-    render() {
-        if (this.props.session.sessionToken && this.props.session.userName) {
-            return (
-                <div className="col-1" onClick={this.props.logout}>
-                     <img className="round-image" src={this.props.session.avatarURL} height="24px" alt="discord avatar"/>
-                </div>
-            )
-        } else {
-            return (
-                <div className="col-1">
-                    <a href={this.props.discordURL}><FontAwesomeIcon icon={faUser as IconProp} style={{color:'green'}}/></a>
-                </div>
-            )
-        }
+function MobileLoginLogoutButton(props: MobileLoginLogoutButtonProps) {
+    if (props.session.sessionToken && props.session.userName) {
+        return (
+            <div className="col-1" onClick={props.logout}>
+                    <img className="round-image" src={props.session.avatarURL} height="24px" alt="discord avatar"/>
+            </div>
+        )
+    } else {
+        return (
+            <div className="col-1">
+                <a href={props.discordURL}><FontAwesomeIcon icon={faUser as IconProp} style={{color:'green'}}/></a>
+            </div>
+        )
     }
 }
 
 
 interface LoginLogoutButtonProps {
     discordURL: string,
-    session: Session,
+    session: SessionState,
     logout: () => void
 }
-class LoginLogoutButton extends React.Component<LoginLogoutButtonProps> {
-    render() {
-        if (this.props.session.sessionToken && this.props.session.userName) {
+function LoginLogoutButton(props: LoginLogoutButtonProps) {
+    const discordURL = props.discordURL
+    const session = props.session
+    const logout = props.logout
+    
+        if (session.sessionToken && session.userName) {
             return (
-                    <button type="button" className="btn btn-success" onClick={this.props.logout}>
-                        <img className="round-image" src={this.props.session.avatarURL} height="25px"alt="discord avatar"/>
+                    <button type="button" className="btn btn-success" onClick={logout}>
+                        <img className="round-image" src={session.avatarURL} height="25px"alt="discord avatar"/>
                         <span>Logout</span>
                     </button>
              )
         } else {
             return (          
-                <a href={this.props.discordURL}>
+                <a href={discordURL}>
                     <button type="button" className="btn btn-success" >
                         <img src={discordLogo} height="20px" alt="discord logo"/>
                         <span>Login</span>
@@ -238,7 +199,4 @@ class LoginLogoutButton extends React.Component<LoginLogoutButtonProps> {
                 </a>
             )
         }
-    }
 }
-
-export default connect(mapStateToProps,mapDispatchToProps)(Header)
