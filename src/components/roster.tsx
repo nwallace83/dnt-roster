@@ -1,4 +1,3 @@
-import React from 'react'
 import '../index.css'
 import lifeStaff from '../images/weapons/lifestaff.png'
 import bow from '../images/weapons/bow.png'
@@ -13,82 +12,49 @@ import sword from '../images/weapons/sword.png'
 import voidGauntlet from '../images/weapons/voidgauntlet.png'
 import warHammer from '../images/weapons/warhammer.png'
 import Character from '../interfaces/character'
-import Session from '../interfaces/session'
 import { toastr } from 'react-redux-toastr'
-import { connect } from 'react-redux'
-import { setRoster, applyFilter, replaceCharacter, toggleShowInactive } from '../reducers/rosterSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { applyFilter, replaceCharacter, toggleShowInactive } from '../reducers/rosterSlice'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
 import { confirm } from 'react-confirm-box'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import { RootState } from '../store'
 
-const mapStateToProps = (state: any) => {
-    return {
-        roster: state.roster.filteredRoster,
-        showInactive: state.roster.showInactive,
-        session: state.session
-    }
+export default function Roster() {
+    const roster = useSelector((state: RootState) => state.roster.filteredRoster)
+
+    return (
+        <div className="row bg-light-grey padding-top-4">
+            <RosterFilter />
+            <table className="table table-striped table-bordered ">
+                    <RosterHeader />
+                <tbody>
+                    {roster.map( (player,index) => {return <Player player={player} key={index} />})}
+                </tbody>
+            </table>
+        </div>
+    )
 }
 
-const mapDispatchToProps = (dispatch: any) => {
-    return {
-        setRoster: (roster: Array<Character>) => dispatch(setRoster(roster)),
-        applyFilter: (filterText: string) => dispatch(applyFilter(filterText)),
-        replaceCharacter: (character: Character) => dispatch(replaceCharacter(character)),
-        toggleShowInactive: () => dispatch(toggleShowInactive())
-    }
-}
+function RosterFilter() {
+    const dispatch = useDispatch()
+    const showInactive = useSelector((state: RootState) => state.roster.showInactive)
 
-interface RosterProps {
-    roster: Array<Character>,
-    showInactive: boolean,
-    session: Session
-}
-interface RosterActionProps {
-    setRoster: (c: Array<Character>) => void,
-    applyFilter: (s: string) => void,
-    replaceCharacter: (c: Character) => void,
-    toggleShowInactive: () => void
-}
-class Roster extends React.Component<RosterProps & RosterActionProps> {
-    render() {
-        return (
-            <div className="row bg-light-grey padding-top-4">
-                <RosterFilter toggleShowInactive={this.props.toggleShowInactive} showInactive={this.props.showInactive} roster={this.props.roster} applyFilter={this.props.applyFilter} />
-                <table className="table table-striped table-bordered ">
-                        <RosterHeader session={this.props.session} />
-                    <tbody>
-                        {this.props.roster.map( (player,index) => {return <Player replaceCharacter={this.props.replaceCharacter} session={this.props.session} player={player} key={index} />})}
-                    </tbody>
-                </table>
+    return (
+        <div className="row roster-filter-div">
+            <div className="col-md-12" id="roster-filter">
+                <label className="form-check-label" htmlFor="rosterfilterinput">Filter:</label>
+                <input id="rosterfilterinput" type="text" name="filter" onChange={applyFilterAction} />
             </div>
-        )
-    }
-}
-
-interface RosterFilterProps {
-    toggleShowInactive: any,
-    showInactive: any,
-    roster: any,
-    applyFilter: any
-}
-class RosterFilter extends React.Component<RosterFilterProps> {
-    render() {
-        return (
-            <div className="row roster-filter-div">
-                <div className="col-md-12" id="roster-filter">
-                    <label className="form-check-label" htmlFor="rosterfilterinput">Filter:</label>
-                    <input id="rosterfilterinput" type="text" name="filter" onChange={this.applyFilter} />
-                </div>
-                <div className="col-md-12 showinactive-div">
-                    <input className="form-check-input" name ="showinactive" type="checkbox" value="" onClick={this.applyInactiveFilter} id="showinactive" checked={this.props.showInactive} />
-                    <label className="form-check-label" htmlFor="showinactive">Show Inactive</label>
-                </div>
+            <div className="col-md-12 showinactive-div">
+                <input className="form-check-input" name ="showinactive" type="checkbox" value="" onClick={applyInactiveFilter} id="showinactive" checked={showInactive} />
+                <label className="form-check-label" htmlFor="showinactive">Show Inactive</label>
             </div>
-        )
-    }
+        </div>
+    )
 
-     applyFilter = (): void => {
+    function applyFilterAction() {
         let getFilterValueFromHTML = (): string => {
             let element: HTMLInputElement = document.getElementById('rosterfilterinput') as HTMLInputElement
             return element ? element.value.trim() : ''
@@ -97,26 +63,22 @@ class RosterFilter extends React.Component<RosterFilterProps> {
         let filterValue: string = getFilterValueFromHTML()
         setTimeout(() => {
             if (filterValue === getFilterValueFromHTML()) {
-                this.props.applyFilter(filterValue)
+                dispatch(applyFilter(filterValue))
             }
         },250)
     }
 
-    applyInactiveFilter = () => {
-        this.props.toggleShowInactive()
+    function applyInactiveFilter() {
+        dispatch(toggleShowInactive())
         let element: HTMLInputElement = document.getElementById('rosterfilterinput') as HTMLInputElement
         if (element) {
-            let filterValue: string = element.value.trim()
-            this.props.applyFilter(filterValue)
+            let filterValue: string = element ? element.value.trim() : ''
+            dispatch(applyFilter(filterValue))
         }
     }
 }
 
-interface RosterHeaderProps {
-    session: Session
-}
-class RosterHeader extends React.Component<RosterHeaderProps> {
-    render() {
+function RosterHeader() {
         return (
             <thead>
             <tr>
@@ -128,68 +90,65 @@ class RosterHeader extends React.Component<RosterHeaderProps> {
             </tr>
         </thead>
         )
-    }
 }
 
 interface PlayerProps {
-    replaceCharacter: any,
-    session: Session,
-    player: Character
+    player: Character,
+    key: number,
 }
-class Player extends React.Component<PlayerProps> {
-    render() {
-        return (
-            <tr>
-                <th>{this.props.player.characterName}</th>
-                <td className="d-none d-lg-table-cell">
-                    {this.props.player.discordUserName}
-                </td>
-                <td>
-                    <img className="padding-bottom-4" height="15px" src={this.getWeaponIcon(this.props.player.primaryWeapon1)} alt=""/>
-                    <span>{this.props.player.primaryWeapon1}</span>
+function Player(props: PlayerProps) {
+    const player = props.player
+    return (
+        <tr>
+            <th>{player.characterName}</th>
+            <td className="d-none d-lg-table-cell">
+                {player.discordUserName}
+            </td>
+            <td>
+                <img className="padding-bottom-4" height="15px" src={getWeaponIcon(player.primaryWeapon1)} alt=""/>
+                <span>{player.primaryWeapon1}</span>
 
-                    <br/><img className="padding-bottom-4 d-md-none" height="15px" src={this.getWeaponIcon(this.props.player.primaryWeapon2)} alt=""/>
-                    <span className="d-lg-none">{this.props.player.primaryWeapon2}</span>
-                    <span className="d-lg-none"><br/>{this.props.player.primaryArmor}</span>
-                    <span className="d-lg-none"><br/>{this.props.player.primaryRole}</span>
-                    <span className="d-lg-none"><br/>{this.props.player.primaryGS}</span>
-                </td>
-                <td className="d-none d-lg-table-cell">
-                    <img className="padding-bottom-4" height="15px" src={this.getWeaponIcon(this.props.player.primaryWeapon2)} alt=""/>
-                    <span>{this.props.player.primaryWeapon2}</span>
-                </td>
-                <td className="d-none d-lg-table-cell">
-                    <span>{this.props.player.primaryArmor}</span>
-                </td>
-                <td className="d-none d-lg-table-cell">
-                    <span>{this.props.player.primaryRole}</span>
-                </td>
-                <td className="d-none d-lg-table-cell">
-                    <span>{this.props.player.primaryGS}</span>
-                </td>
-                <td className="d-none d-lg-table-cell">
-                    <img className="padding-bottom-4" height="15px" src={this.getWeaponIcon(this.props.player.secondaryWeapon1)} alt=""/>
-                    <span>{this.props.player.secondaryWeapon1}</span>
-                </td>
-                <td className="d-none d-lg-table-cell">
-                    <img className="padding-bottom-4" height="15px" src={this.getWeaponIcon(this.props.player.secondaryWeapon2)} alt=""/>
-                    <span>{this.props.player.secondaryWeapon2}</span>
-                </td>
-                <td className="d-none d-lg-table-cell">
-                    <span>{this.props.player.secondaryArmor}</span>
-                </td>
-                <td className="d-none d-lg-table-cell">
-                    <span>{this.props.player.secondaryRole}</span>
-                </td>
-                <td className="d-none d-lg-table-cell">
-                    <span>{this.props.player.secondaryGS}</span>
-                </td>
-                <ActiveStatus replaceCharacter={this.props.replaceCharacter} session={this.props.session} player={this.props.player} />
-            </tr>
-        )
-    }
+                <br/><img className="padding-bottom-4 d-md-none" height="15px" src={getWeaponIcon(player.primaryWeapon2)} alt=""/>
+                <span className="d-lg-none">{player.primaryWeapon2}</span>
+                <span className="d-lg-none"><br/>{player.primaryArmor}</span>
+                <span className="d-lg-none"><br/>{player.primaryRole}</span>
+                <span className="d-lg-none"><br/>{player.primaryGS}</span>
+            </td>
+            <td className="d-none d-lg-table-cell">
+                <img className="padding-bottom-4" height="15px" src={getWeaponIcon(player.primaryWeapon2)} alt=""/>
+                <span>{player.primaryWeapon2}</span>
+            </td>
+            <td className="d-none d-lg-table-cell">
+                <span>{player.primaryArmor}</span>
+            </td>
+            <td className="d-none d-lg-table-cell">
+                <span>{player.primaryRole}</span>
+            </td>
+            <td className="d-none d-lg-table-cell">
+                <span>{player.primaryGS}</span>
+            </td>
+            <td className="d-none d-lg-table-cell">
+                <img className="padding-bottom-4" height="15px" src={getWeaponIcon(player.secondaryWeapon1)} alt=""/>
+                <span>{player.secondaryWeapon1}</span>
+            </td>
+            <td className="d-none d-lg-table-cell">
+                <img className="padding-bottom-4" height="15px" src={getWeaponIcon(player.secondaryWeapon2)} alt=""/>
+                <span>{player.secondaryWeapon2}</span>
+            </td>
+            <td className="d-none d-lg-table-cell">
+                <span>{player.secondaryArmor}</span>
+            </td>
+            <td className="d-none d-lg-table-cell">
+                <span>{player.secondaryRole}</span>
+            </td>
+            <td className="d-none d-lg-table-cell">
+                <span>{player.secondaryGS}</span>
+            </td>
+            <ActiveStatus player={player} />
+        </tr>
+    )
 
-    getWeaponIcon(weapon: string): string {
+    function getWeaponIcon(weapon: string): string {
         let weaponIcon=''
 
         switch(weapon) {
@@ -239,40 +198,40 @@ class Player extends React.Component<PlayerProps> {
 
 
 interface ActiveStatusProps {
-    replaceCharacter: any,
-    session: Session,
     player: Character
 }
-class ActiveStatus extends React.Component<ActiveStatusProps> {
-    render() {
-        return (
-            <td className="txt-center d-none d-lg-table-cell">
-                <FontAwesomeIcon onClick={() => this.changeActiveStatus()} className={this.getClasses()} icon={this.props.player.inactive ? faThumbsDown as IconProp: faThumbsUp as IconProp} />
-            </td>
-        )
-    }
+function ActiveStatus(props: ActiveStatusProps) {
+    const session = useSelector((state: RootState) => state.session)
+    const player = props.player
+    const dispatch = useDispatch()
 
-    getClasses(): string {
-        if (this.props.session.isAdmin) {
-            return this.props.player.inactive ? 'inactive-player-icon-admin' : 'active-player-icon-admin'
+    return (
+        <td className="txt-center d-none d-lg-table-cell">
+            <FontAwesomeIcon onClick={() => changeActiveStatus()} className={getClasses()} icon={player.inactive ? faThumbsDown as IconProp: faThumbsUp as IconProp} />
+        </td>
+    )
+
+    function getClasses(): string {
+        if (session.isAdmin) {
+            return player.inactive ? 'inactive-player-icon-admin' : 'active-player-icon-admin'
         } else {
-            return this.props.player.inactive ? 'inactive-player-icon' : 'active-player-icon'
+            return player.inactive ? 'inactive-player-icon' : 'active-player-icon'
         }    
     }
 
-    async changeActiveStatus(): Promise<any> {
-        if (!this.props.session.isAdmin) {
+    async function changeActiveStatus(): Promise<any> {
+        if (!session.isAdmin) {
             return null
         }
 
-        const result = await confirm('Change ' + this.props.player.characterName + ' to ' + (this.props.player.inactive ? 'active?' : 'inactive?'))
+        const result = await confirm('Change ' + player.characterName + ' to ' + (player.inactive ? 'active?' : 'inactive?'))
         if (result) {
-            const endPoint = '/api/v1/admin/character/inactive/' + this.props.player.id + '/' + !this.props.player.inactive
+            const endPoint = '/api/v1/admin/character/inactive/' + player.id + '/' + !player.inactive
             fetch(endPoint,{method: 'POST'}).then(res => {
                 if (res.ok) {
                     res.json().then(res => {
-                        this.props.replaceCharacter(res)
-                        toastr.success('success', this.props.player.characterName + ' is now ' + (this.props.player.inactive ? 'inactive' : 'active'))
+                        dispatch(replaceCharacter(res))
+                        toastr.success('success', player.characterName + ' is now ' + (player.inactive ? 'inactive' : 'active'))
                     })
                 } else {
                     toastr.error('Error','Tell Kavion where you touched it')
@@ -281,5 +240,3 @@ class ActiveStatus extends React.Component<ActiveStatusProps> {
         }
     }
 }
-
-export default connect(mapStateToProps,mapDispatchToProps)(Roster)
