@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { current } from 'immer'
+import { initial } from 'lodash'
 import Character, { CharacterCrafting } from '../interfaces/character'
 
 interface CharacterState extends Character {
@@ -36,12 +37,8 @@ export const characterSlice = createSlice({
     initialState: initialState,
     reducers: {
         saveCharacter: (state,payload: {type: string, payload: Character}) => {
-            const character = payload.payload
-            if (character && character.characterName && character.crafting) {
-                return character
-            } else {
-                return {...state,initialState}
-            }
+            const character = payload.payload ?? initialState
+            return {...state,character}
         },
         clearCharacter: () => {
             return initialState
