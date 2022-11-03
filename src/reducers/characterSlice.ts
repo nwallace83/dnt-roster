@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { current } from 'immer'
-import { initial } from 'lodash'
 import Character, { CharacterCrafting } from '../interfaces/character'
 
 interface CharacterState extends Character {
