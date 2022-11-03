@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 interface MenuState {
-    activeTab: string | null
+    activeTab: string
 }
 
-const initialState: MenuState = {activeTab: localStorage.getItem('activeTab') ? localStorage.getItem('activeTab') : 'roster'}
+const initialState: MenuState = {activeTab: localStorage.getItem('activeTab') ?? 'roster'}
 
 export const menuSlice = createSlice({
     name:'menu',
