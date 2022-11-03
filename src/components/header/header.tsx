@@ -1,0 +1,152 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import { useCallback, useEffect } from 'react'
+import logo from '../../images/logo-green.png'
+import logoSquare from '../../images/logo-square.png'
+import { useDispatch, useSelector } from 'react-redux'
+import { setSession, clearSession } from '../../reducers/sessionSlice'
+import { clearCharacter, saveCharacter } from '../../reducers/characterSlice'
+import { setRoster } from '../../reducers/rosterSlice'
+import { changeTab } from '../../reducers/menuSlice'
+import Cookies from 'js-cookie'
+import { toastr } from 'react-redux-toastr'
+import { RootState } from '../../store'
+import LoginLogoutButton from './login_logout_button'
+import MobileLoginLogoutButton from './mobile_login_logout_button'
+
+export default function Header() {
+  const dispatch = useDispatch()
+  const activeTab = useSelector((state: RootState) => state.menu.activeTab)
+  const session = useSelector((state: RootState) => state.session)
+  const roster = useSelector((state: RootState) => state.roster.roster)
+
+  const logout = useCallback(() => {
+    dispatch(clearSession())
+    dispatch(clearCharacter())
+    dispatch(changeTab('roster'))
+    Cookies.remove('authorization')
+    toastr.success('Logged Out', 'Successfully logged out')
+  }, [dispatch])
+
+  const initializeRoster = useCallback(() => {
+    fetch('/api/v1/roster').then(res => {
+      if (res.ok) {
+        res.json().then(res => dispatch(setRoster(res))).catch(res => console.error(res))
+      } else {
+        window.alert('Problem loading roster, tell Kavion where you touched it')
+      }
+    })
+  }, [dispatch])
+
+  const initializeCharacter = useCallback(() => {
+    fetch('/api/v1/character/').then(res => {
+      if (res.ok) {
+        res.json().then(res => dispatch(saveCharacter(res)))
+      } else {
+        logout()
+        toastr.error('Error', 'Unable to get your character, refresh page and yell at Kavion')
+      }
+    })
+  }, [dispatch, logout])
+
+  const setSessionFromCookie = useCallback(() => {
+    const authCookie: string | undefined = Cookies.get('authorization')
+
+    if (authCookie) {
+      fetch('/api/v1/auth')
+        .then(res => {
+          if (res.ok) {
+            res.json().then(res => {
+              dispatch(setSession(res.token))
+              Cookies.set('authorization', res.token, { expires: 30 })
+              initializeCharacter()
+            })
+          } else {
+            logout()
+            dispatch(changeTab('roster'))
+          }
+        })
+    }
+  }, [dispatch, initializeCharacter, logout])
+
+  const initializeSession = useCallback(() => {
+    const queryString: string = window.location.search
+    const urlParams: URLSearchParams = new URLSearchParams(queryString)
+
+    if (urlParams.get('code')) {
+      fetch('/api/v1/discord/login/' + urlParams.get('code'), { method: 'POST' })
+        .then(res => {
+          if (res.ok) {
+            window.history.replaceState({}, document.title, '/')
+            res.json().then(res => {
+              const token = res.token
+              dispatch(setSession(token))
+              Cookies.set('authorization', token, { expires: 30 })
+              initializeCharacter()
+              toastr.success('Logged in', 'Welcome ' + session.userName)
+            }).catch(res => console.error(res))
+          }
+        })
+    } else {
+      setSessionFromCookie()
+    }
+  }, [dispatch, initializeCharacter, session.userName, setSessionFromCookie])
+
+  useEffect(() => {
+    if (!session.sessionToken) {
+      initializeSession()
+    } 
+    if (roster.length === 0) {
+      initializeRoster()
+    }
+  }, [session, initializeRoster, initializeSession, roster.length])
+
+  return (
+    <div className="row">
+      <div className="col-md-8 d-none d-lg-inline-block" id="nav-menu">
+        <img src={logo} height="40px" id="logo" alt="logo" />
+        <ul className="nav nav-tabs">
+          <li className="nav-item" onClick={() => dispatch(changeTab('roster'))}>
+
+            <a className={getButtonClasses('roster')} aria-current="page" href="#">Roster</a>
+          </li>
+          <li className="nav-item" onClick={() => dispatch(changeTab('crafters'))}>
+            <a className={getButtonClasses('crafters')} aria-current="page" href="#">Crafters</a>
+          </li>
+          {showEditCharacersTab()}
+        </ul>
+      </div>
+      <div className="col-md-4 txt-right d-none d-lg-inline-block" id="login-logout-div">
+        <LoginLogoutButton logout={logout} />
+      </div>
+      <div className="row d-lg-none">
+        <div className="col-auto"><img src={logoSquare} height="24px" id="logo" alt="logo" /></div>
+        <div className="col-auto" onClick={() => dispatch(changeTab('roster'))} style={getMobileButtonStyle('roster')}><span>&#8226;roster&#8226;</span></div>
+        <div className="col-auto" onClick={() => dispatch(changeTab('crafters'))} style={getMobileButtonStyle('crafters')}><span>&#8226;crafters&#8226;</span></div>
+        {session.sessionToken ? <div className="col-auto" onClick={() => dispatch(changeTab('editCharacter'))} style={getMobileButtonStyle('editCharacter')}><span>&#8226;character&#8226;</span></div> : null}
+        <MobileLoginLogoutButton logout={logout} />
+      </div>
+    </div>
+  )
+
+  function showEditCharacersTab() {
+    if (session.sessionToken && session.userName) {
+      return (
+        <li className="nav-item" onClick={() => dispatch(changeTab('editCharacter'))}>
+          <a className={getButtonClasses('editCharacter')} aria-current="page" href="#">Edit Character</a>
+        </li>
+      )
+    }
+  }
+
+  function getButtonClasses(tabName: string): string {
+    return 'nav-link ' + (activeTab === tabName ? 'active' : 'inactive')
+  }
+
+  
+  function getMobileButtonStyle(tabName: string){
+    return { color: activeTab === tabName ? 'green' : 'white' }
+  }
+}
+
+
+

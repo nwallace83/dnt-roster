@@ -1,6 +1,6 @@
 import {fireEvent, render, screen} from '@testing-library/react'
 import '@testing-library/jest-dom'
-import Roster from '../../components/roster'
+import Roster from '../../components/roster/roster'
 import { Provider } from 'react-redux'
 import store from '../../store'
 import { setRoster } from '../../reducers/rosterSlice'

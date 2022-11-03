@@ -1,4 +1,4 @@
-import Roster from './roster'
+import Roster from './roster/roster'
 import EditCharacter from './editCharacter'
 import Crafters from './crafters'
 import { useSelector } from 'react-redux'
