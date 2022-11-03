@@ -151,51 +151,50 @@ function Player(props: PlayerProps) {
     function getWeaponIcon(weapon: string): string {
         let weaponIcon=''
 
-        switch(weapon) {
-            case 'Life Staff': 
-                weaponIcon = lifeStaff
-                break
-            case 'Bow': 
-                weaponIcon = bow
-                break
-            case 'Fire Staff': 
-                weaponIcon = fireStaff
-                break
-            case 'Great Axe': 
-                weaponIcon = greatAxe
-                break
-            case 'Hatchet': 
-                weaponIcon = hatchet
-                break
-            case 'Ice Gauntlet': 
-                weaponIcon = iceGauntlet
-                break
-            case 'Musket': 
-                weaponIcon = musket
-                break
-            case 'Rapier': 
-                weaponIcon = rapier
-                break
-            case 'Spear': 
-                weaponIcon = spear
-                break
-            case 'Sword': 
-                weaponIcon = sword
-                break
-            case 'Void Gauntlet': 
-                weaponIcon = voidGauntlet
-                break
-            case 'War Hammer': 
-                weaponIcon = warHammer
-                break
-            default:
-                weaponIcon = ''
-        }
-
-        return weaponIcon
+    switch (weapon) {
+      case 'Life Staff':
+        weaponIcon = lifeStaff
+        break
+      case 'Bow':
+        weaponIcon = bow
+        break
+      case 'Fire Staff':
+        weaponIcon = fireStaff
+        break
+      case 'Great Axe':
+        weaponIcon = greatAxe
+        break
+      case 'Hatchet':
+        weaponIcon = hatchet
+        break
+      case 'Ice Gauntlet':
+        weaponIcon = iceGauntlet
+        break
+      case 'Musket':
+        weaponIcon = musket
+        break
+      case 'Rapier':
+        weaponIcon = rapier
+        break
+      case 'Spear':
+        weaponIcon = spear
+        break
+      case 'Sword':
+        weaponIcon = sword
+        break
+      case 'Void Gauntlet':
+        weaponIcon = voidGauntlet
+        break
+      case 'War Hammer':
+        weaponIcon = warHammer
+        break
+      default:
+        weaponIcon = ''
     }
-}
 
+    return weaponIcon
+  }
+}
 
 interface ActiveStatusProps {
     player: Character

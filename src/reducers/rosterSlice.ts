@@ -5,21 +5,6 @@ import Crafters from '../interfaces/crafters'
 import filter from 'lodash/filter'
 import sortBy from 'lodash/sortBy'
 
-interface RosterState {
-    roster: Array<Character>,
-    filteredRoster:  Array<Character>,
-    showInactive: boolean,
-    crafters: {
-            weaponSmithing: Array<string>,
-            armoring: Array<string>,
-            engineering: Array<string>,
-            jewelCrafting: Array<string>,
-            arcana: Array<string>,
-            cooking: Array<string>,
-            furnishing: Array<string>
-    }
-}
-
 let initialState: RosterState = {
     roster:[],
     filteredRoster: [],
@@ -136,6 +121,21 @@ export const rosterSlice = createSlice({
         }
     }
 })
+
+interface RosterState {
+  roster: Array<Character>,
+  filteredRoster:  Array<Character>,
+  showInactive: boolean,
+  crafters: {
+          weaponSmithing: Array<string>,
+          armoring: Array<string>,
+          engineering: Array<string>,
+          jewelCrafting: Array<string>,
+          arcana: Array<string>,
+          cooking: Array<string>,
+          furnishing: Array<string>
+  }
+}
 
 export const { setRoster, clearRoster, applyFilter, replaceCharacter, toggleShowInactive }  = rosterSlice.actions
 
