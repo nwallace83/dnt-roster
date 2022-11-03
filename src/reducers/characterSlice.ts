@@ -37,7 +37,7 @@ export const characterSlice = createSlice({
     reducers: {
         saveCharacter: (state,payload: {type: string, payload: Character}) => {
             const character = payload.payload ?? initialState
-            return {...state,character}
+            return character
         },
         clearCharacter: () => {
             return initialState

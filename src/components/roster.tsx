@@ -20,6 +20,7 @@ import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
 import { confirm } from 'react-confirm-box'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { RootState } from '../store'
+import { useEffect } from 'react'
 
 export default function Roster() {
     const roster = useSelector((state: RootState) => state.roster.filteredRoster)
@@ -40,6 +41,10 @@ export default function Roster() {
 function RosterFilter() {
     const dispatch = useDispatch()
     const showInactive = useSelector((state: RootState) => state.roster.showInactive)
+
+    useEffect(() => {
+      applyFilterAction()
+    })
 
     return (
         <div className="row roster-filter-div">

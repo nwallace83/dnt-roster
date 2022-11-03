@@ -3,6 +3,7 @@ import { toastr } from 'react-redux-toastr'
 import { saveCharacter, toggleTradeSkill } from '../reducers/characterSlice'
 import Character, { CharacterCrafting } from '../interfaces/character'
 import { RootState } from '../store'
+import { replaceCharacter } from '../reducers/rosterSlice'
 
 export default function CharacterBody() {
     return (
@@ -20,6 +21,7 @@ export default function CharacterBody() {
 function EditCharacterForm() {
     const dispatch = useDispatch()
     const character = useSelector((state: RootState) => state.character)
+    const session = useSelector((state: RootState) => state.session)
 
     return (
         <div className="col-md-12">
@@ -157,7 +159,6 @@ function EditCharacterForm() {
         </div>
     )
 
-
     function saveCharacterToServer() {
         let charToSave: Character = {
             characterName: '',
@@ -185,6 +186,7 @@ function EditCharacterForm() {
             }
         }
 
+        charToSave.id = session.id
         // @ts-ignore
         charToSave.characterName = document.characterform.charactername.value ? document.characterform.charactername.value.trim() : ''
         // @ts-ignore
@@ -226,6 +228,7 @@ function EditCharacterForm() {
             fetch('/api/v1/character', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(charToSave) }).then(res => {
                 if (res.ok) {
                     dispatch(saveCharacter(charToSave))
+                    dispatch(replaceCharacter(charToSave))
                     toastr.success('Character Saved', '')
                 }
             })
