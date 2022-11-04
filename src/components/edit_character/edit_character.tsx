@@ -42,16 +42,16 @@ export default function EditCharacter() {
           </div>
         </div>
         <hr />
-        <EditCharacterSelect character={character} fieldName="primaryWeapon1" options={weaponOptions} onChange={updateCharacterField} width="3" labelText="Main Weapon" />
-        <EditCharacterSelect character={character} fieldName="primaryWeapon2" options={weaponOptions} onChange={updateCharacterField} width="3" labelText="Main Weapon" />
-        <EditCharacterSelect character={character} fieldName="primaryRole" options={roleOptions} onChange={updateCharacterField} width="2" labelText="Role" />
-        <EditCharacterSelect character={character} fieldName="primaryArmor" options={armorOptions} onChange={updateCharacterField} width="2" labelText="Armor" />
-        <EditCharacterGS character={character} fieldName="primaryGS" onChange={updateCharacterField} />
-        <EditCharacterSelect character={character} fieldName="secondaryWeapon1" options={weaponOptions} onChange={updateCharacterField} width="3" labelText="Alt Weapon" />
-        <EditCharacterSelect character={character} fieldName="secondaryWeapon2" options={weaponOptions} onChange={updateCharacterField} width="3" labelText="Alt Weapon" />
-        <EditCharacterSelect character={character} fieldName="secondaryRole" options={roleOptions} onChange={updateCharacterField} width="2" labelText="Role" />
-        <EditCharacterSelect character={character} fieldName="secondaryArmor" options={armorOptions} onChange={updateCharacterField} width="2" labelText="Armor" />
-        <EditCharacterGS character={character} fieldName="secondaryGS" onChange={updateCharacterField} />
+        <EditCharacterSelect fieldName="primaryWeapon1" options={weaponOptions} defaultValue={character.primaryWeapon1} onChange={updateCharacterField} width="3" labelText="Main Weapon" />
+        <EditCharacterSelect fieldName="primaryWeapon2" options={weaponOptions} defaultValue={character.primaryWeapon2} onChange={updateCharacterField} width="3" labelText="Main Weapon" />
+        <EditCharacterSelect fieldName="primaryRole" options={roleOptions} defaultValue={character.primaryRole} onChange={updateCharacterField} width="2" labelText="Role" />
+        <EditCharacterSelect fieldName="primaryArmor" options={armorOptions} defaultValue={character.primaryArmor} onChange={updateCharacterField} width="2" labelText="Armor" />
+        <EditCharacterGS defaultValue={character.primaryGS} fieldName="primaryGS" onChange={updateCharacterField} />
+        <EditCharacterSelect fieldName="secondaryWeapon1" options={weaponOptions} defaultValue={character.secondaryWeapon1} onChange={updateCharacterField} width="3" labelText="Alt Weapon" />
+        <EditCharacterSelect fieldName="secondaryWeapon2" options={weaponOptions} defaultValue={character.secondaryWeapon2} onChange={updateCharacterField} width="3" labelText="Alt Weapon" />
+        <EditCharacterSelect fieldName="secondaryRole" options={roleOptions} defaultValue={character.secondaryRole} onChange={updateCharacterField} width="2" labelText="Role" />
+        <EditCharacterSelect fieldName="secondaryArmor" options={armorOptions} defaultValue={character.secondaryArmor} onChange={updateCharacterField} width="2" labelText="Armor" />
+        <EditCharacterGS defaultValue={character.secondaryGS} fieldName="secondaryGS" onChange={updateCharacterField} />
         <hr />
         <TradeSkills onChange={updateCharacterCraftingField} character={character} />
         <div className="col-md-3">

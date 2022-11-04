@@ -1,8 +1,7 @@
-import Character from '../../interfaces/character'
 
 interface SelectRoleProps {
   fieldName: string
-  character: Character
+  defaultValue: string,
   options: string[]
   width: string
   labelText: string
@@ -13,8 +12,8 @@ export function EditCharacterSelect(props: SelectRoleProps) {
   return (
     <div className={'col-md-' + props.width}>
       <label className="form-label font-weight-bold">{props.labelText}</label>
-      <select name={props.fieldName} className="form-select" onChange={(e) => handleChange(props.fieldName,e.target.value)}>
-        {props.options.map((option, index) => <Option optionText={option} key={index} fieldName={props.fieldName} character={props.character} />)}
+      <select name={props.fieldName} className="form-select" value={props.defaultValue} onChange={(e) => handleChange(props.fieldName,e.target.value)}>
+        {props.options.map((option, index) => <Option optionText={option} key={index} fieldName={props.fieldName} />)}
       </select>
     </div>
   )
@@ -23,11 +22,9 @@ export function EditCharacterSelect(props: SelectRoleProps) {
 interface OptionProps {
   optionText: string
   fieldName: string
-  character: Character
 }
 export default function Option(props: OptionProps) {
-  const isSelected = props.character[props.fieldName as keyof Character] === props.optionText
   return (
-    <option selected={isSelected}>{props.optionText}</option>
+    <option>{props.optionText}</option>
   )
 }

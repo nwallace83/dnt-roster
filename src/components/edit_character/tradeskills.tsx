@@ -20,7 +20,7 @@ export default function TradeSkills(props: TradeSkillsProps) {
   return (
     <div className="row padding-left-20">
       {tradeSkills.map((tradeSkill, index) => {
-        return <TradeSkillOption fieldName={tradeSkill.fieldName} character={character} onChange={handleChange} key={index} labelText={tradeSkill.labelText} />
+        return <TradeSkillOption fieldName={tradeSkill.fieldName} defaultChecked={character.crafting[tradeSkill.fieldName as keyof CharacterCrafting]} onChange={handleChange} key={index} labelText={tradeSkill.labelText} />
       })}
       <div className="col-md-12">
         <span>*only check if you have 200 + trophies + gear*</span>
@@ -32,7 +32,7 @@ export default function TradeSkills(props: TradeSkillsProps) {
 interface TradeSkillOptionProps {
   fieldName: string
   labelText: string
-  character: Character
+  defaultChecked: boolean
   onChange: (e: string, b: boolean) => void
 }
 function TradeSkillOption(props: TradeSkillOptionProps) {
@@ -40,7 +40,7 @@ function TradeSkillOption(props: TradeSkillOptionProps) {
   return (
     <div className="form-check col-md-3">
       <input className="form-check-input" name={props.fieldName.toLowerCase()} type="checkbox" id={props.fieldName.toLowerCase()}
-        checked={props.character.crafting[props.fieldName as keyof CharacterCrafting]}
+        defaultChecked={props.defaultChecked}
         onClick={(e: any) => handleChange(props.fieldName, e.target.checked)}
       />
       <label className="form-check-label" htmlFor={props.fieldName}>

@@ -1,7 +1,5 @@
-import Character from '../../interfaces/character'
-
 interface EditCharacterGSProps {
-  character: Character
+  defaultValue: string
   fieldName: string
   onChange: (f: string, v: string) => void
 }
@@ -11,7 +9,7 @@ export default function EditCharacterGS(props: EditCharacterGSProps) {
     <div className="col-md-2">
       <label className="form-label">Gear Score</label>
       <input name="primarygs" maxLength={3} type="Number" className="form-control"
-        defaultValue={props.character.primaryGS} onChange={(e) => handleChange(props.fieldName, e.target.value)}
+        defaultValue={props.defaultValue} onChange={(e) => handleChange(props.fieldName, e.target.value)}
       />
     </div>
   )
