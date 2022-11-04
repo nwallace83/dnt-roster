@@ -4,13 +4,13 @@ import logo from '../../images/logo-green.png'
 import logoSquare from '../../images/logo-square.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { setSession, clearSession } from '../../reducers/sessionSlice'
-import { setRoster } from '../../reducers/rosterSlice'
 import { changeTab } from '../../reducers/menuSlice'
 import Cookies from 'js-cookie'
 import { toastr } from 'react-redux-toastr'
 import { RootState } from '../../store'
 import LoginLogoutButton from './login_logout_button'
 import MobileLoginLogoutButton from './mobile_login_logout_button'
+import { clearCharacter } from '../../reducers/character_slice'
 
 export default function Header() {
   const dispatch = useDispatch()
@@ -23,16 +23,7 @@ export default function Header() {
     dispatch(changeTab('roster'))
     Cookies.remove('authorization')
     toastr.success('Logged Out', 'Successfully logged out')
-  }, [dispatch])
-
-  const initializeRoster = useCallback(() => {
-    fetch('/api/v1/roster').then(res => {
-      if (res.ok) {
-        res.json().then(res => dispatch(setRoster(res))).catch(res => console.error(res))
-      } else {
-        window.alert('Problem loading roster, tell Kavion where you touched it')
-      }
-    })
+    dispatch(clearCharacter())
   }, [dispatch])
 
   const setSessionFromCookie = useCallback(() => {
@@ -80,10 +71,7 @@ export default function Header() {
     if (!session.sessionToken) {
       initializeSession()
     } 
-    if (roster.length === 0) {
-      initializeRoster()
-    }
-  }, [session, initializeRoster, initializeSession, roster.length])
+  }, [session, initializeSession, roster.length])
 
   return (
     <div className="row">

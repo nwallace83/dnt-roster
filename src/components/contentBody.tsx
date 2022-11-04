@@ -1,6 +1,6 @@
 import Roster from './roster/roster'
 import EditCharacter from './edit_character/edit_character'
-import Crafters from './crafters'
+import CraftersTable from './crafters'
 import { useSelector } from 'react-redux'
 import { RootState } from '../store'
 
@@ -10,7 +10,7 @@ export default function ContentBody()  {
     if (activeTab === 'editCharacter') {
         return <EditCharacter />
     } else if (activeTab === 'crafters') {
-        return <Crafters />
+        return <CraftersTable />
     } else {
         return <Roster />
     }
