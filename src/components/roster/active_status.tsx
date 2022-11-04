@@ -9,11 +9,11 @@ import { RootState } from '../../store'
 import { confirm } from 'react-confirm-box'
 
 interface ActiveStatusProps {
-  player: Character
+  character: Character
 }
 export default function ActiveStatus(props: ActiveStatusProps) {
   const session = useSelector((state: RootState) => state.session)
-  const player = props.player
+  const player = props.character
   const dispatch = useDispatch()
 
   return (
@@ -37,7 +37,7 @@ export default function ActiveStatus(props: ActiveStatusProps) {
 
     const result = await confirm('Change ' + player.characterName + ' to ' + (player.inactive ? 'active?' : 'inactive?'))
     if (result) {
-      const endPoint = '/api/v1/admin/character/inactive/' + player.id + '/' + !player.inactive
+      const endPoint = '/api/v1/admin/character/inactive/' + session.id + '/' + !player.inactive
       fetch(endPoint, { method: 'POST' }).then(res => {
         if (res.ok) {
           res.json().then(res => {

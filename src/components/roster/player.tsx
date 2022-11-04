@@ -65,7 +65,7 @@ export default function Player(props: PlayerProps) {
           <td className="d-none d-lg-table-cell">
               <span>{player.secondaryGS}</span>
           </td>
-          <ActiveStatus player={player} />
+          <ActiveStatus character={player} />
       </tr>
   )
 

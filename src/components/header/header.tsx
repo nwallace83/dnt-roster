@@ -4,7 +4,6 @@ import logo from '../../images/logo-green.png'
 import logoSquare from '../../images/logo-square.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { setSession, clearSession } from '../../reducers/sessionSlice'
-import { clearCharacter, saveCharacter } from '../../reducers/characterSlice'
 import { setRoster } from '../../reducers/rosterSlice'
 import { changeTab } from '../../reducers/menuSlice'
 import Cookies from 'js-cookie'
@@ -21,7 +20,6 @@ export default function Header() {
 
   const logout = useCallback(() => {
     dispatch(clearSession())
-    dispatch(clearCharacter())
     dispatch(changeTab('roster'))
     Cookies.remove('authorization')
     toastr.success('Logged Out', 'Successfully logged out')
@@ -37,17 +35,6 @@ export default function Header() {
     })
   }, [dispatch])
 
-  const initializeCharacter = useCallback(() => {
-    fetch('/api/v1/character/').then(res => {
-      if (res.ok) {
-        res.json().then(res => dispatch(saveCharacter(res)))
-      } else {
-        logout()
-        toastr.error('Error', 'Unable to get your character, refresh page and yell at Kavion')
-      }
-    })
-  }, [dispatch, logout])
-
   const setSessionFromCookie = useCallback(() => {
     const authCookie: string | undefined = Cookies.get('authorization')
 
@@ -58,7 +45,6 @@ export default function Header() {
             res.json().then(res => {
               dispatch(setSession(res.token))
               Cookies.set('authorization', res.token, { expires: 30 })
-              initializeCharacter()
             })
           } else {
             logout()
@@ -66,7 +52,7 @@ export default function Header() {
           }
         })
     }
-  }, [dispatch, initializeCharacter, logout])
+  }, [dispatch, logout])
 
   const initializeSession = useCallback(() => {
     const queryString: string = window.location.search
@@ -81,7 +67,6 @@ export default function Header() {
               const token = res.token
               dispatch(setSession(token))
               Cookies.set('authorization', token, { expires: 30 })
-              initializeCharacter()
               toastr.success('Logged in', 'Welcome ' + session.userName)
             }).catch(res => console.error(res))
           }
@@ -89,7 +74,7 @@ export default function Header() {
     } else {
       setSessionFromCookie()
     }
-  }, [dispatch, initializeCharacter, session.userName, setSessionFromCookie])
+  }, [dispatch, session.userName, setSessionFromCookie])
 
   useEffect(() => {
     if (!session.sessionToken) {
