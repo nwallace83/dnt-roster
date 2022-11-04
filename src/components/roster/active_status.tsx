@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useDispatch, useSelector } from 'react-redux'
 import { toastr } from 'react-redux-toastr'
 import Character from '../../interfaces/character'
-import { replaceCharacter } from '../../reducers/rosterSlice'
+import { replaceCharacter } from '../../reducers/roster_slice'
 import { RootState } from '../../store'
 import { confirm } from 'react-confirm-box'
 

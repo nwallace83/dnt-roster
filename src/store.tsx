@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
-import menuReducer from './reducers/menuSlice'
-import sessionReducer from './reducers/sessionSlice'
-import rosterReducer from './reducers/rosterSlice'
+import menuReducer from './reducers/menu_slice'
+import sessionReducer from './reducers/session_slice'
+import rosterReducer from './reducers/roster_slice'
 import characterReducer from './reducers/character_slice'
 import { reducer as toastrReducer } from 'react-redux-toastr'
 
