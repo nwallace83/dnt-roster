@@ -71,14 +71,9 @@ export default function Header() {
         <div className="col-md-8 d-none d-lg-inline-block" id="nav-menu">
           <img src={logo} height="40px" id="logo" alt="logo" />
           <ul className="nav nav-tabs">
-            <li className="nav-item" onClick={() => dispatch(changeTab('roster'))}>
-
-              <a className={getButtonClasses('roster')} aria-current="page" href="#">Roster</a>
-            </li>
-            <li className="nav-item" onClick={() => dispatch(changeTab('crafters'))}>
-              <a className={getButtonClasses('crafters')} aria-current="page" href="#">Crafters</a>
-            </li>
-            {session.sessionToken ? <EditCharactersTab /> : null}
+            <HeaderTab tabName={'roster'} displayName={'Roster'} adminOnly={false} />
+            <HeaderTab tabName={'crafters'} displayName={'Crafters'} adminOnly={false} />
+            <HeaderTab tabName={'editCharacter'} displayName={'Edit Character'} adminOnly={true} />
           </ul>
         </div>
         <div className="col-md-4 txt-right d-none d-lg-inline-block" id="login-logout-div">
@@ -95,23 +90,26 @@ export default function Header() {
     )
   }
 
-  function EditCharactersTab() {
-    return (
-      <li className="nav-item" onClick={() => dispatch(changeTab('editCharacter'))}>
-        <a className={getButtonClasses('editCharacter')} aria-current="page" href="#">Edit Character</a>
-      </li>
-    )
-  }
-
-  function getButtonClasses(tabName: string): string {
-    return 'nav-link ' + (activeTab === tabName ? 'active' : 'inactive')
-  }
-
-
   function getMobileButtonStyle(tabName: string) {
     return { color: activeTab === tabName ? 'green' : 'white' }
   }
 }
 
+interface HeaderTabProps {
+  tabName: string,
+  displayName: string,
+  adminOnly: boolean
+}
+function HeaderTab(props: HeaderTabProps) {
+  const dispatch = useDispatch()
+  const activeTab = useSelector((state: RootState) => state.menu.activeTab)
+  const isAdmin = useSelector((state: RootState) => state.session.isAdmin)
 
-
+  if (props.adminOnly && !isAdmin) {
+    return null
+  } return (
+    <li className="nav-item" onClick={() => dispatch(changeTab(props.tabName))}>
+      <a className={'nav-link ' + (props.tabName === activeTab ? 'active' : 'inactive')} aria-current="page" href="#">{props.displayName}</a>
+    </li>
+  )
+}
