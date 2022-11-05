@@ -130,12 +130,12 @@ let character = {
   inactive:false,
   crafting: {
     weaponSmithing:false,
-    armoring:false,
+    armoring:true,
     engineering:false,
     jewelCrafting:false,
-    arcana:false,
+    arcana:true,
     cooking:false,
-    furnishing:false
+    furnishing:true
   }
 }
 

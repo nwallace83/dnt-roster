@@ -18,7 +18,13 @@ export default function EditCharacter() {
 
   useEffect(() => {
     if (!character.id) {
-      fetch('/api/v1/character/').then(res => {
+      fetchCharacter()
+    } else if (character.id) {
+      setIsLoading(false)
+    }
+
+    async function fetchCharacter() {
+      await fetch('/api/v1/character/').then(res => {
         if (res.ok) {
           res.json().then(res => dispatch(saveCharacter(res)))
           setIsLoading(false)
@@ -27,10 +33,10 @@ export default function EditCharacter() {
           toastr.error('Error', 'Unable to get your character, refresh page and yell at Kavion')
         }
       })
-    } else if (character.id) {
-      setIsLoading(false)
     }
-  }, [character.id, dispatch])
+  }, [character, dispatch])
+
+  
 
   function updateCharacterField(field: string, value: string | boolean | number) {
     dispatch(saveCharacter({ ...character, [field]: value }))
