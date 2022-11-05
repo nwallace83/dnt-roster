@@ -8,6 +8,32 @@ import { setRoster } from '../../reducers/roster_slice'
 import { toastr } from 'react-redux-toastr'
 
 export default function Roster() {
+  const dispatch = useDispatch()
+  const roster = useSelector((state: RootState) => state.roster.roster)
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    if (roster.length === 0) {
+      fetchRoster()
+    } else if (roster.length > 0) {
+      setIsLoading(false)
+    }
+
+    async function fetchRoster() {
+      await fetch('/api/v1/roster').then(res => {
+        if (res.ok) {
+          res.json().then(res => {
+            dispatch(setRoster(res))
+            setIsLoading(false)
+          }).catch(res => console.error(res))
+        } else {
+          setIsLoading(false)
+          toastr.error('Error', 'Unable to load roster, refresh page and yell at Kavion')
+        }
+      })
+    }
+  }, [dispatch, roster])
+
   return (
     <div className="row bg-light-grey padding-top-4">
       <RosterFilter />
@@ -21,43 +47,19 @@ export default function Roster() {
             <th className="d-none d-lg-table-cell" scope="col">Active</th>
           </tr>
         </thead>
-        <RosterPlayers />
+        {isLoading ? null : <RosterPlayers />}
       </table>
     </div>
   )
 }
 
 function RosterPlayers() {
-  const dispatch = useDispatch()
   const roster = useSelector((state: RootState) => state.roster.filteredRoster)
-  const [isLoading, setIsLoading] = useState(true)
 
-  useEffect(() => {
-    if (roster.length === 0) {
-      fetch('/api/v1/roster').then(res => {
-        if (res.ok) {
-          res.json().then(res => {
-            dispatch(setRoster(res))
-            setIsLoading(false)
-          }).catch(res => console.error(res))
-        } else {
-          setIsLoading(false)
-          toastr.error('Error', 'Unable to load roster, refresh page and yell at Kavion')
-        }
-      })
-    } else if (roster.length > 0) {
-      setIsLoading(false)
-    }
-  }, [dispatch, roster.length, isLoading])
-
-  if (isLoading) {
-    return <div className="row bg-light-grey padding-top-4">Loading....</div>
-  } else {
     return (
       <tbody>
         {roster.map((player, index) => { return <Player player={player} key={index} /> })}
       </tbody>
     )
-  }
 }
 

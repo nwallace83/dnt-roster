@@ -12,7 +12,10 @@ import { toastr } from 'react-redux-toastr'
 import Crafters from '../interfaces/crafters'
 
 export default function CraftersTable() {
+  const dispatch = useDispatch()
   const crafters = useSelector((state: RootState) => state.roster.crafters)
+  const roster = useSelector((state: RootState) => state.roster.roster)
+  const [isLoading, setIsLoading] = useState(true)
   const tradeSkills = [
     { name: 'Weapon Smithing', image: weaponSmithing, fieldName: 'weaponSmithing' },
     { name: 'Armoring', image: armoring, fieldName: 'armoring' },
@@ -22,6 +25,28 @@ export default function CraftersTable() {
     { name: 'Furnishing', image: furnishing, fieldName: 'furnishing' },
     { name: 'Cooking', image: cooking, fieldName: 'cooking' }
   ]
+
+  useEffect(() => {
+    if (roster.length === 0) {
+      fetchRoster()
+    } else if (roster.length > 0) {
+      setIsLoading(false)
+    }
+
+    async function fetchRoster() {
+      await fetch('/api/v1/roster').then(res => {
+        if (res.ok) {
+          res.json().then(res => {
+            dispatch(setRoster(res))
+            setIsLoading(false)
+          }).catch(res => console.error(res))
+        } else {
+          setIsLoading(false)
+          toastr.error('Error', 'Unable to load roster, refresh page and yell at Kavion')
+        }
+      })
+    }
+  }, [dispatch, roster])
 
   return (
     <div className="row bg-light-grey padding-top-4">
@@ -33,7 +58,7 @@ export default function CraftersTable() {
         </thead>
         <tbody>
           <tr className="txt-left">
-            {tradeSkills.map((skill, index) => <CrafterRow crafters={crafters[skill.fieldName as keyof Crafters]} key={index} />)}
+            {isLoading ? null : tradeSkills.map((skill, index) => <CrafterRow crafters={crafters[skill.fieldName as keyof Crafters]} key={index} />)}
           </tr>
         </tbody>
       </table>
@@ -58,34 +83,7 @@ interface CrafterRowProps {
   crafters: string[]
 }
 function CrafterRow(props: CrafterRowProps) {
-  const dispatch = useDispatch()
-  const roster = useSelector((state: RootState) => state.roster.filteredRoster)
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    if (roster.length === 0) {
-      fetch('/api/v1/roster').then(res => {
-        if (res.ok) {
-          res.json().then(res => {
-            dispatch(setRoster(res))
-            setIsLoading(false)
-          }).catch(res => console.error(res))
-        } else {
-          setIsLoading(false)
-          toastr.error('Error', 'Unable to load crafters, refresh page and yell at Kavion')
-        }
-      })
-    } else if (roster.length > 0) {
-      setIsLoading(false)
-    }
-  }, [dispatch, roster.length, isLoading])
-
-  if (isLoading) {
-    return <td></td>
-  } else {
     return (
       <td>{props.crafters.map((name, index) => <span key={index}>{name}<br /></span>)}</td>
     )
-  }
-
 }

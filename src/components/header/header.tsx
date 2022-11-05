@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useCallback, useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import logo from '../../images/logo-green.png'
 import logoSquare from '../../images/logo-square.png'
 import { useDispatch, useSelector } from 'react-redux'
@@ -16,7 +16,7 @@ export default function Header() {
   const dispatch = useDispatch()
   const activeTab = useSelector((state: RootState) => state.menu.activeTab)
   const session = useSelector((state: RootState) => state.session)
-  const roster = useSelector((state: RootState) => state.roster.roster)
+  const [isLoading, setIsLoading] = useState(true)
 
   const logout = useCallback(() => {
     dispatch(clearSession())
@@ -26,10 +26,10 @@ export default function Header() {
     dispatch(clearCharacter())
   }, [dispatch])
 
-  const setSessionFromCookie = useCallback(() => {
+  useEffect(() => {
     const authCookie: string | undefined = Cookies.get('authorization')
-
-    if (authCookie) {
+    if (authCookie && !session.userName) {
+      dispatch(setSession(authCookie))
       fetch('/api/v1/auth')
         .then(res => {
           if (res.ok) {
@@ -43,12 +43,8 @@ export default function Header() {
           }
         })
     }
-  }, [dispatch, logout])
 
-  const initializeSession = useCallback(() => {
-    const queryString: string = window.location.search
-    const urlParams: URLSearchParams = new URLSearchParams(queryString)
-
+    const urlParams: URLSearchParams = new URLSearchParams(window.location.search)
     if (urlParams.get('code')) {
       fetch('/api/v1/discord/login/' + urlParams.get('code'), { method: 'POST' })
         .then(res => {
@@ -59,64 +55,60 @@ export default function Header() {
               dispatch(setSession(token))
               Cookies.set('authorization', token, { expires: 30 })
               toastr.success('Logged in', 'Welcome ' + session.userName)
-            }).catch(res => console.error(res))
+              setIsLoading(false)
+            }).catch(res => { console.error(res); setIsLoading(false) })
           }
         })
-    } else {
-      setSessionFromCookie()
     }
-  }, [dispatch, session.userName, setSessionFromCookie])
+    setIsLoading(false)
+  }, [dispatch, logout, session])
 
-  useEffect(() => {
-    if (!session.sessionToken) {
-      initializeSession()
-    } 
-  }, [session, initializeSession, roster.length])
+  if (isLoading) {
+    return null
+  } else {
+    return (
+      <div className="row">
+        <div className="col-md-8 d-none d-lg-inline-block" id="nav-menu">
+          <img src={logo} height="40px" id="logo" alt="logo" />
+          <ul className="nav nav-tabs">
+            <li className="nav-item" onClick={() => dispatch(changeTab('roster'))}>
 
-  return (
-    <div className="row">
-      <div className="col-md-8 d-none d-lg-inline-block" id="nav-menu">
-        <img src={logo} height="40px" id="logo" alt="logo" />
-        <ul className="nav nav-tabs">
-          <li className="nav-item" onClick={() => dispatch(changeTab('roster'))}>
-
-            <a className={getButtonClasses('roster')} aria-current="page" href="#">Roster</a>
-          </li>
-          <li className="nav-item" onClick={() => dispatch(changeTab('crafters'))}>
-            <a className={getButtonClasses('crafters')} aria-current="page" href="#">Crafters</a>
-          </li>
-          {showEditCharacersTab()}
-        </ul>
+              <a className={getButtonClasses('roster')} aria-current="page" href="#">Roster</a>
+            </li>
+            <li className="nav-item" onClick={() => dispatch(changeTab('crafters'))}>
+              <a className={getButtonClasses('crafters')} aria-current="page" href="#">Crafters</a>
+            </li>
+            {session.sessionToken ? <EditCharactersTab /> : null}
+          </ul>
+        </div>
+        <div className="col-md-4 txt-right d-none d-lg-inline-block" id="login-logout-div">
+          <LoginLogoutButton logout={logout} />
+        </div>
+        <div className="row d-lg-none">
+          <div className="col-auto"><img src={logoSquare} height="24px" id="logo" alt="logo" /></div>
+          <div className="col-auto" onClick={() => dispatch(changeTab('roster'))} style={getMobileButtonStyle('roster')}><span>&#8226;roster&#8226;</span></div>
+          <div className="col-auto" onClick={() => dispatch(changeTab('crafters'))} style={getMobileButtonStyle('crafters')}><span>&#8226;crafters&#8226;</span></div>
+          {session.sessionToken ? <div className="col-auto" onClick={() => dispatch(changeTab('editCharacter'))} style={getMobileButtonStyle('editCharacter')}><span>&#8226;character&#8226;</span></div> : null}
+          <MobileLoginLogoutButton logout={logout} />
+        </div>
       </div>
-      <div className="col-md-4 txt-right d-none d-lg-inline-block" id="login-logout-div">
-        <LoginLogoutButton logout={logout} />
-      </div>
-      <div className="row d-lg-none">
-        <div className="col-auto"><img src={logoSquare} height="24px" id="logo" alt="logo" /></div>
-        <div className="col-auto" onClick={() => dispatch(changeTab('roster'))} style={getMobileButtonStyle('roster')}><span>&#8226;roster&#8226;</span></div>
-        <div className="col-auto" onClick={() => dispatch(changeTab('crafters'))} style={getMobileButtonStyle('crafters')}><span>&#8226;crafters&#8226;</span></div>
-        {session.sessionToken ? <div className="col-auto" onClick={() => dispatch(changeTab('editCharacter'))} style={getMobileButtonStyle('editCharacter')}><span>&#8226;character&#8226;</span></div> : null}
-        <MobileLoginLogoutButton logout={logout} />
-      </div>
-    </div>
-  )
+    )
+  }
 
-  function showEditCharacersTab() {
-    if (session.sessionToken && session.userName) {
-      return (
-        <li className="nav-item" onClick={() => dispatch(changeTab('editCharacter'))}>
-          <a className={getButtonClasses('editCharacter')} aria-current="page" href="#">Edit Character</a>
-        </li>
-      )
-    }
+  function EditCharactersTab() {
+    return (
+      <li className="nav-item" onClick={() => dispatch(changeTab('editCharacter'))}>
+        <a className={getButtonClasses('editCharacter')} aria-current="page" href="#">Edit Character</a>
+      </li>
+    )
   }
 
   function getButtonClasses(tabName: string): string {
     return 'nav-link ' + (activeTab === tabName ? 'active' : 'inactive')
   }
 
-  
-  function getMobileButtonStyle(tabName: string){
+
+  function getMobileButtonStyle(tabName: string) {
     return { color: activeTab === tabName ? 'green' : 'white' }
   }
 }

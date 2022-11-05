@@ -30,7 +30,7 @@ export default function EditCharacter() {
     } else if (character.id) {
       setIsLoading(false)
     }
-  }, [character.id, dispatch, isLoading])
+  }, [character.id, dispatch])
 
   function updateCharacterField(field: string, value: string | boolean | number) {
     dispatch(saveCharacter({ ...character, [field]: value }))
