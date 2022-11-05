@@ -37,7 +37,7 @@ export default function ActiveStatus(props: ActiveStatusProps) {
 
     const result = await confirm('Change ' + player.characterName + ' to ' + (player.inactive ? 'active?' : 'inactive?'))
     if (result) {
-      const endPoint = '/api/v1/admin/character/inactive/' + session.id + '/' + !player.inactive
+      const endPoint = '/api/v1/admin/character/inactive/' + props.character.id + '/' + !player.inactive
       fetch(endPoint, { method: 'POST' }).then(res => {
         if (res.ok) {
           res.json().then(res => {
