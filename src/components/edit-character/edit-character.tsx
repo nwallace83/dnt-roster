@@ -6,6 +6,8 @@ import EditCharacterGS from './edit-character-gs'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../store'
 import { saveCharacter } from '../../reducers/character-slice'
+import { replaceCharacter } from '../../reducers/roster-slice'
+import Character from '../../interfaces/character'
 
 
 export default function EditCharacter() {
@@ -86,7 +88,10 @@ export default function EditCharacter() {
     if (character.characterName.length > 2 && character.primaryWeapon1.length > 1 && character.primaryWeapon2.length > 1 && character.primaryRole.length > 1) {
       fetch('/api/v1/character', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(character) }).then(res => {
         if (res.ok) {
-          toastr.success('Character Saved', '')
+          res.json().then((res: Character) => {
+            dispatch(replaceCharacter(res))
+            toastr.success('Character Saved', '')
+          })
         }
       })
     } else {

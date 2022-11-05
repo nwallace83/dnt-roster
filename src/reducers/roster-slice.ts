@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { current } from 'immer'
+import { produce } from 'immer'
 import Character, { CharacterCrafting } from '../interfaces/character'
 import Crafters from '../interfaces/crafters'
 import filter from 'lodash/filter'
@@ -19,23 +19,19 @@ let initialState: RosterState = {
   }
 }
 
-function removeCharacter(roster: Array<Character>, character: Character): Array<Character> {
-  return filter(roster, char => { return char.id !== character.id })
-}
-
-function removeInactive(roster: Array<Character>): Array<Character> {
+function removeInactive(roster: Character[]): Character[] {
   return filter(roster, char => { return !char.inactive })
 }
 
-function sortRoster(roster: Array<Character>): Array<Character> {
+function sortRoster(roster: Character[]): Character[] {
   return sortBy(roster, (character: Character) => {
     return character.characterName
   })
 }
 
 
-function getCraftersForSkill(roster: Array<Character>, skill: string): Array<string> {
-  let crafters: Array<string> = []
+function getCraftersForSkill(roster: Character[], skill: string): string[] {
+  let crafters: string[] = []
 
   roster.forEach(character => {
     if (!character.inactive) {
@@ -51,9 +47,9 @@ export const rosterSlice = createSlice({
   name: 'roster',
   initialState: initialState,
   reducers: {
-    setRoster: (state, payload: { type: string, payload: Array<Character> }): RosterState => {
+    setRoster: (state, payload: { type: string, payload: Character[] }): RosterState => {
       const roster = payload.payload
-      let sortedRoster: Array<Character> = sortRoster(roster)
+      let sortedRoster: Character[] = sortRoster(roster)
       let crafters: Crafters = {
         weaponSmithing: getCraftersForSkill(sortedRoster, 'weaponSmithing'),
         armoring: getCraftersForSkill(sortedRoster, 'armoring'),
@@ -70,66 +66,74 @@ export const rosterSlice = createSlice({
       return initialState
     },
     replaceCharacter: (state, character: { type: string, payload: Character }): RosterState => {
-      let roster: Array<Character> = removeCharacter(current(state.roster), character.payload)
-      let filteredRoster: Array<Character> = removeCharacter(current(state.filteredRoster), character.payload)
+      if (state.roster.length === 0) {
+        return state
+      }
+
+      let roster = produce(state.roster,(draft) => {
+        return filter(draft, char => { return char.id !== character.payload.id })
+      })
+      let filteredRoster = produce(state.filteredRoster,(draft) => {
+        return filter(draft, char => { return char.id !== character.payload.id })
+      })
 
       roster.push(character.payload)
       filteredRoster.push(character.payload)
 
-      let rosterSorted: Array<Character> = sortRoster(roster)
-      let filteredRosterSorted: Array<Character> = sortRoster(filteredRoster)
+      let rosterSorted: Character[] = sortRoster(roster)
+      let filteredRosterSorted: Character[] = sortRoster(filteredRoster)
 
       return { ...state, roster: rosterSorted, filteredRoster: filteredRosterSorted }
 
     },
     applyFilter: (state, payload: { type: string, payload: applyFilterPayload }): RosterState => {
-      const filterpayload = payload.payload 
-      let filteredCharacters: Array<Character>
+      const filterpayload = payload.payload
+      let newState = produce(state.roster,(rosterClone) => {
+        let filteredCharacters = rosterClone
 
-      if (filterpayload.filterValue.length === 0) {
-        if (!filterpayload.showInactive) {
-          filteredCharacters = removeInactive(current(state.roster))
-        } else {
-          filteredCharacters = current(state.roster)
+        if (filterpayload.filterValue.length === 0) {
+          if (!filterpayload.showInactive) {
+            filteredCharacters = removeInactive(rosterClone)
+          }
+          return filteredCharacters
         }
-        return { ...state, filteredRoster: filteredCharacters }
-      }
+  
+        filteredCharacters = filter(rosterClone, (character) => {
+          let dataString: string = character.characterName +
+            character.primaryRole +
+            character.primaryArmor +
+            character.primaryWeapon1 +
+            character.primaryWeapon2 +
+            character.discordUserName +
+            character.primaryGS +
+            character.secondaryGS
+          dataString = dataString.toUpperCase()
+          return dataString.indexOf(filterpayload.filterValue.toUpperCase()) > -1
+        })
+  
+        if (!filterpayload.showInactive) {
+          filteredCharacters = removeInactive(filteredCharacters)
+        }
 
-      let roster: Array<Character> = current(state.roster)
-
-      filteredCharacters = filter(roster, (character) => {
-        let dataString: string = character.characterName +
-          character.primaryRole +
-          character.primaryArmor +
-          character.primaryWeapon1 +
-          character.primaryWeapon2 +
-          character.discordUserName +
-          character.primaryGS +
-          character.secondaryGS
-        dataString = dataString.toUpperCase()
-        return dataString.indexOf(filterpayload.filterValue.toUpperCase()) > -1
+        return filteredCharacters
       })
 
-      if (!filterpayload.showInactive) {
-        filteredCharacters = removeInactive(filteredCharacters)
-      }
-
-      return { ...state, filteredRoster: filteredCharacters }
+      return { ...state, filteredRoster: newState }
     }
   }
 })
 
 interface RosterState {
-  roster: Array<Character>,
-  filteredRoster: Array<Character>,
+  roster: Character[],
+  filteredRoster: Character[],
   crafters: {
-    weaponSmithing: Array<string>,
-    armoring: Array<string>,
-    engineering: Array<string>,
-    jewelCrafting: Array<string>,
-    arcana: Array<string>,
-    cooking: Array<string>,
-    furnishing: Array<string>
+    weaponSmithing: string[],
+    armoring: string[],
+    engineering: string[],
+    jewelCrafting: string[],
+    arcana: string[],
+    cooking: string[],
+    furnishing: string[]
   }
 }
 
