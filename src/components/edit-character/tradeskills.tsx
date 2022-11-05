@@ -43,7 +43,7 @@ function TradeSkillOption(props: TradeSkillOptionProps) {
         checked={props.isChecked}
         onClick={(e: any) => handleChange(props.fieldName, e.target.checked)}
       />
-      <label className="form-check-label" htmlFor={props.fieldName}>
+      <label className="form-check-label" htmlFor={props.fieldName.toLowerCase()}>
         {props.labelText}
       </label>
     </div>
