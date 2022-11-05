@@ -12,7 +12,7 @@ interface ActiveStatusProps {
   character: Character
 }
 export default function ActiveStatus(props: ActiveStatusProps) {
-  const session = useSelector((state: RootState) => state.session)
+  const isAdmin = useSelector((state: RootState) => state.session.isAdmin)
   const player = props.character
   const dispatch = useDispatch()
 
@@ -23,7 +23,7 @@ export default function ActiveStatus(props: ActiveStatusProps) {
   )
 
   function getClasses(): string {
-    if (session.isAdmin) {
+    if (isAdmin) {
       return player.inactive ? 'inactive-player-icon-admin' : 'active-player-icon-admin'
     } else {
       return player.inactive ? 'inactive-player-icon' : 'active-player-icon'
@@ -31,7 +31,7 @@ export default function ActiveStatus(props: ActiveStatusProps) {
   }
 
   async function changeActiveStatus() {
-    if (!session.isAdmin) {
+    if (!isAdmin) {
       return null
     }
 
