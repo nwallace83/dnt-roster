@@ -1,9 +1,9 @@
 import {render, screen} from '@testing-library/react'
 import '@testing-library/jest-dom'
-import ContentBody from '../../components/content_body'
+import ContentBody from '../../components/content-body'
 import { Provider } from 'react-redux'
 import store from '../../store'
-import { changeTab } from '../../reducers/menu_slice'
+import { changeTab } from '../../reducers/menu-slice'
 import renderer from 'react-test-renderer'
 import { act } from 'react-dom/test-utils'
 

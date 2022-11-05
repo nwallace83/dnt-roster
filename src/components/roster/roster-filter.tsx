@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { applyFilter } from '../../reducers/roster_slice'
+import { applyFilter } from '../../reducers/roster-slice'
 
 export default function RosterFilter() {
   const dispatch = useDispatch()

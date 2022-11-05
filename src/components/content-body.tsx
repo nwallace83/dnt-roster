@@ -1,5 +1,5 @@
 import Roster from './roster/roster'
-import EditCharacter from './edit_character/edit_character'
+import EditCharacter from './edit-character/edit-character'
 import CraftersTable from './crafters'
 import { useSelector } from 'react-redux'
 import { RootState } from '../store'

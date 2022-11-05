@@ -1,11 +1,11 @@
 import { toastr } from 'react-redux-toastr'
 import { useEffect, useState } from 'react'
-import { EditCharacterSelect } from './edit_character_select'
+import { EditCharacterSelect } from './edit-character-select'
 import TradeSkills from './tradeskills'
-import EditCharacterGS from './edit_character_gs'
+import EditCharacterGS from './edit-character-gs'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../store'
-import { saveCharacter } from '../../reducers/character_slice'
+import { saveCharacter } from '../../reducers/character-slice'
 
 
 export default function EditCharacter() {

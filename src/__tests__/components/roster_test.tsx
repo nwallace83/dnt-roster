@@ -3,7 +3,7 @@ import '@testing-library/jest-dom'
 import Roster from '../../components/roster/roster'
 import { Provider } from 'react-redux'
 import store from '../../store'
-import { setRoster } from '../../reducers/roster_slice'
+import { setRoster } from '../../reducers/roster-slice'
 import renderer from 'react-test-renderer'
 import Character from '../../interfaces/character'
 

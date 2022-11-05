@@ -1,10 +1,10 @@
 
 import { useDispatch, useSelector } from 'react-redux'
-import RosterFilter from './roster_filter'
+import RosterFilter from './roster-filter'
 import { RootState } from '../../store'
 import Player from './player'
 import { useEffect, useState } from 'react'
-import { setRoster } from '../../reducers/roster_slice'
+import { setRoster } from '../../reducers/roster-slice'
 import { toastr } from 'react-redux-toastr'
 
 export default function Roster() {
