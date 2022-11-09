@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../store'
 import { saveCharacter } from '../../reducers/character-slice'
 import { replaceCharacter } from '../../reducers/roster-slice'
-import Character from '../../interfaces/character'
+import Character from '../../types/character'
 
 
 export default function EditCharacter() {

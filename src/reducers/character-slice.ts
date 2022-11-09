@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import Character, { getNewCharacter } from '../interfaces/character'
+import Character, { getNewCharacter } from '../types/character'
 interface CharacterState extends Character {
 }
 const initialState: CharacterState =  getNewCharacter()

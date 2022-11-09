@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { produce } from 'immer'
-import Character, { CharacterCrafting } from '../interfaces/character'
-import Crafters from '../interfaces/crafters'
+import Character, { CharacterCrafting } from '../types/character'
+import Crafters from '../types/crafters'
 import filter from 'lodash/filter'
 import sortBy from 'lodash/sortBy'
 

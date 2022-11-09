@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import store from '../../../store'
 import { setRoster } from '../../../reducers/roster-slice'
 import renderer from 'react-test-renderer'
-import Character from '../../../interfaces/character'
+import Character from '../../../types/character'
 
 describe('Roster', () => {
   let container: renderer.ReactTestRenderer

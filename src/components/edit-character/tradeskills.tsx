@@ -1,4 +1,4 @@
-import Character, { CharacterCrafting } from '../../interfaces/character'
+import Character, { CharacterCrafting } from '../../types/character'
 
 interface TradeSkillsProps {
   character: Character

@@ -10,7 +10,7 @@ import spear from '../../images/weapons/spear.png'
 import sword from '../../images/weapons/sword.png'
 import voidGauntlet from '../../images/weapons/voidgauntlet.png'
 import warHammer from '../../images/weapons/warhammer.png'
-import Character from '../../interfaces/character'
+import Character from '../../types/character'
 import ActiveStatus from './active-status'
 
 interface PlayerProps {

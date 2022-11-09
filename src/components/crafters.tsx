@@ -9,7 +9,7 @@ import { RootState } from '../store'
 import { setRoster } from '../reducers/roster-slice'
 import { useEffect, useState } from 'react'
 import { toastr } from 'react-redux-toastr'
-import Crafters from '../interfaces/crafters'
+import Crafters from '../types/crafters'
 
 export default function CraftersTable() {
   const dispatch = useDispatch()
