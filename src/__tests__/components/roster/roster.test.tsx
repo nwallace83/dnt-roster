@@ -1,11 +1,11 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import Roster from '../../components/roster/roster'
+import Roster from '../../../components/roster/roster'
 import { Provider } from 'react-redux'
-import store from '../../store'
-import { setRoster } from '../../reducers/roster-slice'
+import store from '../../../store'
+import { setRoster } from '../../../reducers/roster-slice'
 import renderer from 'react-test-renderer'
-import Character from '../../interfaces/character'
+import Character from '../../../interfaces/character'
 
 describe('Roster', () => {
   let container: renderer.ReactTestRenderer
