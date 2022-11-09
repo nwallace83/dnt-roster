@@ -7,7 +7,7 @@ import { changeTab } from '../../reducers/menu-slice'
 import renderer from 'react-test-renderer'
 import { act } from 'react-dom/test-utils'
 
-jest.mock('../../components/editCharacter', () => () => {  
+jest.mock('../../components/edit-character/edit-character', () => () => {  
         return <div data-testid="edit-character" />
     }
 )
@@ -17,7 +17,7 @@ jest.mock('../../components/crafters', (): any => (): any => {
     }
 )
 
-jest.mock('../../components/roster', () => () => {  
+jest.mock('../../components/roster/roster', () => () => {  
         return <div data-testid="roster" />
     }
 )

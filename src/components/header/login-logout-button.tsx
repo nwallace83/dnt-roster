@@ -10,7 +10,7 @@ export default function LoginLogoutButton(props: LoginLogoutButtonProps) {
   const session = useSelector((state: RootState) => state.session)
   const logout = props.logout
 
-  if (session.sessionToken && session.userName) {
+  if (session.userName) {
     return (
       <button type="button" className="btn btn-success" onClick={logout}>
         <img className="round-image" src={session.avatarURL} height="25px" alt="discord avatar" />

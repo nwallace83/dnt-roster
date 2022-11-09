@@ -5,7 +5,6 @@ import logoSquare from '../../images/logo-square.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { setSession, clearSession } from '../../reducers/session-slice'
 import { changeTab } from '../../reducers/menu-slice'
-import Cookies from 'js-cookie'
 import { toastr } from 'react-redux-toastr'
 import { RootState } from '../../store'
 import LoginLogoutButton from './login-logout-button'
@@ -19,31 +18,15 @@ export default function Header() {
   const [isLoading, setIsLoading] = useState(true)
 
   const logout = useCallback(() => {
-    dispatch(clearSession())
-    dispatch(changeTab('roster'))
-    Cookies.remove('authorization')
-    toastr.success('Logged Out', 'Successfully logged out')
-    dispatch(clearCharacter())
+    fetch('/logout', { method: 'POST' }).then(() => {
+      dispatch(clearSession())
+      dispatch(changeTab('roster'))
+      toastr.success('Logged Out', 'Successfully logged out')
+      dispatch(clearCharacter())
+    }).catch(() => toastr.error('Unable to log out', ''))
   }, [dispatch])
 
   useEffect(() => {
-    const authCookie: string | undefined = Cookies.get('authorization')
-    if (authCookie && !session.userName) {
-      dispatch(setSession(authCookie))
-      fetch('/api/v1/auth')
-        .then(res => {
-          if (res.ok) {
-            res.json().then(res => {
-              dispatch(setSession(res.token))
-              Cookies.set('authorization', res.token, { expires: 30 })
-            })
-          } else {
-            logout()
-            dispatch(changeTab('roster'))
-          }
-        })
-    }
-
     const urlParams: URLSearchParams = new URLSearchParams(window.location.search)
     if (urlParams.get('code')) {
       fetch('/api/v1/discord/login/' + urlParams.get('code'), { method: 'POST' })
@@ -51,17 +34,27 @@ export default function Header() {
           if (res.ok) {
             window.history.replaceState({}, document.title, '/')
             res.json().then(res => {
-              const token = res.token
-              dispatch(setSession(token))
-              Cookies.set('authorization', token, { expires: 30 })
+              dispatch(setSession(res))
               toastr.success('Logged in', 'Welcome ' + session.userName)
               setIsLoading(false)
             }).catch(res => { console.error(res); setIsLoading(false) })
           }
-        })
+          setIsLoading(false)
+        }).catch(() => setIsLoading(false))
+    } else if (session?.userName === '' || session?.userName == null) {
+      fetch('/api/v1/auth')
+        .then(res => {
+          if (res.ok) {
+            res.json().then(res => {
+              dispatch(setSession(res))
+            })
+          }
+          setIsLoading(false)
+        }).catch(() => setIsLoading(false))
+    } else {
+      setIsLoading(false)
     }
-    setIsLoading(false)
-  }, [dispatch, logout, session])
+  }, [dispatch, session.userName])
 
   if (isLoading) {
     return null
