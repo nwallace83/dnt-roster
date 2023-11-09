@@ -1,11 +1,14 @@
 stages:
   - test
+  - build
 
-unit-test:
+default:
   image: node:latest
-  stage: test
   before_script:
     - npm install
+
+unit-test:
+  stage: test
   script:
     - npm run test:ci
   coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
@@ -13,3 +16,12 @@ unit-test:
     paths:
       - coverage/
     when: always
+
+build-artifact:
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    name: "dnt-roster-{$CI_COMMIT_SHORT_SHA}"
+    paths:
+      - "build/"
