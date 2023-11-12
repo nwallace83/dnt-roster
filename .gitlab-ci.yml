@@ -31,9 +31,9 @@ build-app:
       - "build/"
 
 build-container-image:
-  image: docker:latest
+  image: docker::24.0.7
   services:
-    - docker:24.0.5-dind
+    - docker:24.0.7-dind
   stage: deploy
   script:
     - docker build -t $HARBOR_HOST/$HARBOR_PROJECT/dnt-roster:$CI_COMMIT_SHORT_SHA .
