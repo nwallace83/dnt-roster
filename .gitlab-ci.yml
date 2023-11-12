@@ -5,11 +5,11 @@ stages:
 
 default:
   image: node:latest
-  before_script:
-    - npm install
 
 unit-test:
   stage: test
+  before_script:
+    - npm install
   script:
     - npm run test:ci
   coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
@@ -21,6 +21,8 @@ unit-test:
 
 build-app:
   stage: build
+  before_script:
+    - npm install
   script:
     - npm run build
   artifacts:
