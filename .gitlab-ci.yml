@@ -34,5 +34,6 @@ build-container-image:
   image: docker:latest
   stage: deploy
   script:
-    - docker build -t harbor.nwallace.io/home-server/dnt-roster:$CI_COMMIT_SHORT_SHA .
-    - docker push harbor.nwallace.io/home-server/dnt-roster:$CI_COMMIT_SHORT_SHA
+    - docker login --username $HARBOR_USERNAME --password $HARBOR_PASSWORD $HARBOR_HOST
+    - docker build -t $HARBOR_HOST/$HARBOR_PROJECT/dnt-roster:$CI_COMMIT_SHORT_SHA .
+    - docker push $HARBOR_HOST/$HARBOR_PROJECT/dnt-roster:$CI_COMMIT_SHORT_SHA
