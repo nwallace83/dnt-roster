@@ -32,6 +32,8 @@ build-app:
 
 build-container-image:
   image: docker:latest
+  services:
+    - docker:24.0.5-dind
   stage: deploy
   script:
     - docker login --username $HARBOR_USERNAME --password $HARBOR_PASSWORD $HARBOR_HOST
