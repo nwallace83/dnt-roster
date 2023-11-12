@@ -31,7 +31,7 @@ build-app:
       - "build/"
 
 build-container-image:
-  image: docker::24.0.7
+  image: docker:24.0.7
   services:
     - docker:24.0.7-dind
   stage: deploy
