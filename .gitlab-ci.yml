@@ -6,6 +6,9 @@ stages:
 default:
   image: node:latest
 
+variables:
+  GIT_CLEAN_FLAGS: none
+
 unit-test:
   stage: test
   before_script:
@@ -29,12 +32,12 @@ build-app:
       - "build/"
 
 build-container:
+  image: docker:24.0.7
   variables:
     DOCKER_HOST: tcp://docker:2376
     DOCKER_TLS_CERTDIR: "/certs"
     DOCKER_TLS_VERIFY: 1
     DOCKER_CERT_PATH: "$DOCKER_TLS_CERTDIR/client"
-  image: docker:24.0.7
   services:
     - docker:24.0.7-dind
   stage: build-container
