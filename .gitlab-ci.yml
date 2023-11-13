@@ -6,9 +6,6 @@ stages:
 default:
   image: node:latest
 
-variables:
-  GIT_CLEAN_FLAGS: none
-
 unit-test:
   stage: test
   before_script:
@@ -16,20 +13,18 @@ unit-test:
   script:
     - npm run test:ci
   coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
-  artifacts:
-    name: "dnt-roster-test-coverage-$CI_COMMIT_SHORT_SHA"
-    paths:
-      - coverage/
-    when: always
 
 build-app:
   stage: build
+  before_script:
+    - npm install
   script:
     - npm run build
   artifacts:
     name: "dnt-roster-$CI_COMMIT_SHORT_SHA"
     paths:
       - "build/"
+    expire_in: 600 seconds
 
 build-container:
   image: docker:24.0.7
