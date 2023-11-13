@@ -15,7 +15,7 @@ default:
 pre:
   stage: pre
   script:
-  - npm install
+  - npm ci
   cache:
     key: node_modules
     paths:
