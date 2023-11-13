@@ -45,4 +45,4 @@ build-container-image:
     - until docker info; do sleep 1; done
     - docker login --username=$HARBOR_USERNAME --password=$HARBOR_PASSWORD $HARBOR_URL
     - docker build -t $HARBOR_HOST/$HARBOR_PROJECT/dnt-roster:$CI_COMMIT_SHORT_SHA -t $HARBOR_HOST/$HARBOR_PROJECT/dnt-roster:latest .
-    - docker push $HARBOR_HOST/$HARBOR_PROJECT/dnt-roster:$CI_COMMIT_SHORT_SHA
+    - docker push -a $HARBOR_HOST/$HARBOR_PROJECT/dnt-roster
