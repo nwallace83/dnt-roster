@@ -37,7 +37,7 @@ build-container:
   image: docker:24.0.7
   services:
     - docker:24.0.7-dind
-  stage: build-container-image
+  stage: build-container
   script:
     - until docker info; do sleep 1; done
     - docker login --username=$HARBOR_USERNAME --password=$HARBOR_PASSWORD $HARBOR_URL
