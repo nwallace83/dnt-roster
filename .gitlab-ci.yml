@@ -1,7 +1,7 @@
 stages:
   - test
   - build
-  - deploy
+  - build-container
 
 default:
   image: node:latest
@@ -21,8 +21,6 @@ unit-test:
 
 build-app:
   stage: build
-  before_script:
-    - npm install
   script:
     - npm run build
   artifacts:
@@ -30,17 +28,16 @@ build-app:
     paths:
       - "build/"
 
-variables:
-  DOCKER_HOST: tcp://docker:2376
-  DOCKER_TLS_CERTDIR: "/certs"
-  DOCKER_TLS_VERIFY: 1
-  DOCKER_CERT_PATH: "$DOCKER_TLS_CERTDIR/client"
-
-build-container-image:
+build-container:
+  variables:
+    DOCKER_HOST: tcp://docker:2376
+    DOCKER_TLS_CERTDIR: "/certs"
+    DOCKER_TLS_VERIFY: 1
+    DOCKER_CERT_PATH: "$DOCKER_TLS_CERTDIR/client"
   image: docker:24.0.7
   services:
     - docker:24.0.7-dind
-  stage: deploy
+  stage: build-container-image
   script:
     - until docker info; do sleep 1; done
     - docker login --username=$HARBOR_USERNAME --password=$HARBOR_PASSWORD $HARBOR_URL
