@@ -7,8 +7,10 @@ stages:
 default:
   image: node:latest
   cache:
+    key: node_modules
     paths:
     - "node_modules"
+    policy: pull
 
 pre:
   stage: pre
@@ -24,11 +26,6 @@ test:
   script:
   - npm run test:ci
   coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
-  cache:
-    key: node_modules
-    paths:
-    - "node_modules"
-    policy: pull
 
 build-app:
   stage: build
@@ -39,14 +36,10 @@ build-app:
     paths:
     - "build/"
     expire_in: 600 seconds
-  cache:
-    key: node_modules
-    paths:
-    - "node_modules"
-    policy: pull
 
 build-container:
   image: docker:24.0.7
+  cache: {}
   variables:
     DOCKER_HOST: tcp://docker:2376
     DOCKER_TLS_CERTDIR: "/certs"
